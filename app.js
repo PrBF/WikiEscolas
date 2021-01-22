@@ -9,6 +9,10 @@ wiki.post("/cadastro_escolas", function(req,res){
     res.send ("Cadastramento de escolas");
 })
 
+wiki.post("/dados_escolas", function(req.res){
+    res.send ("Formulario recebido!");
+})
+
 wiki.get ("/visualiza_mapa", function(req,res){
     res.send ("Integração com API");
 })
