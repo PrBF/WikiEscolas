@@ -5,7 +5,7 @@ wiki.get("/", function(req,res){
     res.send ("Pagina inicial");
 })
 
-wiki.get("/cadastro_escolas", function(req,res){
+wiki.post("/cadastro_escolas", function(req,res){
     res.send ("Cadastramento de escolas");
 })
 
