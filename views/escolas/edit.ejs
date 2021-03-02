@@ -1,5 +1,58 @@
 <%- include ("partials/head") %>
 
+<form action="/escolas/<%=%>?_method=PATCH" method="POST">
+        <h3> Cadastro de escolas</h3>
+        <div>
+            <label>Nome da escola: 
+                <input type="text" name="nome_escola"> 
+            </label>
+            <label>  Endereço: 
+                <input type="text" name="endereco">
+            </label>
+            <label> INEP:
+                <input type ="number" name ="INEP" readonly>
+            </label>
+            <label> Responsável do cadastro: 
+                <input type ="text" name ="responsavel">
+            
+            <label> Email: 
+                <input type = "email" name ="email" placeholder="wiki@escolas.com">
     
+            <label> Telefone: 
+                <input type ="tel" name = "telefone" placeholder="(DDD) 1234 - 4567">
+            <label> 
+            <br>
+            <label> Modalidade:
+                <select name="modalidade">
+                    <option disabled selected></option>
+                    <option>Regular</option>
+                    <option>EJA</option>
+                    <option>PROEJA</option>
+                    <option>Profissional e tecnológica</option>
+                    <option>Indigena</option>
+                    <option>Quilombola</option>
+                    <option>Educação do Campo</option>
+                </select>
+            </label>
+            <br>
+            <label>Tipo de instituição
+                <input type="radio" name="federal" value="Federal">Federal
+                <input type="radio" name="estadual" value="Estadual"> Estadual
+                <input type="radio" name="municipal" value="Municipal"> Municipal
+            </label>
+            <label> Horário de funcionamento:
+                <input type ="time" name = "horario">
+            </label>
+            <label> Foto: 
+                <input type ="image" name ="foto">
+            </label>
+            <label> Ano de fundação: 
+                <input type ="date" name="ano">
+            </label>
+        </div>
+        <button type="submit">Editar Cadastro</button>
+    
+</form>
+
 
 <%- include ("partials/footer") %>
