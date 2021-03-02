@@ -32,17 +32,16 @@ wiki.get('/escolas/:INEP/edit', (req,res) =>{
 wiki.patch('/escolas/:INEP', (req,res) =>{
     const {codigo} = req.params;
     const {nome_escola, endereco, responsavel} = req.body;
-    const novoNome = req.body.nome_escola;
-    const novoEndereco = req.body.endereco;
-    const novoResponsavel = req.body.responsavel;
-    const novoEmail = req.body.email;
-    const novoTelefone = req.body.telefone;
+    const atualizaNome = req.body.nome_escola;
+    const atualizaEndereco = req.body.endereco;
+    const atualizaResponsavel = req.body.responsavel;
+    const atualizaEmail = req.body.email;
+    const atualizaTelefone = req.body.telefone;
     const atualizaModalidade = req.body.modalidade;
     const atualizaTipoInst = req.body.tipoInst;
     const atualizaHorario = req.body.horario;
     const atualizaFoto = req.body.foto;
     const atualizaAno = req.body.ano;
-    const { email, telefone, modalidade, tipoInst, horario, foto, ano} = req.body;
     //const de filtro de busca
     //atribuição
     res.redirect('/escolas/'+ codigo);
