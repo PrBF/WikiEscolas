@@ -53,6 +53,34 @@ wiki.delete('/escolas/:INEP', (req,res) =>{
     res.redirect('/escolas');
 })
 
+wiki.get('/escolas/eventos', (req,res) =>{
+    res.render('/escolas/eventos/index');
+} )
+
+wiki.get('/escolas/eventos/:INEP', (req,res) =>{
+    res.render ('escolas/eventos/show');
+})
+
+wiki.get('/escolas/eventos/new', (req, res) =>{
+    res.render ('escolas/eventos/new');
+})
+
+wiki.post ('/escolas/eventos/create', (req,res) =>{
+    res.render('escolas/eventos/create', {});
+})
+
+wiki.get('/escolas/eventos/:INEP/edit', (req,res) =>{
+    res.render('escolas/eventos/edit');
+})
+
+wiki.patch('/escolas/eventos/:INEP', (req,res) =>{
+    res.redirect('escolas/eventos');
+})
+
+wiki.delete('escolas/eventos/:INEP', (req,res) =>{
+    res.redirect('/escolas/eventos');
+})
+
 wiki.get ('/visualiza_mapa', function(req,res){
     res.send ("Integração com API");
 })
