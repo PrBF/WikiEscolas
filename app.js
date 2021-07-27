@@ -1,91 +1,43 @@
-const express = require ('express');
-const wiki = express();
-const path = require('path');
-const methodOverride = require('method-override');
+const express = require('express')
+const app = express()
+const path = require('path')
+const methodOverride = require('method-override')
 
+app.use(express.urlencoded({extended: true}))
+app.use(methodOverride('_method'));
+app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
-wiki.use(express.urlencoded({extended: true}));
-wiki.use(methodOverride('_method'));
-wiki.use(express.static(path.join(__dirname, 'public')));
-wiki.set ('view engine', 'ejs');
-wiki.set ('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
-wiki.get('/', function(req,res){
-    res.send ("Pagina inicial");
+app.get('/', (req, res) =>{
+    res.render('index')
 })
 
-wiki.get('/escolas/cadastro_escolas', function(req,res){
-    res.render ('escolas/new');
+app.get('/show', (req, res) =>{
+    res.render('show')
 })
 
-wiki.post('/escolas', function(req,res){
-    const {nome_escola, endereco, INEP, responsavel} = req.body;
-    const { email, telefone, modalidade, tipoInst, horario, foto, ano} = req.body;
-
-    res.render ('escolas/show', {nome_escola, endereco, INEP, responsavel, email, telefone, modalidade, tipoInst, horario, foto, ano});
+app.get('/login', (req, res) =>{
+    res.render('escolas/login');
 })
 
-wiki.get('/escolas/:INEP/edit', (req,res) =>{
-    res.send("atualização dos dados da escola");
+app.get('/escolas/new', (req, res) =>{
+    res.render('escolas/new');
 })
 
-wiki.patch('/escolas/:INEP', (req,res) =>{
-    const {codigo} = req.params;
-    const {nome_escola, endereco, responsavel} = req.body;
-    const atualizaNome = req.body.nome_escola;
-    const atualizaEndereco = req.body.endereco;
-    const atualizaResponsavel = req.body.responsavel;
-    const atualizaEmail = req.body.email;
-    const atualizaTelefone = req.body.telefone;
-    const atualizaModalidade = req.body.modalidade;
-    const atualizaTipoInst = req.body.tipoInst;
-    const atualizaHorario = req.body.horario;
-    const atualizaFoto = req.body.foto;
-    const atualizaAno = req.body.ano;
-    //const de filtro de busca
-    //atribuição
-    res.redirect('/escolas/'+ codigo);
+app.post ('/confirma', (req, res) =>{
+    //falta tipo de instituição
+    const {nome_escola, endereco, INEP, responsavel, email, telefone, modalidade, horario, foto,ano} = req.body;
+    res.render('confirmacao',{nome_escola, endereco, INEP, responsavel, email, telefone, modalidade, horario, foto,ano})
 })
 
-wiki.delete('/escolas/:INEP', (req,res) =>{
-    const {codigo} = req.params;
-    //filtro de código 
-    res.redirect('/escolas');
+app.get('/escola/:id/show', (req, res) =>{
+    const {id} = req.params;
+    res.render('escolas/show', {id});
 })
 
-wiki.get('/escolas/eventos', (req,res) =>{
-    res.render('/escolas/eventos/index');
-} )
-
-wiki.get('/escolas/eventos/:INEP', (req,res) =>{
-    res.render ('escolas/eventos/show');
+app.listen(3000, () =>{
+    console.log("Rodando")
 })
-
-wiki.get('/escolas/eventos/new', (req, res) =>{
-    res.render ('escolas/eventos/new');
-})
-
-wiki.post ('/escolas/eventos/create', (req,res) =>{
-    res.render('escolas/eventos/create', {});
-})
-
-wiki.get('/escolas/eventos/:INEP/edit', (req,res) =>{
-    res.render('escolas/eventos/edit');
-})
-
-wiki.patch('/escolas/eventos/:INEP', (req,res) =>{
-    res.redirect('escolas/eventos');
-})
-
-wiki.delete('escolas/eventos/:INEP', (req,res) =>{
-    res.redirect('/escolas/eventos');
-})
-
-wiki.get ('/visualiza_mapa', function(req,res){
-    res.send ("Integração com API");
-})
-
-
-wiki.listen(3000, () =>{
-    console.log("Servidor rodando!");
-});
