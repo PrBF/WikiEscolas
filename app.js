@@ -36,10 +36,10 @@ app.get('/escolas/new', (req, res) =>{
     res.render('escolas/new');
 })
 
-app.post ('/confirma', (req, res) =>{
-    //falta tipo de instituição
-    const {nome_escola, endereco, INEP, responsavel, email, telefone, modalidade, horario, foto,ano} = req.body;
-    res.render('confirmacao',{nome_escola, endereco, INEP, responsavel, email, telefone, modalidade, horario, foto,ano})
+app.post ('/escolas', async (req, res) =>{
+    const novaEscola = new Escola(req.body);
+    await novaEscola.save();
+    res.redirect('/');
 })
 
 app.get('/escola/:id/show', (req, res) =>{
