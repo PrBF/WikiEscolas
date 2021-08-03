@@ -54,39 +54,12 @@ const escolaSchema = new mongoose.Schema({
         }
     }, 
     modalidade:{
-        regular:{
-            type: String
-        }, 
-        eja:{
-            type: String
-        }, 
-        proeja: {
-            type: String
-        }, 
-        prof_tec: {
-            type: String
-        },
-        indigena:{
-            type: String
-        },
-        quilombola:{
-            type: String
-        },
-        educacao_campo:{
-            type: String
-        }
-
+        type: String,
+        required: true
     },
     tipo_inst: {
-        federal:{
-            type: String
-        }, 
-        estadual:{
-            type: String
-        }, 
-        municipal:{
-            type: String
-        }
+        type: String, 
+        required: true
     },
     username: {
         type: String, 
@@ -105,6 +78,6 @@ const escolaSchema = new mongoose.Schema({
 })
 
 
-const Escola = mongoose.model("Escola", escolaSchema);
+const Escola = mongoose.model('Escola', escolaSchema);
 
 module.exports = Escola;
