@@ -53,6 +53,41 @@ const escolaSchema = new mongoose.Schema({
             }
         }
     }, 
+    modalidade:{
+        regular:{
+            type: String
+        }, 
+        eja:{
+            type: String
+        }, 
+        proeja: {
+            type: String
+        }, 
+        prof_tec: {
+            type: String
+        },
+        indigena:{
+            type: String
+        },
+        quilombola:{
+            type: String
+        },
+        educacao_campo:{
+            type: String
+        }
+
+    },
+    tipo_inst: {
+        federal:{
+            type: String
+        }, 
+        estadual:{
+            type: String
+        }, 
+        municipal:{
+            type: String
+        }
+    },
     username: {
         type: String, 
         required: true
