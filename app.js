@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const path = require('path')
 const methodOverride = require('method-override')
+const mongoose= require('mongoose');
+const Escola = ('./models/escola');
 
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'));
@@ -36,10 +38,10 @@ app.get('/escolas/new', (req, res) =>{
     res.render('escolas/new');
 })
 
-app.post ('/escolas', async (req, res) =>{
-    const novaEscola = new Escola(req.body);
-    await novaEscola.save();
-    res.redirect('/');
+app.post ('/escola', async (req, res) =>{
+    const escola = new Escola (req.body);
+    await escola.save();
+    res.redirect('/login');
 })
 
 app.get('/escola/:id/show', (req, res) =>{
@@ -47,6 +49,6 @@ app.get('/escola/:id/show', (req, res) =>{
     res.render('escolas/show', {id});
 })
 
-app.listen(3000, () =>{
+app.listen(4000, () =>{
     console.log("Rodando")
 })
