@@ -40,7 +40,6 @@ body{
     
 }
 
-
 .inicializacao button{
     background-color: #066165;
     margin-top: 40px;
@@ -180,3 +179,90 @@ head a h5{
     text-decoration: underline;
 }
 
+#container_escola{
+    background-color: var(--cor_auxiliar);
+    height: 30vh;
+
+}
+
+.content_escola{
+    background-color: var(--background_padrao);
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    height: 90vh;
+    margin-top: -20vh;
+    padding: 5%;
+    text-align: justify;
+    
+}
+
+.content_escola h2, h1 {
+    color: var(--cor_auxiliar);
+   
+}
+
+#head_escola{
+    margin-bottom: 20px;
+}
+
+#head_escola p{
+    font-size: 1rem;
+    color: gray;
+}
+.info_geral li{
+    text-decoration: none;
+    list-style: none;
+    margin-top: 20px;
+}
+
+.info_evento{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#container_new{
+    background-color: var(--cor_auxiliar);
+    height: 100vh;
+    padding-top: 10%;
+    
+
+}
+
+#content_new{
+    padding: 25px;
+    background-color: var(--background_padrao);
+    width: 60vw;
+
+    margin-left: 20%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+#content_new h2{
+    text-align: center;
+}
+
+
+#content_new form {
+    display: flex;
+    flex-direction: column;
+}
+
+#content_new label{
+    padding: 5px;
+}
+
+#content_new button{
+    background-color: var(--cor_auxiliar);
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 2%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+}
