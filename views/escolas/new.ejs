@@ -1,6 +1,7 @@
 <%- include ('../partials/head')%>
 
-
+    <div id="container_new">
+        <div id="content_new">
     <h2> Cadastro de escolas</h2>
     <form action="/escola" method="POST">
         <label>Nome da escola: 
@@ -14,14 +15,14 @@
         </label>
         <label> Responsável do cadastro: 
             <input type ="text" name ="responsavel">
-        
+        </label>
         <label> Email: 
             <input type = "email" name ="email" placeholder="wiki@escolas.com">
-
+        </label>
         <label> Telefone: 
             <input type ="tel" name = "telefone" placeholder="(DDD) 1234 - 4567">
-        <label> 
-        <br>
+        </label> 
+        
         <label> Modalidade:
             <select name="modalidade">
                 <option disabled selected></option>
@@ -34,11 +35,11 @@
                 <option>Educação do Campo</option>
             </select>
         </label>
-        <br>
+        
         <label>Tipo de instituição
-            <input type="radio" name="federal" value="Federal">Federal
-            <input type="radio" name="estadual" value="Estadual"> Estadual
-            <input type="radio" name="municipal" value="Municipal"> Municipal
+            <input type="radio" name="federal" value="Federal">Federal</input>
+            <input type="radio" name="estadual" value="Estadual"> Estadual</input>
+            <input type="radio" name="municipal" value="Municipal"> Municipal</input>
         </label>
         <label> Horário de funcionamento:
             <input type ="time" name = "horario">
@@ -50,10 +51,11 @@
             <input type ="date" name="ano">
         </label>
 
-    <button type="submit">Cadastrar escola</button>
+    <button type="submit">Cadastrar</button>
  
     </form>
-
+</div>
+</div>
 
 
 <%- include ('../partials/footer')%>
