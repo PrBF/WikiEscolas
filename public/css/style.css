@@ -266,3 +266,11 @@ head a h5{
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 
 }
+
+.content{
+    display: flex;
+}
+#map{
+    width: 90%;
+    margin-left: 25.5rem;
+}
