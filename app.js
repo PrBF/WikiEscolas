@@ -44,9 +44,15 @@ app.post ('/escola', async (req, res) =>{
     res.redirect('/login');
 })
 
-app.get('/escola/:id/show', (req, res) =>{
+
+app.get('/escolas/:id', async (req, res) =>{
     const {id} = req.params;
-    res.render('escolas/show', {id});
+    const escola = await Escola.findById(id);
+    if (escola){
+        res.render('escolas/show', {escola});
+    } else {
+        res.render('error');
+    }
 })
 
 app.listen(4000, () =>{
