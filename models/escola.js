@@ -32,7 +32,6 @@ const escolaSchema = new mongoose.Schema({
             }, 
             tel2: {
                 type: Number, 
-                required: true
             }
         }, 
         redes: {
@@ -61,16 +60,17 @@ const escolaSchema = new mongoose.Schema({
         type: String, 
         required: true
     },
-    username: {
-        type: String, 
-        required: true
-    },
     foto: {
         type: String,
     }, 
     horario_func: {
-        type: Date,
-        required: true
+        horario_funcMin: {
+            type: Date, 
+       
+        },
+        horario_funMax: {
+            type: Date, 
+        },
     }, 
     ano_fund : {
         type: Date
