@@ -4,26 +4,29 @@
         <div id="content_new">
     <h2> Cadastro de escolas</h2>
     <form action="/escola" method="POST">
-        <label>Nome da escola: 
-            <input type="text" name="nome_escola"> 
+        <label for="nome">Nome da escola: 
+            <input type="text" name="nome" id="nome"> 
         </label>
-        <label>  Endereço: 
-            <input type="text" name="endereco">
+        <label for="endereco">  Endereço: 
+            <input type="text" name="endereco" id="endereco">
         </label>
-        <label> INEP:
-            <input type ="number" name ="INEP">
+        <label for="id_inep"> INEP:
+            <input type ="number" name ="id_inep" id="id_inep">
         </label>
-        <label> Responsável do cadastro: 
-            <input type ="text" name ="responsavel">
+        <label for="responsavel"> Responsável do cadastro: 
+            <input type ="text" name ="responsavel" id="responsavel">
         </label>
-        <label> Email: 
-            <input type = "email" name ="email" placeholder="wiki@escolas.com">
+        <label for="contato"> Email: 
+            <input type = "email" name ="email" id="email" placeholder="wiki@escolas.com">
         </label>
+        <label for="contato"> Telefone: 
+            <input type ="tel" name = "tel1" id="tel1" placeholder="(DDD) 1234 - 4567">
+        </label> 
         <label> Telefone: 
-            <input type ="tel" name = "telefone" placeholder="(DDD) 1234 - 4567">
+            <input type ="tel" name = "tel2" id="tel2" placeholder="(DDD) 1234 - 4567">
         </label> 
         
-        <label> Modalidade:
+        <label for = "modalidade"> Modalidade:
             <select name="modalidade">
                 <option disabled selected></option>
                 <option>Regular</option>
@@ -36,19 +39,19 @@
             </select>
         </label>
         
-        <label>Tipo de instituição
-            <input type="radio" name="federal" value="Federal">Federal</input>
-            <input type="radio" name="estadual" value="Estadual"> Estadual</input>
-            <input type="radio" name="municipal" value="Municipal"> Municipal</input>
+        <label for = "tipo_inst">Tipo de instituição
+            <input type="radio" name="tipo_inst" value="Federal">Federal</input>
+            <input type="radio" name="tipo_inst" value="Estadual"> Estadual</input>
+            <input type="radio" name="tipo_inst" value="Municipal"> Municipal</input>
         </label>
-        <label> Horário de funcionamento:
-            <input type ="time" name = "horario">
+        <label for = "horario_func"> Horário de funcionamento:
+            <input type ="time" name = "horario_funcMin" id="horario_funcMin"> até <input type= "time" name = "horario_funcMax" id = "horario_funcMax">
         </label>
-        <label> Foto: 
-            <input type ="image" name ="foto">
+        <label for="foto"> Foto: 
+            <input type="file" name ="foto" id="foto">
         </label>
-        <label> Ano de fundação: 
-            <input type ="date" name="ano">
+        <label for="ano_fund"> Ano de fundação: 
+            <input type ="date" name="ano_fund" id="ano_fund">
         </label>
 
     <button type="submit">Cadastrar</button>
