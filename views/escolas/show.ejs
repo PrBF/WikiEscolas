@@ -1,14 +1,41 @@
 <%- include ('../partials/head')%>
 
-<div id="escola_especifica">
-    <h2><%=id%></h2>
-    <h3>Informações gerais</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis commodi magnam esse quo itaque nobis, quod totam culpa nisi veritatis temporibus natus obcaecati, ullam in quos enim optio saepe recusandae?</p>
-    <h3>Noticias</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem iure totam hic vel modi, exercitationem ipsam quibusdam sed consequatur a. Id enim laborum animi tempore in facilis vel sunt molestiae.</p>
-    <h3>Eventos e projetos</h3>
-    <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi dolorem dolore iure mollitia dignissimos? Deserunt dolore enim, recusandae aliquam nesciunt ullam laborum facilis quibusdam maxime quas nihil reiciendis saepe error!</h3>
-</div>
-    
+    <div id="container_escola"></div>
 
-<%- include ('../partials/footer')%>
+    <div class="content_escola">
+        <% if (escola) {%>
+
+            <div id="head_escola">
+                <h1><%= escola.nome %></h1>
+                <p><%= escola.modalidade %> | Ano de fundação <%=escola.ano_fund%></p>
+            </div>
+
+            <div class="info_geral">
+                <h2>Informações gerais</h2>
+                <ul>
+                    <li><i data-feather="home"></i><%=escola.endereco%></li>
+                   
+
+                    <li><i data-feather="phone"></i>Telefone</li>
+                    <p><%=escola.telefone%></p>
+
+                    <li><i data-feather="clock"></i>Horário de atendimento</li>
+                </ul>
+
+                <h2>Eventos e projetos</h2> 
+                <div class="info_evento">
+                    <h3>23 Set</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam consequatura recusandae.
+                        Tempore sed pariaturex numquam ipsam ad? Hic maximeblanditiis ad placeat minus voluptatemsequi
+                        provident a nam.</p>
+                </div>
+            </div>
+
+            <h2>Noticias</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem iure totam hic vel modi, exercitationem
+                ipsam quibusdam sed consequatur a. Id enim laborum animi tempore in facilis vel sunt molestiae.</p>
+            <% } %>
+
+    </div>
+
+    <%- include ('../partials/footer')%>
