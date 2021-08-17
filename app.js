@@ -3,7 +3,7 @@ const app = express()
 const path = require('path')
 const methodOverride = require('method-override')
 const mongoose= require('mongoose');
-const Escola = ('./models/escola');
+const Escola = require('./models/escola');
 
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'));
