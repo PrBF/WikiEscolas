@@ -20,38 +20,36 @@ const escolaSchema = new mongoose.Schema({
         type: String,
         required: true
     }, 
-    contato: {
-        email:{
-            type: String, 
-            required: true
-        },
-        telefone: {
-            tel1: {
-                type: Number,
-                required: true
-            }, 
-            tel2: {
-                type: Number, 
-            }
-        }, 
-        redes: {
-            facebook: {
-                type: String, 
-            }, 
-            youtube: {
-                type: String,
-            },
-            instagram: {
-                type: String
-            },
-            site: {
-                type: String
-            }, 
-            blog: {
-                type: String
-            }
-        }
+ 
+    email:{
+        type: String, 
+        required: true
+    },
+
+    tel1: {
+        type: Number,
+        required: true
     }, 
+    tel2: {
+        type: Number, 
+    },
+
+    facebook: {
+        type: String, 
+    }, 
+    youtube: {
+        type: String,
+    },
+    instagram: {
+        type: String
+    },
+    site: {
+        type: String
+    }, 
+    blog: {
+        type: String
+    },
+ 
     modalidade:{
         type: String,
         required: true
