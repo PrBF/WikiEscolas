@@ -90,6 +90,14 @@ app.get('/escolas/:id/edit', isLoggedIn, async(req, res) => {
     const escola = await Escola.findById(id);
     res.render('escolas/edit')
 })
+
+app.put ('/escola/:id', isLoggedIn, async (req, res) => {
+    const {id} = req.params;
+    await Escola.findByIdAndUpdate(id, req.body, {runValidators: true, new:true, safe: true, upsert: true});
+    res.redirect('/escola');
+})
+
+
 app.listen(4000, () =>{
     console.log("Rodando")
 })
