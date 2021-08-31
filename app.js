@@ -25,6 +25,8 @@ mongoose.connect('mongodb://localhost:27017/dbWiki', {useNewUrlParser: true, use
     console.log(err);
 })
 
+app.use(session({secret: 'my_secret', resave: false, saveUninitialized: false}))
+
 app.get('/', (req, res) =>{
     res.render('index')
 })
