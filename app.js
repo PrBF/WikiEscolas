@@ -7,7 +7,6 @@ const Escola = require('./models/escola');
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-const { allowedNodeEnvironmentFlags } = require('process');
 
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'));
