@@ -29,6 +29,8 @@ app.use(session({secret: 'my_secret', resave: false, saveUninitialized: false}))
 app.use(passport.initialize());
 app.use(passport.session());
 
+passport.use(new LocalStrategy(Escola.authenticate()))
+
 app.get('/', (req, res) =>{
     res.render('index')
 })
