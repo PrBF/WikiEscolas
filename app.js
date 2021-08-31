@@ -60,7 +60,7 @@ app.get('/logout', (req, res) => {
 })
 
 app.post('/login', 
-    passport.authenticate('local', { successRedirect: '',
+    passport.authenticate('local', { successRedirect: 'escolas/edit',
                                      failureRedirect: '/login'})
 )
 
