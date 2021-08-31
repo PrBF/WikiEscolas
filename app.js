@@ -88,7 +88,7 @@ app.get('/escolas/:id', async (req, res) =>{
 app.get('/escolas/:id/edit', isLoggedIn, async(req, res) => {
     const {id} = req.params;
     const escola = await Escola.findById(id);
-    res.render('escolas/edit')
+    res.render('escolas/edit', {escola});
 })
 
 app.put ('/escola/:id', isLoggedIn, async (req, res) => {
