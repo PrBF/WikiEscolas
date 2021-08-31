@@ -85,6 +85,12 @@ app.get('/escolas/:id', async (req, res) =>{
     }
 })
 
+app.get('/escolas', isLoggedIn, async(req, res) => {
+    const id = req.user;
+    const escola = await Escola.findById(id);
+    res.render('/escolas/index', {escola})
+})
+
 app.get('/escolas/:id/edit', isLoggedIn, async(req, res) => {
     const {id} = req.params;
     const escola = await Escola.findById(id);
