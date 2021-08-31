@@ -85,6 +85,11 @@ app.get('/escolas/:id', async (req, res) =>{
     }
 })
 
+app.get('/escolas/:id/edit', isLoggedIn, async(req, res) => {
+    const {id} = req.params;
+    const escola = await Escola.findById(id);
+    res.render('escolas/edit')
+})
 app.listen(4000, () =>{
     console.log("Rodando")
 })
