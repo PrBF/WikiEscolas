@@ -33,13 +33,18 @@ passport.use(new LocalStrategy(Escola.authenticate()))
 passport.serializeUser(Escola.serializeUser());
 passport.deserializeUser(Escola.deserializeUser());
 
-app.use((req,res,next) => {
-    if (req.isAuthenticated()){
-        return next();
-    } 
-    req.session.returnTo = req.originalUrl
-    res.redirect('login')
+app.use((req, res, next) =>{
+    res.locals.currentUser = req.user;
+    next();
 })
+
+const isLoggedIn = (req, res, next) =>{
+    if(req.isAuthenticated()){
+        return next();
+    }
+    req.session.returnTo = req.originalUrl;
+    res.redirect("login");
+}
 
 app.get('/', (req, res) =>{
     res.render('index')
