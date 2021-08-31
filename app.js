@@ -59,6 +59,11 @@ app.get('/logout', (req, res) => {
     res.redirect('/show')
 })
 
+app.post('/login', 
+    passport.authenticate('local', { successRedirect: '',
+                                     failureRedirect: '/login'})
+)
+
 app.get('/escolas/new', (req, res) =>{
     res.render('escolas/new');
 })
