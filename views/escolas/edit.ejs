@@ -4,13 +4,13 @@
             <h2> Edite os dados de sua escola</h2>
             <form action="/escola/<%=escola._id%>?_method=PUT" method="POST">
                 <label for="nome">Nome da escola:
-                    <input type="text" name="nome" id="nome" readonly>
+                    <input type="text" name="nome" id="nome" value=<%=escola.nome%> readonly>
                 </label>
                 <label for="endereco"> Endereço:
                     <input type="text" name="endereco" id="endereco">
                 </label>
                 <label for="id_inep"> INEP:
-                    <input type="number" name="id_inep" id="id_inep" readonly>
+                    <input type="number" name="id_inep" id="id_inep" value=<%=escola.inep%> readonly>
                 </label>
                 <label for="responsavel"> Responsável do cadastro:
                     <input type="text" name="responsavel" id="responsavel">
