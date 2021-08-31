@@ -7,6 +7,7 @@ const Escola = require('./models/escola');
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
+const { allowedNodeEnvironmentFlags } = require('process');
 
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'));
@@ -51,6 +52,11 @@ app.get('/show', (req, res) =>{
 
 app.get('/login', (req, res) =>{
     res.render('escolas/login');
+})
+
+app.get('/logout', (req, res) => {
+    req.logout()
+    res.redirect('/show')
 })
 
 app.get('/escolas/new', (req, res) =>{
