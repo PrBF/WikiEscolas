@@ -5,6 +5,7 @@ const methodOverride = require('method-override')
 const mongoose= require('mongoose');
 const Escola = require('./models/escola');
 const session = require('express-session');
+const passport = require('passport');
 
 
 app.use(express.urlencoded({extended: true}))
