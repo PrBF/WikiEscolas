@@ -74,8 +74,8 @@ app.get('/escolas/new', (req, res) =>{
 
 app.post ('/escola', async (req, res) =>{
     try{
-        const {nome, cnpj, endereco, id_inep, responsaavel, email, tel1, tel2, facebook, instagram, site, blog, modalidade, tipo_inst, foto, horario_funcMin, horario_funcMax, ano_fund, password} = req.body;
-        const escola = new Escola ({nome, cnpj, endereco, id_inep, responsaavel, email, tel1, tel2, facebook, instagram, site, blog, modalidade, tipo_inst, foto, horario_funcMin, horario_funcMax, ano_fund})
+        const {nome, cnpj, endereco, id_inep, responsavel, email, tel1, tel2, facebook, instagram, site, blog, modalidade, tipo_inst, foto, horario_funcMin, horario_funcMax, ano_fund, username,  password} = req.body;
+        const escola = new Escola ({nome, cnpj, endereco, id_inep, responsavel, email, tel1, tel2, facebook, instagram, site, blog, modalidade, tipo_inst, foto, horario_funcMin, horario_funcMax, username, ano_fund})
         const escolaRegistrada = await Escola.register(escola, password);
         console.log(escolaRegistrada, err => {
             if (err) return next(err);

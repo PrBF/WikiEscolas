@@ -6,6 +6,10 @@ const escolaSchema = new mongoose.Schema({
         type: String,
         required: true
     }, 
+    username:{
+        type: String, 
+        required: true
+    },
     cnpj:{
         type: String
     },
