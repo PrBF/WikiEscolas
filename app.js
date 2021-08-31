@@ -27,6 +27,7 @@ mongoose.connect('mongodb://localhost:27017/dbWiki', {useNewUrlParser: true, use
 
 app.use(session({secret: 'my_secret', resave: false, saveUninitialized: false}))
 app.use(passport.initialize());
+app.use(passport.session());
 
 app.get('/', (req, res) =>{
     res.render('index')
