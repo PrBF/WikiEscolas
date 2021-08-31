@@ -30,6 +30,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 passport.use(new LocalStrategy(Escola.authenticate()))
+passport.serializeUser(Escola.serializeUser());
+passport.deserializeUser(Escola.deserializeUser());
 
 app.get('/', (req, res) =>{
     res.render('index')
