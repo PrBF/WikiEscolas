@@ -293,8 +293,11 @@ head a h5{
 }
 
 .icon-dash{
-
     margin-top: 30px;
+}
+
+#logout-icon{
+    margin-top: 25vw;
 }
 
 #menu-dash-container{
