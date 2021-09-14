@@ -1,5 +1,5 @@
 {
-  "name": "WikiEscolas",
+  "name": "Wikiescola",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -7,15 +7,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PrBF/WikiEscolas.git"
+    "url": "git+https://github.com/PrBF/Wikiescola.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/PrBF/WikiEscolas/issues"
+    "url": "https://github.com/PrBF/Wikiescola/issues"
   },
-  "homepage": "https://github.com/PrBF/WikiEscolas#readme",
+  "homepage": "https://github.com/PrBF/Wikiescola#readme",
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",

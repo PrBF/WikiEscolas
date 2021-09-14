@@ -82,6 +82,6 @@ const escolaSchema = new mongoose.Schema({
 
 escolaSchema.plugin(passportLocalMongoose);
 
-const Escola = mongoose.model('Escola', escolaSchema);
+const Escola = mongoose.model("Escola", escolaSchema);
 
 module.exports = Escola;

@@ -25,11 +25,11 @@ mongoose.connect('mongodb://localhost:27017/dbWiki', {useNewUrlParser: true, use
     console.log(err);
 })
 
-app.use(session({secret: 'my_secret', resave: false, saveUninitialized: false}))
+app.use(session({secret: 'my_secret...', resave: false, saveUninitialized: false}))
 app.use(passport.initialize());
 app.use(passport.session());
 
-passport.use(new LocalStrategy(Escola.authenticate()))
+passport.use(new LocalStrategy(Escola.authenticate()));
 passport.serializeUser(Escola.serializeUser());
 passport.deserializeUser(Escola.deserializeUser());
 
@@ -63,12 +63,19 @@ app.get('/logout', (req, res) => {
     res.redirect('/show')
 })
 
-app.post('/login', 
-    passport.authenticate('local', { successRedirect: 'escolas/index',
-                                     failureRedirect: '/login'})
-)
+app.post('/login',
+  passport.authenticate('local', { successRedirect: '/escola',
+                                   failureRedirect: '/login', })
+);
 
-app.get('/escolas/new', (req, res) =>{
+app.get('/escola', isLoggedIn, async(req, res) => {
+    const id = req.user;
+    const escola = await Escola.findById(id);
+    res.render('escolas/index', {escola})
+})
+
+
+app.get('/escola/new', (req, res) =>{
     res.render('escolas/new');
 })
 
@@ -88,7 +95,7 @@ app.post ('/escola', async (req, res) =>{
 })
 
 
-app.get('/escolas/:id', async (req, res) =>{
+app.get('/escola/:id', async (req, res) =>{
     const {id} = req.params;
     const escola = await Escola.findById(id);
     if (escola){
@@ -98,13 +105,9 @@ app.get('/escolas/:id', async (req, res) =>{
     }
 })
 
-app.get('/escolas', isLoggedIn, async(req, res) => {
-    const id = req.user;
-    const escola = await Escola.findById(id);
-    res.render('/escolas/index', {escola})
-})
 
-app.get('/escolas/:id/edit', isLoggedIn, async(req, res) => {
+
+app.get('/escola/:id/edit', isLoggedIn, async(req, res) => {
     const {id} = req.params;
     const escola = await Escola.findById(id);
     res.render('escolas/edit', {escola});
