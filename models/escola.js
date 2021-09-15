@@ -24,7 +24,7 @@ const escolaSchema = new mongoose.Schema({
     longitude:{
         type: Number, 
         required: true
-    }
+    },
     id_inep: {
         type: Number,
         required: true
