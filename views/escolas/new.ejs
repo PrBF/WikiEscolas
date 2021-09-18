@@ -2,76 +2,81 @@
 
     <div id="container_new">
         <div id="content_new">
-    <h2> Cadastro de escola</h2>
-    <form action="/escola" method="POST">
-        <label for="nome">Nome da escola: 
-            <input type="text" name="nome" id="nome"> 
-        </label>
-        <label for="endereco">  Endereço: 
-            <input type="text" name="endereco" id="endereco">
-        </label>
-        <label for="latitude"> Latitude:
-            <input type="text" name="latitude" id="latitude">
-        </label>
-        <label for="longitude"> Longitude:
-            <input type="text" name="longitude" id="longitude">
-        </label>
-        <label for="id_inep"> INEP:
-            <input type ="number" name ="id_inep" id="id_inep">
-        </label>
-        <label for="responsavel"> Responsável do cadastro: 
-            <input type ="text" name ="responsavel" id="responsavel">
-        </label>
-        <label for="contato"> Email: 
-            <input type = "email" name ="email" id="email" placeholder="wiki@escola.com">
-        </label>
-        <label for="contato"> Telefone: 
-            <input type ="tel" name = "tel1" id="tel1" placeholder="(DDD) 1234 - 4567">
-        </label> 
-        <label> Telefone: 
-            <input type ="tel" name = "tel2" id="tel2" placeholder="(DDD) 1234 - 4567">
-        </label> 
-        
-        <label for = "modalidade"> Modalidade:
-            <select name="modalidade">
-                <option disabled selected></option>
-                <option>Regular</option>
-                <option>EJA</option>
-                <option>PROEJA</option>
-                <option>Profissional e tecnológica</option>
-                <option>Indigena</option>
-                <option>Quilombola</option>
-                <option>Educação do Campo</option>
-            </select>
-        </label>
-        
-        <label for = "tipo_inst">Tipo de instituição
-            <input type="radio" name="tipo_inst" value="Federal">Federal</input>
-            <input type="radio" name="tipo_inst" value="Estadual"> Estadual</input>
-            <input type="radio" name="tipo_inst" value="Municipal"> Municipal</input>
-        </label>
-        <label for = "horario_func"> Horário de funcionamento:
-            <input type ="time" name = "horario_funcMin" id="horario_funcMin"> até <input type= "time" name = "horario_funcMax" id = "horario_funcMax">
-        </label>
-        <label for="foto"> Foto: 
-            <input type="file" name ="foto" id="foto">
-        </label>
-        <label for="ano_fund"> Ano de fundação: 
-            <input type ="date" name="ano_fund" id="ano_fund">
-        </label>
-        <label for="username"> Username:
-            <input type="text" name="username" id="username">
-        </label>
-        <label for = "password">Senha:
-            <input type="password" name="password" id="password">
-        </label>
+            <h2> Cadastro de escola</h2>
+            <form action="/escola" method="POST">
+                <label for="nome">Nome da escola:
+                    <input type="text" name="nome" id="nome">
+                </label>
+                <label for="endereco"> Endereço:
+                    <input type="text" name="endereco" id="endereco">
+                </label>
+                <label for="latitude"> Latitude:
+                    <input type="text" name="latitude" id="latitude">
+                </label>
+                <label for="longitude"> Longitude:
+                    <input type="text" name="longitude" id="longitude">
+                </label>
+                <label for="id_inep"> INEP:
+                    <input type="number" name="id_inep" id="id_inep">
+                </label>
+                <label for="responsavel"> Responsável do cadastro:
+                    <input type="text" name="responsavel" id="responsavel">
+                </label>
+                <label for="contato"> Email:
+                    <input type="email" name="email" id="email" placeholder="wiki@escola.com">
+                </label>
+                <label for="contato"> Telefone:
+                    <input type="tel" name="tel1" id="tel1" placeholder="(DDD) 1234 - 4567">
+                </label>
+                <label> Telefone:
+                    <input type="tel" name="tel2" id="tel2" placeholder="(DDD) 1234 - 4567">
+                </label>
+
+                <label for="modalidade"> Modalidade:
+                    <select name="modalidade">
+                        <option disabled selected></option>
+                        <option>Regular</option>
+                        <option>EJA</option>
+                        <option>PROEJA</option>
+                        <option>Profissional e tecnológica</option>
+                        <option>Indigena</option>
+                        <option>Quilombola</option>
+                        <option>Educação do Campo</option>
+                    </select>
+                </label>
+
+                <label for="tipo_inst">Tipo de instituição
+                    <input type="radio" name="tipo_inst" value="Federal">Federal</input>
+                    <input type="radio" name="tipo_inst" value="Estadual"> Estadual</input>
+                    <input type="radio" name="tipo_inst" value="Municipal"> Municipal</input>
+                </label>
+                <label for="horario_func"> Horário de funcionamento:
+                    <input type="time" name="horario_funcMin" id="horario_funcMin"> até <input type="time"
+                        name="horario_funcMax" id="horario_funcMax">
+                </label>
+                <label for="foto"> Foto:
+                    <input type="file" name="foto" id="foto">
+                </label>
+                <label for="ano_fund"> Ano de fundação:
+                    <input type="date" name="ano_fund" id="ano_fund">
+                </label>
+                <label for="username"> Username:
+                    <input type="text" name="username" id="username">
+                </label>
+                <label for="password">Senha:
+                    <input type="password" name="password" id="password">
+                </label>
 
 
-    <button type="submit">Cadastrar</button>
- 
-    </form>
-</div>
-</div>
+                <button type="submit">Cadastrar</button>
+
+            </form>
+
+        </div>
+        <div id="btn-help">
+            <p>?</p>
+        </div>
+    </div>
 
 
-<%- include ('../partials/footer')%>
+    <%- include ('../partials/footer')%>
