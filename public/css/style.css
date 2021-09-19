@@ -2,13 +2,18 @@
     --background_padrao: #EDEDED;
     --cor_auxiliar: #066165;
     --fonte_titulos:'Open Sans Condensed', sans-serif;
+    
 }
 
 body{
     background-color: var(--background_padrao);
-    font-family: var(--fonte_titulos);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
 }
 
+h1, h2, h3{
+    font-family: var(--fonte_titulos);
+}
 *{
     box-sizing: border-box;
     padding:0;
@@ -225,16 +230,21 @@ head a h5{
 .content{
     display: flex;
 }
+
 #map{
     width: 77.9%;
     margin-left: 22%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .menu-dash{
     background-color: var(--cor_auxiliar);
     height: 100vh;
     display: flex;
-    
 }
 
 .icon{
@@ -244,7 +254,6 @@ head a h5{
     align-items: center;
     justify-content: center;
     margin-left: 2%;
-
 }
 
 .icon-dash{
