@@ -76,11 +76,11 @@ h1, h2, h3{
     color: white;
 }
 
-head{
+.header-search{
+    background: red;
+    width: 100%;
     display: flex;
-}
-head a h5{
-    float: right;
+    
 }
 
 #busca{
