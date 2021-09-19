@@ -383,6 +383,17 @@ form .escola-details{
     width: 20%;
 }
 
+.modalidade{
+    width: 70%;
+    height: 30px;
+    outline: none;
+    border-radius: 5px;
+    border: 1.5px solid #ccc;
+}
+
+.modalidade option{
+    font-family: 'Poppins', sans-serif;
+}
 .escola-details .input-form .details{
     display: block;
     margin-bottom: 5px;
