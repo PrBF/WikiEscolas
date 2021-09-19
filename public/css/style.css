@@ -222,51 +222,6 @@ head a h5{
     align-items: center;
 }
 
-
-#container_new{
-    background-color: var(--cor_auxiliar);
-    height: 100vh;
-    padding-top: 10%;
-    
-
-}
-
-#content_new{
-    padding: 25px;
-    background-color: var(--background_padrao);
-    width: 60vw;
-
-    margin-left: 20%;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-
-#content_new h2{
-    text-align: center;
-}
-
-
-#content_new form {
-    display: flex;
-    flex-direction: column;
-}
-
-#content_new label{
-    padding: 5px;
-}
-
-#content_new button{
-    background-color: var(--cor_auxiliar);
-    color: white;
-    padding: 10px;
-    border: none;
-    width: 20%;
-    margin-left: 40%;
-    margin-top: 2%;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-
-}
-
 .content{
     display: flex;
 }
@@ -374,6 +329,75 @@ li span {
     border-radius: 3px;
 }
 
+#container-form{
+    height: 100vh;
+    background-color: var(--cor_auxiliar);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-form{
+    background-color: var(--background_padrao);
+    width: 80%; 
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.title-form{
+    font-size: 1.5rem;
+    margin-bottom: 3%;
+}
+
+
+form .escola-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.escola-details .input-form{
+    margin-bottom: 8px;
+    width: calc(100%/3 - 20px);
+
+}
+
+.escola-details .input-form .details{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-form input{
+    height: 30px;
+    width: 70%;
+    outline: none;
+    border-radius: 5px;
+    border: 1.5px solid #ccc;
+    padding-left: 10px;
+    font-size: 13px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.escola-details .input-form input:focus{
+    border-color: #0aa6ad
+}
+
+.btn-submit-new{
+    width: 80%;
+    padding: 10px;
+    background: linear-gradient(150deg, var(--cor_auxiliar), #0aa6ad);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10%;
+}
+
+button:hover {
+    transition: all 1s;
+    background: linear-gradient(-150deg, var(--cor_auxiliar), #0aa6ad);
+  } 
+
 #btn-help{
     background-color: var(--cor_auxiliar);
     border-radius: 80px;
@@ -382,7 +406,7 @@ li span {
     height: 50px;
     margin-left: 90%;
     position: absolute;
-    border: 1px solid #0aa6ad;
+    border: 2px solid #5e7b7c;
 }
 
 #btn-help p{
