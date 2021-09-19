@@ -367,6 +367,7 @@ li span {
 }
 
 
+
 form .escola-details{
     display: flex;
     flex-wrap: wrap;
@@ -374,16 +375,18 @@ form .escola-details{
 }
 
 .escola-details .input-form{
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     width: calc(100%/3 - 20px);
+}
 
+#horario_funcMin, #horario_funcMax{
+    width: 20%;
 }
 
 .escola-details .input-form .details{
     display: block;
     margin-bottom: 5px;
 }
-
 
 .input-form input{
     height: 30px;
