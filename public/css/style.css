@@ -2,7 +2,6 @@
     --background_padrao: #EDEDED;
     --cor_auxiliar: #066165;
     --fonte_titulos:'Open Sans Condensed', sans-serif;
-    
 }
 
 body{
@@ -14,6 +13,7 @@ body{
 h1, h2, h3{
     font-family: var(--fonte_titulos);
 }
+
 *{
     box-sizing: border-box;
     padding:0;
@@ -40,9 +40,7 @@ h1, h2, h3{
     font-size: 20px;
     padding-top: 0;
     margin-bottom: 20px;
-    font-weight: lighter;
-  
-    
+    font-weight: lighter;   
 }
 
 .inicializacao button{
@@ -60,6 +58,7 @@ h1, h2, h3{
 .container{
     display: flex;
 }
+
 .container_horizontal{
     background-color: #066165;
     box-shadow: 4 4 20px rgba(0,0,0,1);
@@ -92,6 +91,7 @@ h1, h2, h3{
 #busca h2{
     font-size: 1.5em;
 }
+
 #busca input{
     margin-top: 1vw;
     width: 15vw;
@@ -113,6 +113,7 @@ h1, h2, h3{
 .rodape{
     margin-top: 30vh;
 }
+
 .rodape button{
     font-family: 'Poppins', sans-serif;
     font-size: 0.7rem;
@@ -167,8 +168,8 @@ form .input-login{
 .input-login input:valid ~ label{
     top: -5px;
     color: var(--cor_auxiliar);
- 
 }
+
 .btn-login{
     display: flex;
     align-items: center;
@@ -187,6 +188,7 @@ form .input-login{
     height: 30px;
 
 }
+
 .input-login input{
     width: 100%;
     padding: 0 5px;
@@ -228,7 +230,6 @@ form .input-login{
 #container_escola{
     background-color: var(--cor_auxiliar);
     height: 30vh;
-
 }
 
 .content_escola{
@@ -240,12 +241,10 @@ form .input-login{
     margin-top: -20vh;
     padding: 5%;
     text-align: justify;
-    
 }
 
 .content_escola h2, h1 {
     color: var(--cor_auxiliar);
-   
 }
 
 #head_escola{
@@ -256,6 +255,7 @@ form .input-login{
     font-size: 1rem;
     color: gray;
 }
+
 .info_geral li{
     text-decoration: none;
     list-style: none;
@@ -307,25 +307,24 @@ form .input-login{
 
 #menu-dash-container{
     background-color: white;
-
     width: 185vh;
     height: 95vh;
     margin-top: 1%;
     margin-left: 2%;
     border-radius: 30px;
 }
+
 #menu-dash-content-info{
-    
     height: 100%;
     padding:0%;
     display: flex;
     padding: 10px;
-  
 }
 
 #menu-dash-info{
     width: 70%;
 }
+
 #menu-dash-content-info h1{
     padding: 2%;
     margin-left: 6%;
@@ -344,6 +343,7 @@ form .input-login{
 li span {
     color: black;
 }
+
 #menu-dash-content-event{
     background-color: var(--background_padrao);
     width: 100%;
@@ -352,6 +352,7 @@ li span {
     padding: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
+
 #menu-dash-content-event h2{
     margin-top: 20px;
     margin-left: 10px;
@@ -399,8 +400,6 @@ li span {
     margin-bottom: 3%;
 }
 
-
-
 form .escola-details{
     display: flex;
     flex-wrap: wrap;
@@ -427,6 +426,7 @@ form .escola-details{
 .modalidade option{
     font-family: 'Poppins', sans-serif;
 }
+
 .escola-details .input-form .details{
     display: block;
     margin-bottom: 5px;
