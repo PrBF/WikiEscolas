@@ -40,11 +40,11 @@ const escolaSchema = new mongoose.Schema({
     },
 
     tel1: {
-        type: Number,
+        type: String,
         required: true
     }, 
     tel2: {
-        type: Number, 
+        type: String, 
     },
 
     facebook: {
