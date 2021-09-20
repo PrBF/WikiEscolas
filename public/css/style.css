@@ -128,67 +128,100 @@ h1, h2, h3{
     margin-left: 30%;
 }
 
-#login {
+#login{
     background-color: var(--cor_auxiliar);
-    width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
-
+    justify-content: center;
 }
 
-#container_login{
-    margin-left: 38%;
-    width: 350px;
-    height: 350px;
+#container-login{
     background-color: var(--background_padrao);
-    padding: 5px;
+    width: 25%;
+    padding: 4%;
+    border-radius: 4px;
+}
+
+#container-login h1{
+    color: var(--cor_auxiliar);
+    text-align: center;
+    padding-bottom: 4%;
+}
+
+form .input-login{
+    position: relative;
+    border-bottom: 2px solid #066165;
+    margin: 30px 0;
+}
+.input-login label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    transition: .5s;
+}
+
+.input-login input:focus ~ label,
+.input-login input:valid ~ label{
+    top: -5px;
+    color: var(--cor_auxiliar);
+ 
+}
+.btn-login{
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    padding: 2px;
+    margin: 5%;
 }
 
-#container_login h2{
-    margin: 30px 0px 50px 0px;
-    color:var(--cor_auxiliar);
-    
-}
-
-#container_login input {
-    padding: 5px;
-    font-family: var(--fonte_titulos);
-    
-
-}
-
-#container_login input ::-webkit-input-placeholder{
-    background-color: var(--background_padrao);
-}
-
-
-#container_login button{
-    font-family: var(--fonte_titulos);
-    background-color: var(--cor_auxiliar);
-    color:white;
-    padding: 10px;
+.btn-login button{
+    background-color: #066165;
     border: none;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5) ;
-    margin-top: 40px;
-}
+    border-radius: 2px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    width: 80%;
+    height: 30px;
 
-#container_login p{
-    margin-top: 15px;
+}
+.input-login input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
     font-size: 12px;
-    margin-right: 0px;
+    border: none;
+    background: none;
+    outline: none;
 }
 
-#container_login p:hover {
-    color: var(--cor_auxiliar);
-
+.forgot-password{
+    font-size: 0.8rem;
+    color: #053f42;
+    text-align: center;
 }
 
-#container_login p:hover d {
-    color: var(--cor_auxiliar);
+.forgot-password:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.signup{
+    font-size: 0.7rem;
+    text-align: center;
+    color:#066165;
+    margin-top: 10%;
+    cursor: pointer;
+}
+
+.signup a{
+    text-decoration: none;
+    color:#066165;
+}
+
+.signup a:hover{
     text-decoration: underline;
 }
 

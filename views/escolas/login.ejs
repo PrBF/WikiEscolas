@@ -1,18 +1,26 @@
 <%- include ('../partials/head')%>
     <div id="login">
-        <div id="container_login">
-            <h2>Login</h2>
+        <div id="container-login">
+            <h1>Login</h1>
             <form action='/login' method="POST">
-                <label>
-                    <input type="text" name="username" id="username" required placeholder="nome de usuario ou e-mail" size="25">
-                </label>
-                <br>
-                <label>
-                    <input type="password" name="password" id="password" placeholder="senha" required size="25">
-                </label>
-                <p>Recuperar conta</p>
-                <br>
-                <button type="submit">Acessar</button>
+                <div class="input-login">
+                    <input type="text" name="username" id="username" required size="25">
+                    <label>Username</label>
+                </div>
+                <div class="input-login">
+                    <input type="password" name="password" id="password" required size="25">
+                    <label>Senha</label>
+                </div>
+                <div class="forgot-password">
+                    <p>Esqueceu sua senha?</p>
+                </div>
+                <div class="btn-login">
+                    <button type="submit">Acessar</button>
+                </div>
+
+                <div class="signup">
+                    Não possui login? <a href="escola/new">Cadastre-se!</a>
+                </div>
             </form>
         </div>
     </div>
