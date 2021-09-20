@@ -1,41 +1,40 @@
 <%- include ('../partials/head')%>
 
-    <div id="container_escola"></div>
-
-    <div class="content_escola">
+    <div class="container-escola">
         <% if (escola) {%>
-
-            <div id="head_escola">
-                <h1><%= escola.nome %></h1>
-                <p><%= escola.modalidade %> | Ano de fundação <%=escola.ano_fund%></p>
-            </div>
-
-            <div class="info_geral">
-                <h2>Informações gerais</h2>
-                <ul>
-                    <li><i data-feather="home"></i><%=escola.endereco%></li>
-                   
-
-                    <li><i data-feather="phone"></i>Telefone</li>
-                    <p><%=escola.telefone%></p>
-
-                    <li><i data-feather="clock"></i>Horário de atendimento</li>
-                </ul>
-
-                <h2>Eventos e projetos</h2> 
-                <div class="info_evento">
-                    <h3>23 Set</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam consequatura recusandae.
-                        Tempore sed pariaturex numquam ipsam ad? Hic maximeblanditiis ad placeat minus voluptatemsequi
-                        provident a nam.</p>
+            <div class="content-escola">
+                <div class="info-escola">
+                    <div id="head-escola">
+                        <h1><%= escola.nome %></h1>
+                        <p><%= escola.modalidade %> | Esfera <%=escola.tipo_inst%></p>
+                    </div>
+                    <div class="container-info">
+                        <div class="info-geral">
+                            <h2>Informações gerais</h2>
+                            <ul>
+                                <li><i class="icon-info" data-feather="home"></i><%=escola.endereco%></li>
+                                <li><i class="icon-info"data-feather="phone"></i><%=escola.tel1%></li>
+                                <li><i class="icon-info" data-feather="at-sign"></i><%=escola.email%></li>
+                                <li><i class="icon-info"data-feather="clock"></i>Horário de atendimento</li>
+                            </ul>
+                        </div>
+                        <div class="info-evento">
+                            <h2>Eventos e projetos</h2>
+                            <div class="data-evento">
+                                <h3>23 Set</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam consequatura recusandae. Tempore sed pariaturex numquam ipsam ad? Hic maximeblanditiis ad placeat minus voluptatemsequi provident a nam.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="noticias">
+                        <h2>Noticias</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem iure totam hic vel modi, exercitationem ipsam quibusdam sed consequatur a. Id enim laborum animi tempore in facilis vel sunt molestiae.</p>
+                    </div>
                 </div>
+                
             </div>
-
-            <h2>Noticias</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem iure totam hic vel modi, exercitationem
-                ipsam quibusdam sed consequatur a. Id enim laborum animi tempore in facilis vel sunt molestiae.</p>
-            <% } %>
-
+            
+        <% } %>
     </div>
 
     <%- include ('../partials/footer')%>
