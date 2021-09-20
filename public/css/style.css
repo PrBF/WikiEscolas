@@ -301,6 +301,10 @@ form .input-login{
     margin-top: 30px;
 }
 
+.icon-link{
+    color: white;
+}
+
 #logout-icon{
     margin-top: 25vw;
 }
