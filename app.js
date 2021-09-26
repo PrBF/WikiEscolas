@@ -50,6 +50,7 @@ app.get('/coordenadas', async (req, res) => {
     const info = await Escola.find({});
     for (var i = 0; i < info.length; i++){
         var objCor = {
+            id: info[i]._id,
             nome: info[i].nome,
             lat_log : [info[i].latitude, info[i].longitude]
         }
