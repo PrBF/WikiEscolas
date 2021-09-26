@@ -16,7 +16,6 @@ fetch('http://localhost:4000/coordenadas')
         for (var i = 0; i < data.length; i++){
             L.marker([data[i].lat_log[0], data[i].lat_log[1]]).addTo(map)
             .bindPopup(`<a href="http://localhost:4000/escola/${data[i].id}">${data[i].nome}</a>`)
-            .openPopup();
         }
     
     })
