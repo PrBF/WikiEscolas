@@ -8,11 +8,14 @@ var map = L.map('map', {
         attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
     }).addTo(map);
 
-    L.marker([-29.886586769594576, -50.26717977314782]).addTo(map)
-    .bindPopup('Escola General Osório')
-    .openPopup();
-    L.marker([-29.897633497254294, -50.26138925509925]).addTo(map);
-    L.marker([-29.897633497254294, -57.26138925509925]).addTo(map)
-    .bindPopup('Teste')
-    .openPopup();
-    L.marker([-29.897633497254294, -57.28]).addTo(map);
+fetch('http://localhost:4000/coordenadas')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function (data) {
+        L.marker([data.lat_log[0], data.lat_log[1]]).addTo(map)
+        .bindPopup(data.nome)
+        .openPopup();
+        console.log(data.nome)
+    })
+
