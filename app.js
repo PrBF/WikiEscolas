@@ -46,6 +46,11 @@ const isLoggedIn = (req, res, next) =>{
     res.redirect("login");
 }
 
+app.get('/coordenadas', async (req, res) => {
+    const info = await Escola.find({});
+    console.log(info);
+    res.json({nome: 'Escola', lat_log : ['-22', '23']})
+})
 app.get('/', (req, res) =>{
     res.render('index')
 })
