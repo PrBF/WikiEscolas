@@ -14,7 +14,7 @@ fetch('http://localhost:4000/coordenadas')
     })
     .then(function (data) {
         L.marker([data.lat_log[0], data.lat_log[1]]).addTo(map)
-        .bindPopup(data.nome)
+        .bindPopup(`<a href="http://localhost:4000/escola/${data.id}">${data.nome}</a>`)
         .openPopup();
         console.log(data.nome)
     })
