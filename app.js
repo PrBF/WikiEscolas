@@ -48,9 +48,15 @@ const isLoggedIn = (req, res, next) =>{
 
 app.get('/coordenadas', async (req, res) => {
     const info = await Escola.find({});
-    console.log(info);
-    res.json({nome: 'Escola', lat_log : ['-22', '23']})
+    for (var i = 0; i < info.length; i++){
+        var objCor = {
+            nome: info[i].nome,
+            lat_log : [info[i].latitude, info[i].longitude]
+        }
+    }
+    res.json(objCor)
 })
+
 app.get('/', (req, res) =>{
     res.render('index')
 })
