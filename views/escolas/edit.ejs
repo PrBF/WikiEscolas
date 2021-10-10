@@ -3,7 +3,7 @@
     <div class="content-form">
         <div class="title-form">Edite seus dados!</div>
         
-            <form action="/escola" method="POST">
+            <form action="/escola/<%=escola._id%>?_method=PUT" method="POST">
                 <div class="escola-details">
                     <div class="input-form">
                         <label for="nome"><span class="details">Nome da Escola:</span>
