@@ -85,6 +85,10 @@ const escolaSchema = new mongoose.Schema({
     }, 
     ano_fund : {
         type: Date
+    },
+    autorizacao : {
+        type: Boolean, 
+        required: true, 
     }
 })
 
