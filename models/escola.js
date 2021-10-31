@@ -89,7 +89,20 @@ const escolaSchema = new mongoose.Schema({
     autorizacao : {
         type: Boolean, 
         required: true, 
-    }
+    },
+    noticias: [
+        {
+            titulo: {
+                type: String
+            },
+            descricao:{
+                type:String
+            },
+            data_post:{
+                type: Date
+            }
+        }
+    ]
 })
 
 escolaSchema.plugin(passportLocalMongoose);
