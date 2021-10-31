@@ -108,7 +108,6 @@ app.post ('/escola', async (req, res) =>{
     
 })
 
-
 app.get('/escola/:id', async (req, res) =>{
     const {id} = req.params;
     const escola = await Escola.findById(id);
@@ -118,8 +117,6 @@ app.get('/escola/:id', async (req, res) =>{
         res.render('error');
     }
 })
-
-
 
 app.get('/escola/:id/edit', isLoggedIn, async(req, res) => {
     const {id} = req.params;
@@ -133,6 +130,11 @@ app.put ('/escola/:id', isLoggedIn, async (req, res) => {
     res.redirect('/escola');
 })
 
+app.delete('/escola/:id', isLoggedIn, async(req,res) => {
+    const {id} = req.params;
+    await Escola.findByIdAndDelete(id);
+    res.redirect('/');
+})
 
 app.listen(4000, () =>{
     console.log("Rodando")
