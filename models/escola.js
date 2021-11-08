@@ -87,7 +87,7 @@ const escolaSchema = new mongoose.Schema({
         type: Date
     },
     autorizacao : {
-        type: Boolean, 
+        type: String,
         required: true, 
     },
     noticias: [
