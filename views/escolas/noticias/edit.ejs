@@ -1,0 +1,17 @@
+<%- include ('../../partials/head')%>
+    <div id="container-notice-form">
+        <form action="/escola/<%=escola._id%>/noticias?_method_PUT" method="post">
+            <div id="content-notice-form">
+                <label>Título
+                    <input type="text" name="titulo" id="titulo" placeholder="titulo" value=<%=escola.noticias.titulo%>>
+                </label>
+                <label>Descrição:
+                    <textarea name="descricao" value=<%=escola.noticias.descricao%>></textarea>
+                </label>
+                <label>Data de publicação:
+                    <input type="date" name="data_post" id="data_post" value=<%=escola.noticias.data_post%>>
+                </label>
+            </div>
+        </form>
+    </div>
+<%- include ('../../partials/footer')%>
