@@ -1,5 +1,15 @@
 feather.replace();
 
+var modalContent = document.getElementById('modal')
+
+function openModal(){
+    modalContent.style.display="block"
+}
+
+function closeModal(){
+    modalContent.style.display="none"
+}
+
 var map = L.map('map', {
     center: [-16.166073148734803, -51.550334113559636],
     zoom: 5
