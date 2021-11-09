@@ -601,3 +601,10 @@ button:hover {
     background-color: #053f42;
     border-radius: 4px;
  }
+
+.close{
+   float: right;
+   color: var(--cor_auxiliar);
+   font-size: 1.33rem;
+   cursor:pointer;
+}
