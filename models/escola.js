@@ -126,6 +126,31 @@ const escolaSchema = new mongoose.Schema({
                 required: true    
             }
         }
+    ],
+
+    eventos : [
+        {
+            nome_evento: {
+                type: String,
+                required: true
+            },
+            descricao: {
+                type: String,
+                required: true
+            },
+            endereco: {
+                type: String,
+                required: true
+            },
+            data_inicio: {
+                type: Date,
+                required: true
+            },
+            data_fim: {
+                type: Date,
+                required: true
+            }
+        }
     ]
 })
 
