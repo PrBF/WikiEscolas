@@ -74,15 +74,15 @@ const escolaSchema = new mongoose.Schema({
     foto: {
         type: String,
     }, 
-    horario_func: {
-        horario_funcMin: {
-            type: Date, 
-       
-        },
-        horario_funMax: {
-            type: Date, 
-        },
-    }, 
+   
+    horario_funcMin: {
+        type: Date, 
+    
+    },
+    horario_funMax: {
+        type: Date, 
+    },
+  
     ano_fund : {
         type: Date
     },
