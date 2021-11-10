@@ -102,6 +102,30 @@ const escolaSchema = new mongoose.Schema({
                 type: Date
             }
         }
+    ],
+    projetos : [
+        {
+            titulo: {
+                type: String,
+                required: true
+            },
+            descricao: {
+                type: String,
+                required: true
+            },
+            coordenador: {
+                type: String,
+                required: true
+            },
+            contato: {
+                type: String,
+                required: true
+            },
+            data_inicio: {
+                type: Date,
+                required: true    
+            }
+        }
     ]
 })
 
