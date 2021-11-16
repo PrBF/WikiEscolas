@@ -7,11 +7,13 @@ const Escola = require('./models/escola');
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
+const flash = require('connect-flash')
 
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(flash());
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
