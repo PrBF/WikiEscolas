@@ -639,3 +639,56 @@ input[type='radio']:checked:after {
    font-size: 1.33rem;
    cursor:pointer;
 }
+
+#container-notice-form{
+    background: var(--cor_auxiliar);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content-notice-form{
+    width: 45vw;
+    background: var(--background_padrao);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+
+#content-notice-form button{
+    margin-top: 8%;
+    width: 80%;
+    background-color: var(--cor_auxiliar);
+    border: none;
+    padding: 6px;
+    color: white;
+    border: none;
+    box-shadow:0 0 5px rgba(0,0,0,0.5) ;
+    padding: 5px;
+    margin-left: 10%;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 3px;
+}
+
+#content-notice-form input, textarea{
+    outline: none;
+    border-radius: 5px;
+    border: 1.5px solid #ccc;
+    padding-left: 10px;
+    font-size: 13px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    padding: 8px;
+}
+
+#content-notice-form input:focus, textarea:focus{
+    border-color: #0aa6ad;
+}
+
+#content-notice-form label {
+    display: flex;
+    flex-direction: column;
+}

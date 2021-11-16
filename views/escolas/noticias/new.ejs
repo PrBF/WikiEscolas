@@ -1,9 +1,10 @@
 <%- include ('../../partials/head')%>
     <div id="container-notice-form">
-        <form action="/escola/<%=escola._id%>/noticias?_method_PUT" method="post">
+        <form action="/escola/<%=escola._id%>/noticia?_method_PUT" method="POST">
             <div id="content-notice-form">
+                <h1>Publique sua notícia!</h1>
                 <label>Título
-                    <input type="text" name="titulo" id="titulo" placeholder="titulo">
+                    <input type="text" name="titulo" id="titulo" placeholder="Título">
                 </label>
                 <label>Descrição:
                     <textarea name="descricao"></textarea>
@@ -11,6 +12,7 @@
                 <label>Data de publicação:
                     <input type="date" name="data_post" id="data_post">
                 </label>
+                <button>Publicar notícia</button>
             </div>
         </form>
     </div>
