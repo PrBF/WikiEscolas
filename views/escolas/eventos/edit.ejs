@@ -1,0 +1,30 @@
+<%- include ('../../partials/head')%>
+<%- include ('../../partials/menu')%>
+
+    <form action="" method="">
+        <label for="nome_evento">Nome do evento:
+        <input type="text" name="nome_evento" id="nome_evento" placeholder="Nome do seu evento">
+        </label>
+        <label for="descricao">Descrição:
+            <input type="text" name="descricao" id="descricao" placeholder="Descrição do seu evento">
+        </label>
+        <label for="endereco">Endereço:
+            <input type="text" name="endereco" id="endereco" placeholder="Seu endereço">
+        </label>
+        <label for="data_inicio">Data de início do evento:
+            <input type="date" name="data_inicio" id="data_inicio">
+        </label>
+        <label for="data_fim">Data do fim do evento:
+            <input type="date" name="data_fim" id="data_fim">
+        </label>
+        <label for="hora_inicio">Horário inicial:
+            <input type="time" name="hora_inicio" id="hora_inicio">
+        </label>
+        <label for="hora_fim">Horário final:
+            <input type="time" name="hora_fim" id="hora_fim">
+        </label>
+        <button>Editar evento</button>
+    </form>
+
+</div>
+<%- include ('../../partials/footer')%>
