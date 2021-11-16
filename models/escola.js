@@ -149,6 +149,14 @@ const escolaSchema = new mongoose.Schema({
             data_fim: {
                 type: Date,
                 required: true
+            },
+            hora_inicio: {
+                type: String,
+                required: true
+            },
+            hora_fim: {
+                type: String,
+                required: true
             }
         }
     ]
