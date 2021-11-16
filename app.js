@@ -146,7 +146,7 @@ app.put('/escola/:id/noticia', isLoggedIn, async(req, res) => {
     const {id} = req.params;
     const {titulo, descricao, data_post} = req.body;
     const escola = await Escola.findByIdAndUpdate(id, {titulo, descricao, data_post}, {runValidators: true, new: true})
-
+    escola.save()
     res.render('escola', {escola});
 })
 
