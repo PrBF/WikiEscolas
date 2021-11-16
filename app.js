@@ -136,10 +136,10 @@ app.delete('/escola/:id', isLoggedIn, async(req,res) => {
     res.redirect('/');
 })
 
-app.get('/escola/:id/noticia/new', isLoggedIn, async(req, res) => {
+app.get ('/escola/:id/noticia/new', isLoggedIn, async(req, res) => {
     const {id} = req.params;
-    const escola = await Escola.findById({id});
-    res.render('escola/noticia/new', {escola})
+    const escola = await Escola.findById(id);
+    res.render('escolas/noticias/new', {escola});
 })
 
 app.put('/escola/:id/noticia', isLoggedIn, async(req, res) => {
