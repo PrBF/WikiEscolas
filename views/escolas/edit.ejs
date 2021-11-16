@@ -1,6 +1,7 @@
 <%- include ('../partials/head')%>
-<div id="container-form">
-    <div class="content-form">
+<%- include ('../partials/menu')%>
+
+    <div class="content-form" id="edit-form-school">
         <div class="title-form">Edite seus dados!</div>
         
             <form action="/escola/<%=escola._id%>?_method=PUT" method="POST">
@@ -98,11 +99,8 @@
                     <input type="radio" class="tipo_inst-radio" name="tipo_inst" value="Estadual"><label for="estadual"> Estadual</label></input>
                     <input type="radio" class="tipo_inst-radio" name="tipo_inst" value="Municipal"><label for="municipal"> Municipal</label></input>
                 </div>
-                <button class="btn-submit-new" type="submit">Salvar alterações</button>
+                <button class="btn-submit-new" type="submit" id="btn-submit-edit">Salvar alterações</button>
             </div>
         </form>
-        <div id="btn-help">
-            <p>?</p>
-        </div>
-
+</div>
     <%- include ('../partials/footer')%>

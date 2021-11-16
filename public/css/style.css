@@ -424,6 +424,17 @@ li span {
     align-items: center;
 }
 
+#edit-form-school{
+    width: 100%;
+    background: white;
+}
+
+#btn-submit-edit{
+    margin-top: 4%;
+    width: 20%;
+    margin-left: 32vw;
+}
+
 .content-form{
     background-color: var(--background_padrao);
     width: 80%; 
