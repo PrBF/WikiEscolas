@@ -172,6 +172,14 @@ app.get('/escola/:id/projeto/new', isLoggedIn, async(req, res) => {
     res.render('escolas/projetos/new', {escola})
 })
 
+app.post ('/escola/:id/projeto', isLoggedIn, async(req, res) => {
+    const {id} = req.params;
+    const {titulo, descricao, coordenador, contato, data_inicio} = req.body;
+    const escola = await Escola.findByIdAndUpdate(id, {$push: {projetos: {titulo, descricao, coordenador, contato, data_inicio}}}, {runValidators: true, new: true, safe: true, upsert: true})
+    escola.save();
+    res.redirect('/escola')
+})
+
 app.listen(4000, () =>{
     console.log("Rodando")
 })
