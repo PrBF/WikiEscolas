@@ -144,14 +144,12 @@ app.get ('/escola/:id/noticia/new', isLoggedIn, async(req, res) => {
     res.render('escolas/noticias/new', {escola});
 })
 
-app.put('/escola/:id/noticia', isLoggedIn, async(req, res) => {
+app.post('/escola/:id/noticia', isLoggedIn, async(req, res) => {
     const {id} = req.params;
     const {titulo, descricao, data_post} = req.body;
-
     const escola = await Escola.findByIdAndUpdate(id, {$push: {noticias: {titulo, descricao, data_post}}}, {runValidators: true, new: true, safe:true, upsert:true})
     await escola.save();
-
-    res.render('/escola')
+    res.redirect('/escola'); //depois redirecionar para a listagem de noticias da escola
 })
 
 app.get('/escola/:id/evento/new', isLoggedIn, async(req, res) => {
