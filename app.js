@@ -161,9 +161,9 @@ app.get('/escola/:id/evento/new', isLoggedIn, async(req, res) => {
 app.post('/escola/:id/evento', isLoggedIn, async(req, res) => {
     const {id} = req.params;
     const {nome_evento, descricao, endereco, data_inicio, data_fim, hora_inicio, hora_fim} = req.body;
-    const escola = await Escola.findByIdAndUpadte(id, {$push: {eventos: {nome_evento, descricao, endereco, data_inicio, data_fim, hora_inicio, hora_fim}}}, {runValidators: true, new: true, safe: true, upsert: true})
+    const escola = await Escola.findByIdAndUpdate(id, {$push: {eventos: {nome_evento, descricao, endereco, data_inicio, data_fim, hora_inicio, hora_fim}}}, {runValidators: true, new: true, safe:true, upsert:true})
     await escola.save();
-    res.redirect('/escola')
+    res.redirect('/escola');
 })
 
 app.listen(4000, () =>{
