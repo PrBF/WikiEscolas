@@ -166,6 +166,12 @@ app.post('/escola/:id/evento', isLoggedIn, async(req, res) => {
     res.redirect('/escola');
 })
 
+app.get('/escola/:id/projeto/new', isLoggedIn, async(req, res) => {
+    const {id} = req.params;
+    const escola = await Escola.findById(id);
+    res.render('escolas/projetos/new', {escola})
+})
+
 app.listen(4000, () =>{
     console.log("Rodando")
 })
