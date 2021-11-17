@@ -79,7 +79,7 @@ const escolaSchema = new mongoose.Schema({
         type: String, 
     
     },
-    horario_funMax: {
+    horario_funcMax: {
         type: String, 
     },
   
