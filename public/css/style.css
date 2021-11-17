@@ -411,7 +411,7 @@ li span {
     color: white;
     border: none;
     padding: 8px;
-    margin-left: 40%;
+
     margin-top: 50%;
     border-radius: 3px;
 }
@@ -652,7 +652,7 @@ input[type='radio']:checked:after {
 }
 
 
-#content-notice-form{
+#content-publish-school{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -660,12 +660,12 @@ input[type='radio']:checked:after {
     width: 100%;
 }
 
-#content-notice-form h1{
+#content-publish-school h1{
     margin-left: 30vw;
     padding-bottom: 10vh;
 }
 
-#content-notice-form button{
+#content-publish-school button{
     margin-top: 8%;
     width: 40%;
     background-color: var(--cor_auxiliar);
@@ -679,7 +679,7 @@ input[type='radio']:checked:after {
  
 }
 
-#content-notice-form input, textarea{
+#content-publish-school input, textarea{
     outline: none;
     border-radius: 5px;
     border: 1.5px solid #ccc;
@@ -690,16 +690,31 @@ input[type='radio']:checked:after {
     padding: 8px;
 }
 
+#new-event-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.field-event-form{
+    width: calc(100%/2);
+}
+
+
+.field-event-form input{
+    width: 50%;
+}
+
 #item-notice-form{
     margin-left: 38%;
     width: 70%;
 }
 
-#content-notice-form input:focus, textarea:focus{
+#content-publish-school input:focus, textarea:focus{
     border-color: #0aa6ad;
 }
 
-#content-notice-form label {
+#content-publish-school label {
     display: flex;
     flex-direction: column;
 }
