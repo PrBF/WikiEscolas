@@ -34,7 +34,7 @@
                                     <div class="noticia">
                                         <h2> <%=noticia.titulo%></h2>
                                         <h5><%= `${noticia.data_post.getDay()}/${noticia.data_post.getMonth()}/${ noticia.data_post.getFullYear()}`%></h5>
-                                        <p><%=noticia.descricao.substring(0, 10%></p>
+                                        <p><%=noticia.descricao.substring(0, 10)%></p>
                                         <button id="btnModal" onclick="openModal()">Veja mais</button>
                                         <div id="modal">
                                             <div class="modal-content">
