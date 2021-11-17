@@ -40,7 +40,7 @@
                                             <div class="modal-content">
                                                 <span class="close" onclick="closeModal()">X</span>
                                                 <h1><%=noticia.titulo%></h1>
-                                                <h2>><%=noticia.data_post%></h2>
+                                                <h2>><%=`${noticia.data_post.getDay()}/${noticia.data_post.getMonth()}/${ noticia.data_post.getFullYear()}`%></h2>
                                                 <p><%=noticia.descricao%></p>
                                             </div>
                                         </div>
