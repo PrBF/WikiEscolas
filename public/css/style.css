@@ -748,3 +748,9 @@ input[type='radio']:checked:after {
     position: absolute;
     bottom: 35px;
 }
+
+#btn-delete{
+    color: white;
+    border: none;
+    background-color: var(--cor_auxiliar);
+}
