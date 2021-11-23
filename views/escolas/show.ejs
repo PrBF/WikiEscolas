@@ -21,11 +21,30 @@
                         <div class="info-evento">
                             <h2>Eventos e projetos</h2>
                             <div class="data-evento">
-                                <h3>23 Set</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam consequatura recusandae. Tempore sed pariaturex numquam ipsam ad? Hic maximeblanditiis ad placeat minus voluptatemsequi provident a nam.</p>
+                                <% if (escola.eventos) {%>
+                                    <% for (evento of escola.eventos) {%>
+                                        <h3><%=`${evento.data_inicio.getDay()}/${evento.data_inicio.getMonth()}`%></h3>
+                                        <h3><%= evento.nome_evento%></h3>
+                                        <p><%= evento.descricao %></p>
+                                        <p><%= evento.endereco %></p>
+                                        <p><%= evento.data_fim%></p>
+                                        <p><%= evento.hora_inicio%></p>
+                                        <p><%= evento.hora_fim%></p>
+                                    <%}%>        
+                                <% } %>
                             </div>
+                            <% if (escola.projetos) { %>
+                                <% for (projeto of escola.projetos) {%>
+                                    <h3><%=`${projeto.data_inicio.getDay()}/${projeto.data_inicio.getMonth()}`%></h3>
+                                    <h3><%=projeto.titulo %></h3>
+                                    <p><%= projeto.descricao %></p>
+                                    <p><%= projeto.coordenador%></p>
+                                    <p><%= projeto.contato%></p>
+                                <%}%>
+                            <%}%>
                         </div>
                     </div>
+
                     <div class="noticias">
                         <% if (escola.noticias) %>
                             <h2>Noticias</h2>
