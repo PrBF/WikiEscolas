@@ -1,36 +1,19 @@
 feather.replace();
 
 var modalContent = document.getElementById('modal')
-var dropContent = document.getElementsByClassName('drop-content')
+var select = document.getElementById('data_select')
 
-function dropDown(){
-    for (var i = 0; i < 3; i++){
-        dropContent[i].style.display="block"       
-    }
-}
-
-function closeDropDown(){
-    for (var i = 0; i < 3; i++){
-        dropContent[i].style.display="none"
-    }
-}
-
-function verifyOption(value){
-    if (value == "noticias"){
+function verifyOption(){
+    var option = select.options[select.selectedIndex].value;
+    if (option == "noticias"){
         noticias.style.display="block"
-    } else if (value == "eventos"){
+    } else if (option == "eventos"){
         eventos.style.display="block"
-    } else{
+    } else if (option == "projetos"){
         projetos.style.display="block"
-    }
-}
-
-function verifyOptionOut(value){
-    if (value == "noticias"){
-        noticias.style.display="none"
-    } else if (value == "eventos"){
-        eventos.style.display="none"
     } else{
+        noticias.style.display="none"
+        eventos.style.display="none"
         projetos.style.display="none"
     }
 }

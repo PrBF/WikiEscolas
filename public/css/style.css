@@ -400,16 +400,6 @@ li span {
     margin-top: 8%;
 }
 
-#btn-add-school-data{
-    background-color: var(--cor_auxiliar);
-    color: white;
-    border: none;
-    padding: 8px;
-
-    
-    border-radius: 3px;
-}
-
 #container-form{
     height: 100vh;
     background-color: var(--cor_auxiliar);
@@ -720,48 +710,41 @@ input[type='radio']:checked:after {
 
 #noticias {
     display: none;
-    margin-left: 40px;
+
 }
 
 
 #eventos {
     display: none;
-    margin-left: 40px;
-    margin-top: -28%;
+
 }
 
 
 #projetos {
     display: none;
-    margin-left: 40px;
-    margin-top: -28%;
-    background-color: red;
-    width: max-content;
-
 }
 
-.dropdown{
-    padding: 20px;
-    margin-left: 20px;
-}
-
-.drop-content{
-    display: none;
-    border: none;
+.select_publish{
+    border-color: var(--background_padrao);
+    background-color: var(--background_padrao);
+    border-bottom: var(--cor_auxiliar);
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 3%;
     padding: 5px;
-    
-}
-
-.drop-content:hover{
-    cursor: pointer;
-    color: #053f42;
-}
-
-.dropdown {
-    display: flex;
 }
 
 .item-publish{
-    display: flex;
+    padding-left: 5%;  
+}
 
+#btn-add-school-data{
+    background-color: var(--cor_auxiliar);
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 3px;
+
+    position: absolute;
+    bottom: 35px;
 }

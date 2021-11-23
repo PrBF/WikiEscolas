@@ -1,86 +1,74 @@
 <%- include ('../partials/head')%>
 <%- include ('../partials/menu')%>
-                <div id="menu-dash-info">
-                <h1>Olá, <%=escola.nome%></h1>
-                <ul>
-                    <li><span><%=escola.nome%></span</li>
-                    <li><span><%=escola.tel1%></span></li>
-                    <li><span><%=escola.email%></span></li>
-                </ul>
-            </div>
-                <div id="menu-dash-content-event">
-                    <h1>Gerencie suas publicações</h1>
-                    <div class="dropdown">
-                        <div class="dropbtn" onmouseover="dropDown()" onmouseout="closeDropDown()">Menu
-                            <div>
-                                <div class="item-publish">
-                                    <button class="drop-content" onClick="verifyOption(this.value)" onmouseout="verifyOptionOut(this.value)" value="noticias" >Noticias</button>
-                                    <div id="noticias">
-                                        <% if (escola.noticias) {%>
-                                            <% for (noticia of escola.noticias) {%>  
-                                                <div class="content-noticias">
-                                                    <div class="noticia">
-                                                        <h2> <%=noticia.titulo%></h2>
-                                                        <h5><%= `${noticia.data_post.getDay()}/${noticia.data_post.getMonth()}/${ noticia.data_post.getFullYear ()}`%></h5>
-                                                        <p><%=noticia.descricao.substring(0, 10)%></p>
-                                                        <button id="btnModal" onclick="openModal()">Veja mais</button>
-                                                        <div id="modal">
-                                                            <div class="modal-content">
-                                                                <span class="close" onclick="closeModal()">X</span>
-                                                                <h1><%=noticia.titulo%></h1>
-                                                                <h2>><%=`${noticia.data_post.getDay()}/${noticia.data_post.getMonth()}/${ noticia.data_post.    getFullYear()}`%></h2>
-                                                                <p><%=noticia.descricao%></p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            <% } %>
-                                        <% } %>
-                                        <a href="/escola/<%=escola._id%>/noticia/new"><button id="btn-add-school-data">Cadastrar nova notícia</button></a>
-                                    </div>
-                                </div>
-                                <div class="item-publish">
-                                    <button class="drop-content"onClick="verifyOption(this.value)" onmouseout="verifyOptionOut(this.value)" value="eventos">Eventos</button>
-                                    <div id="eventos">
-                                        <h2>Próximos eventos</h2>
-                                        <div class="event">
-                                        <% if (escola.eventos) {%>
-                                            <% for (evento of escola.eventos) {%>
-                                                <h2><%=`${evento.data_inicio.getDay()}/${evento.data_inicio.getMonth()}`%></h2>
-                                                <h4><%=evento.nome_evento%></h4>
-                                            <%}%>
-                                        <%}%>
-                                        </div>
-                                        
-                                    </div>      
-                                </div>
-                                
-                                <div class="item-publish">
-                                    <button class="drop-content" onClick="verifyOption(this.value)" onmouseout="verifyOptionOut(this.value)">Projetos</button>
-                                    <div id="projetos">
-                                        <% if (escola.projetos) {%>
-                                            <% for (projeto of escola.projetos) {%>  
-                                                <div id="content-project">
-                                                    <p><%=projeto.titulo%></p> 
-                                                </div>
-                                                
-                                            <%}%>
-                                        <%}%>
-                                    </div>
-                                    
-                                </div>
-                                
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <a href="/escola/<%=escola._id%>/projeto/new"><button id = "btn-add-school-data">Cadastrar um novo  projeto</button></a>
-                    <a href="/escola/<%=escola._id%>/evento/new"><button id="btn-add-school-data">Cadastrar novo evento</button></a>
-                    <a href="/escola/<%=escola._id%>/noticia/new"><button id="btn-add-school-data">Cadastrar nova noticia</button></a>
-                </div>
-            </div>        
-        </div>
+    <div id="menu-dash-info">
+        <h1>Olá, <%=escola.nome%></h1>
+        <ul>
+            <li><span><%=escola.nome%></span</li>
+            <li><span><%=escola.tel1%></span></li>
+            <li><span><%=escola.email%></span></li>
+        </ul>
     </div>
+        <div id="menu-dash-content-event">
+            <h1>Gerencie suas publicações</h1>
+            <select class="select_publish" id="data_select" onChange="verifyOption()">
+                <option value="clear">Escolha o tipo de publicação</option>
+                <option value="eventos">Eventos</option>
+                <option value="noticias">Noticias</option>
+                <option value="projetos">Projetos</option>
+            </select>
+            <div class="item-publish">
+                <div id="noticias">
+                    <% if (escola.noticias) {%>
+                        <% for (noticia of escola.noticias) {%>  
+                            <div class="content-noticias">
+                                <div class="noticia">
+                                    <h2> <%=noticia.titulo%></h2>
+                                    <h5><%= `${noticia.data_post.getDay()}/${noticia.data_post.getMonth()}/${ noticia.data_post.getFullYear ()}`%></h5>
+                                    <p><%=noticia.descricao.substring(0, 10)%></p>
+                                    <button id="btnModal" onclick="openModal()">Veja mais</button>
+                                    <div id="modal">
+                                        <div class="modal-content">
+                                            <span class="close" onclick="closeModal()">X</span>
+                                            <h1><%=noticia.titulo%></h1>
+                                            <h2>><%=`${noticia.data_post.getDay()}/${noticia.data_post.getMonth()}/${ noticia.data_post.    getFullYear()}`%></h2>
+                                            <p><%=noticia.descricao%></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                       <% } %>
+                    <% } %>
+                    <a href="/escola/<%=escola._id%>/noticia/new"><button id="btn-add-school-data">Cadastrar nova notícia</button></a>
+                </div>
+            </div>
+           <div class="item-publish">
+                <div id="eventos">
+                    <div class="event">
+                        <% if (escola.eventos) {%>
+                            <% for (evento of escola.eventos) {%>
+                                <h2><%=`${evento.data_inicio.getDay()}/${evento.data_inicio.getMonth()}`%></h2>
+                                <h4><%=evento.nome_evento%></h4>
+                            <%}%>
+                        <%}%>
+                    </div>   
+               <a href="/escola/<%=escola._id%>/evento/new"><button id="btn-add-school-data">Cadastrar novo evento</button></a>     
+               </div> 
+            </div>                   
+            <div class="item-publish">
+                <div id="projetos">
+                    <% if (escola.projetos) {%>
+                        <% for (projeto of escola.projetos) {%>  
+                            <div id="content-project">
+                                <p><%=projeto.titulo%></p> 
+                            </div>
+                           
+                        <%}%>
+                        
+                    <%}%>
+                    <a href="/escola/<%=escola._id%>/projeto/new"><button id="btn-add-school-data">Cadastrar um novo  projeto</button></a>
+                </div>                        
+            </div>  
+        </div>       
 </div>
 
     <%- include ('../partials/footer')%>
