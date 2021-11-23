@@ -1,6 +1,39 @@
 feather.replace();
 
 var modalContent = document.getElementById('modal')
+var dropContent = document.getElementsByClassName('drop-content')
+
+function dropDown(){
+    for (var i = 0; i < 3; i++){
+        dropContent[i].style.display="block"       
+    }
+}
+
+function closeDropDown(){
+    for (var i = 0; i < 3; i++){
+        dropContent[i].style.display="none"
+    }
+}
+
+function verifyOption(value){
+    if (value == "noticias"){
+        noticias.style.display="block"
+    } else if (value == "eventos"){
+        eventos.style.display="block"
+    } else{
+        projetos.style.display="block"
+    }
+}
+
+function verifyOptionOut(value){
+    if (value == "noticias"){
+        noticias.style.display="none"
+    } else if (value == "eventos"){
+        eventos.style.display="none"
+    } else{
+        projetos.style.display="none"
+    }
+}
 
 function openModal(){
     modalContent.style.display="block"
