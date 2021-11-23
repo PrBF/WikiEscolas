@@ -23,25 +23,35 @@
                             <div class="data-evento">
                                 <% if (escola.eventos) {%>
                                     <% for (evento of escola.eventos) {%>
-                                        <h3><%=`${evento.data_inicio.getDay()}/${evento.data_inicio.getMonth()}`%></h3>
-                                        <h3><%= evento.nome_evento%></h3>
-                                        <p><%= evento.descricao %></p>
-                                        <p><%= evento.endereco %></p>
-                                        <p><%= evento.data_fim%></p>
-                                        <p><%= evento.hora_inicio%></p>
-                                        <p><%= evento.hora_fim%></p>
+                                        <ul>
+                                            <h3><%=`${evento.data_inicio.getDay()}/${evento.data_inicio.getMonth()}`%></h3>
+                                            <h3><%= evento.nome_evento%></h3>
+                                            <p class="descricao"><%= evento.descricao %></p>
+                                            <h4>Endereço:</h4>
+                                            <p><%= evento.endereco %></p>
+                                            <h4>Data de Encerramento:</h4>
+                                            <p><%= evento.data_fim%></p>
+                                            <h4>Horário:</h4>
+                                            <p><%= evento.hora_inicio%> - <%= evento.hora_fim%></p>
+                                        </ul>
                                     <%}%>        
                                 <% } %>
                             </div>
-                            <% if (escola.projetos) { %>
-                                <% for (projeto of escola.projetos) {%>
-                                    <h3><%=`${projeto.data_inicio.getDay()}/${projeto.data_inicio.getMonth()}`%></h3>
-                                    <h3><%=projeto.titulo %></h3>
-                                    <p><%= projeto.descricao %></p>
-                                    <p><%= projeto.coordenador%></p>
-                                    <p><%= projeto.contato%></p>
+                            <div class="data-projetos">
+                                <% if (escola.projetos) { %>
+                                    <% for (projeto of escola.projetos) {%>
+                                        <ul>
+                                            <h3><%=`${projeto.data_inicio.getDay()}/${projeto.data_inicio.getMonth()}`%></h3>
+                                            <h3><%=projeto.titulo %></h3>
+                                            <p class="descricao"><%= projeto.descricao %></p>
+                                            <h4>Coordenador:</h4>
+                                            <p><%= projeto.coordenador%></p>
+                                            <h4>Contato: </h4>
+                                            <p><%= projeto.contato%></p>
+                                        </ul>
+                                    <%}%>
                                 <%}%>
-                            <%}%>
+                            </div>
                         </div>
                     </div>
 
