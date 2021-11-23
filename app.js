@@ -208,7 +208,7 @@ app.put('/escola/:id/evento/:id_evento', isLoggedIn, async(req, res) => {
     }   
 })
 
-app.delete('/escola/:id/evento/:id_evento', isLogged, async(req, res) => {
+app.delete('/escola/:id/evento/:id_evento', isLoggedIn, async(req, res) => {
     const {id} = req.params;
     const {id_evento} = req.params;
     try{
