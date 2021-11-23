@@ -152,6 +152,34 @@ app.post('/escola/:id/noticia', isLoggedIn, async(req, res) => {
     res.redirect('/escola'); //depois redirecionar para a listagem de noticias da escola
 })
 
+app.put('/escola/:id/noticia/:id_noticia', isLoggedIn, async(req, res) => {
+    const {id} = req.params;
+    const {id_noticia} = req.params;
+    
+    try{
+        await Escola.findByIdAndUpdate(id,
+            {$pull: {noticias: {_id: id_noticia}}},
+            {runValidators: true, new: true, safe: true, upsert: true}
+        )
+    } catch(err){
+        console.log(err);
+    }
+
+    res.redirect('/escola/'+id+'/index')
+})
+
+app.delete('/escola/:id/noticia/:id_noticia', isLoggedIn, async(req, res) => {
+    const {id} = req.params;
+    const {id_noticia} = req.params;
+    try{
+        await Escola.findByIdAndDelete(id, {noticias: {_id: id_noticia}})
+    }catch(e){
+        console.log(e)
+    }
+
+    res.redirect('/escola/'+id+'/index')
+})
+
 app.get('/escola/:id/evento/new', isLoggedIn, async(req, res) => {
     const {id} = req.params;
     const escola = await Escola.findById(id);
@@ -164,6 +192,31 @@ app.post('/escola/:id/evento', isLoggedIn, async(req, res) => {
     const escola = await Escola.findByIdAndUpdate(id, {$push: {eventos: {nome_evento, descricao, endereco, data_inicio, data_fim, hora_inicio, hora_fim}}}, {runValidators: true, new: true, safe:true, upsert:true})
     await escola.save();
     res.redirect('/escola');
+})
+
+app.put('/escola/:id/evento/:id_evento', isLoggedIn, async(req, res) => {
+    const {id} = req.params;
+    const {id_evento} = req.params;
+    try{
+        const escola = await Escola.findByIdAndUpdate(id, 
+            {$pull: {eventos: {_id: id_evento}}},
+            {runValidators: true, safe: true, new: true, upsert: true},
+        )
+        res.redirect('/escola/index', {escola})
+    } catch(e){
+        console.log(e)
+    }   
+})
+
+app.delete('/escola/:id/evento/:id_evento', isLogged, async(req, res) => {
+    const {id} = req.params;
+    const {id_evento} = req.params;
+    try{
+       await Escola.findByIdAndRemove(id, {eventos: {_id: id_evento}})
+    } catch(e){
+        console.log(e)
+    }
+    res.redirect('/escola/'+id+'/index');
 })
 
 app.get('/escola/:id/projeto/new', isLoggedIn, async(req, res) => {
@@ -180,6 +233,33 @@ app.post ('/escola/:id/projeto', isLoggedIn, async(req, res) => {
     res.redirect('/escola')
 })
 
+app.put('/escola/:id/projeto/:id_projeto', isLoggedIn, async(req, res) => {
+    const {id} = req.params;
+    const {id_projeto} = req.params;
+    try{
+        const escola = await Escola.findByIdAndUpdate(id, 
+            {$pull: {projetos: {_id: id_projeto}}},
+            {runValidators: true, new: true, safe: true, upsert: true},
+        )
+        res.redirect('/escola/index', {escola})
+    } catch(e){
+        console.log(e)
+    }   
+})
+
+app.delete('/escola/:id/projeto/:id_projeto', isLoggedIn, async (req, res) => {
+    const {id} = req.params;
+    const {id_projeto} = req.params;
+    try{
+        await Escola.findByIdAndRemove(id, {projetos: {_id: id_projeto}})
+    } catch (e){
+        console.log(e)
+    }
+
+    res.redirect('/escola'+id+'index');
+})
+
 app.listen(4000, () =>{
     console.log("Rodando")
 })
+
