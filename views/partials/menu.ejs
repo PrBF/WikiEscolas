@@ -2,7 +2,9 @@
     <div class="icon">
         <a href="/escola" class="icon-link"><i class="icon-dash" data-feather="home"></i></a>
         <a href="/escola/<%=escola._id%>/edit" class="icon-link"><i class="icon-dash" data-feather="edit-2"></i></a>
-        <i class="icon-dash" data-feather="calendar"></i>
+        <form action="/escola/<%=escola._id%>?_method=DELETE" method="post">
+            <button><i class="icon-dash" data-feather="trash-2"></i></button>
+        </form>
         <a href="/logout" class="icon-link"><i class="icon-dash" id="logout-icon" data-feather="log-out"></i></a>
     </div>
     <div id="menu-dash-container">
