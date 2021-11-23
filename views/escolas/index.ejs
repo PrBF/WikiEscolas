@@ -51,7 +51,7 @@
                                             <%}%>
                                         <%}%>
                                         </div>
-                                        <a href="/escola/<%=escola._id%>/evento/new"><button id="btn-add-school-data">Cadastrar novo evento</button></a>
+                                        
                                     </div>      
                                 </div>
                                 
@@ -62,7 +62,6 @@
                                             <% for (projeto of escola.projetos) {%>  
                                                 <div id="content-project">
                                                     <p><%=projeto.titulo%></p> 
-                                                    <a href="/escola/<%=escola._id%>/projeto/new"><button id = "btn-add-school-data">Cadastrar um novo  projeto</button></a>
                                                 </div>
                                                 
                                             <%}%>
@@ -75,11 +74,9 @@
                             
                         </div>
                     </div>
-                    <div id="content-manager-data">
-                        
-                        
-                        
-                    </div>
+                    <a href="/escola/<%=escola._id%>/projeto/new"><button id = "btn-add-school-data">Cadastrar um novo  projeto</button></a>
+                    <a href="/escola/<%=escola._id%>/evento/new"><button id="btn-add-school-data">Cadastrar novo evento</button></a>
+                    <a href="/escola/<%=escola._id%>/noticia/new"><button id="btn-add-school-data">Cadastrar nova noticia</button></a>
                 </div>
             </div>        
         </div>
