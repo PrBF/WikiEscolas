@@ -20,31 +20,33 @@
                 <div id="noticias">
                     <% if (escola.noticias) {%>
                         <% for (noticia of escola.noticias) {%>  
-                            <div class="content-noticias">
-                                <div class="noticia">
-                                    <div id="header-notice-profile">
-                                        <h2> <%=noticia.titulo%></h2>
-                                        <div class="icons">
-                                            <form action="/escola/<%=escola._id%>/noticia/<%=noticia._id%>?_method=DELETE" method="post">
-                                                <button><i class="icon-notice-settings"data-feather="trash-2"></i></button>
-                                            </form>
-                                            <a href="/escola/<%=escola._id%>/noticia/<%=noticia._id%>/edit"><i class="icon-notice-settings"data-feather="edit-2"></i></a>
+                            <% if (noticia) {%>
+                                <div class="content-noticias">
+                                    <div class="noticia">
+                                        <div id="header-notice-profile">
+                                            <h2> <%=noticia.titulo%></h2>
+                                            <div class="icons">
+                                                <form action="/escola/<%=escola._id%>/noticia/<%=noticia._id%>?_method=DELETE" method="post">
+                                                    <button><i class="icon-notice-settings"data-feather="trash-2"></i></button>
+                                                </form>
+                                                <a href="/escola/<%=escola._id%>/noticia/<%=noticia._id%>/edit"><i class="icon-notice-settings"data-feather="edit-2"></i></a>
+                                            </div>
+                                            
                                         </div>
-                                        
-                                    </div>
-                                    <h5><%= `${noticia.data_post.getDay()}/${noticia.data_post.getMonth()}/${ noticia.data_post.getFullYear ()}`%></h5>
-                                    <p><%=noticia.descricao.substring(0, 10)%></p>
-                                    <button id="btnModal" onclick="openModal()">Veja mais</button>
-                                    <div id="modal">
-                                        <div class="modal-content">
-                                            <span class="close" onclick="closeModal()">X</span>
-                                            <h1><%=noticia.titulo%></h1>
-                                            <h2>><%=`${noticia.data_post.getDay()}/${noticia.data_post.getMonth()}/${ noticia.data_post.    getFullYear()}`%></h2>
-                                            <p><%=noticia.descricao%></p>
+                                        <h5><%= `${noticia.data_post.getDay()}/${noticia.data_post.getMonth()}/${ noticia.data_post.getFullYear ()}`%></h5>
+                                        <p><%=noticia.descricao.substring(0, 10)%></p>
+                                        <button id="btnModal" onclick="openModal()">Veja mais</button>
+                                        <div id="modal">
+                                            <div class="modal-content">
+                                                <span class="close" onclick="closeModal()">X</span>
+                                                <h1><%=noticia.titulo%></h1>
+                                                <h2>><%=`${noticia.data_post.getDay()}/${noticia.data_post.getMonth()}/${ noticia.data_post.    getFullYear()}`%></h2>
+                                                <p><%=noticia.descricao%></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            <% } %>
                        <% } %>
                     <% } %>
                     <a href="/escola/<%=escola._id%>/noticia/new"><button id="btn-add-school-data">Cadastrar nova notícia</button></a>

@@ -155,25 +155,27 @@ app.post('/escola/:id/noticia', isLoggedIn, async(req, res) => {
 app.get('/escola/:id/noticia/:id_noticia/edit', isLoggedIn, async(req,res) => {
     const {id} = req.params;
     const {id_noticia} = req.params;
-    
-    const escola = await Escola.findById(id, {noticias: {_id: id_noticia}})
-    res.render('escolas/noticias/edit', {escola})
+    const escola = await Escola.findById(id);
+    const noticia = escola.noticias.find(not => not._id == id_noticia);
+    res.render('escolas/noticias/edit', {escola, noticia})
 })
 
 app.put('/escola/:id/noticia/:id_noticia', isLoggedIn, async(req, res) => {
-    const {id} = req.params;
-    const {id_noticia} = req.params;
-    
+    const {id, id_noticia} = req.params;
+    const noticia = req.body;
     try{
-        await Escola.findByIdAndUpdate(id,
-            {$pull: {noticias: {_id: id_noticia}}},
-            {runValidators: true, new: true, safe: true, upsert: true}
-        )
+        await Escola.updateOne(
+            {
+              _id: id,
+              "noticias._id": id_noticia
+            },
+            { $set: { "noticias.$" :  noticia} },
+            {runValidators: true}
+         )
     } catch(err){
         console.log(err);
     }
-
-    res.redirect('/escola/'+id+'/index')
+    res.redirect('/escola/'+id)
 })
 
 app.delete('/escola/:id/noticia/:id_noticia', isLoggedIn, async(req, res) => {
@@ -223,7 +225,7 @@ app.delete('/escola/:id/evento/:id_evento', isLoggedIn, async(req, res) => {
     } catch(e){
         console.log(e)
     }
-       res.redirect('/escola')
+    res.redirect('/escola')
 })
 
 app.get('/escola/:id/projeto/new', isLoggedIn, async(req, res) => {

@@ -2,18 +2,22 @@
 <%- include ('../../partials/menu')%>
 
     <div id="container-publish-school">
-        <form action="/escola/<%=escola._id%>/noticia?_method_PUT" method="post">
+        <form action="/escola/<%=escola._id%>/noticia/<%=noticia._id%>?_method=PUT" method="post">
             <div id="content-publish-school">
                 <h1>Edite sua noticia!</h1>
                 <div class="item-notice-form">
                     <label>Título
-                        <input type="text" name="titulo" id="titulo" value=<%=escola.noticias.titulo%>>
+                        <input type="text" name="titulo" id="titulo" value="<%=noticia.titulo%>">
                     </label>
                     <label>Descrição:
-                        <textarea name="descricao" value=<%=escola.noticias.descricao%>></textarea>
+                        <textarea name="descricao"><%=noticia.descricao%></textarea>
                     </label>
                     <label>Data de publicação:
-                        <input type="date" name="data_post" id="data_post" value=<%=escola.noticias.data_post%>>
+                        <% 
+                           const data = new Date(noticia.data_post);
+                           const dataConvertida = data.getUTCFullYear() + "-" + (data.getUTCMonth()+1) + "-" + data.getUTCDate();
+                        %>
+                        <input type="date" name="data_post" id="data_post" value="<%=dataConvertida%>">
                     </label>
                 </div>
                 <button>Editar notícia</button>
