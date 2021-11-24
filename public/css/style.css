@@ -703,24 +703,24 @@ input[type='radio']:checked:after {
 }
 
 #publish-project{
-
     margin-left: 48%;
     width: 50%;
 }
 
 #new-event-form{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    padding-left: 47%;
 }
 
+#new-event-form button{
+    background-color: red;
+    margin:0%;
+}
 .field-event-form{
-    width: calc(100%/2);
+    margin-left: 30px;
 }
-
 
 .field-event-form input{
-    width: 50%;
+    width: 85%;
 }
 
 #item-notice-form{
@@ -748,12 +748,9 @@ input[type='radio']:checked:after {
     margin-top: 5%;
 }
 
-
 #eventos {
     display: none;
-
 }
-
 
 #projetos {
     display: none;
@@ -794,10 +791,7 @@ input[type='radio']:checked:after {
     display: flex;
 }
 
-
 .icon-notice-settings{
     color: var(--cor_auxiliar);
-   
-   
 }
 
