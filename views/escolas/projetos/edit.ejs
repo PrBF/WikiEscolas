@@ -1,0 +1,31 @@
+<%- include ('../../partials/head')%>
+<%- include ('../../partials/menu')%>
+    <div id="container-publish-school">
+        <form action="/escola/<%=escola._id%>/projeto/<%=escola.projetos._id%>?_method=PUT" method="POST">
+            <div id="content-publish-school">
+                <h1>Cadastre seu projeto</h1>
+                <div id="publish-project">
+                    <label id="for="titulo">Título do projeto:
+                        <input type="text" name="titulo" id="titulo" placeholder="Insira aqui o título do projeto"  value=<%=escola.projetos.titulo%>>
+                    </label>
+                    <label for="descricao">Descrição:
+                        <textarea name="descricao" id="descricao" placeholder="Faça uma breve descrição" cols="30" rows="10"></textarea>
+                    </label>
+                    <label for="coordenador">Coordenador:
+                        <input type="text" name="coordenador" id="coordenador" placeholder="Insira o nome do coordenador" value=<%=escola.projetos.coordenador%>>
+                    </label>
+                    <label for="contato">Contato:
+                        <input type="text" name="contato" id="contato" value=<%=escola.projetos.contato%>>
+                    </label>
+                    <label for="data_inicio">Data de início do projeto:
+                        <input type="date" name="data_inicio" id="data_inicio">
+                    </label>
+                    
+                </div>
+                <button>Editar projeto</button>
+           </div>
+           
+        </form>
+    </div>
+</div>
+<%- include ('../../partials/footer')%>
