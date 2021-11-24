@@ -791,6 +791,12 @@ input[type='radio']:checked:after {
     display: flex;
 }
 
+.icons {
+    display: flex;
+    position: absolute;
+    right: 80px;
+}
+
 .icon-notice-settings{
     color: var(--cor_auxiliar);
 }
