@@ -180,12 +180,11 @@ app.delete('/escola/:id/noticia/:id_noticia', isLoggedIn, async(req, res) => {
     const {id} = req.params;
     const {id_noticia} = req.params;
     try{
-        await Escola.findByIdAndDelete(id, {noticias: {_id: id_noticia}})
-    }catch(e){
+        await Escola.findByIdAndUpdate(id, {$pull: {noticias: {_id: id_noticia}}})
+    } catch(e){
         console.log(e)
     }
-
-    res.redirect('/escola/'+id+'/index')
+    res.redirect('/escola')
 })
 
 app.get('/escola/:id/evento/new', isLoggedIn, async(req, res) => {
@@ -270,4 +269,3 @@ app.delete('/escola/:id/projeto/:id_projeto', isLoggedIn, async (req, res) => {
 app.listen(4000, () =>{
     console.log("Rodando")
 })
-
