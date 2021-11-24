@@ -4,23 +4,27 @@
         <form action="/escola/<%=escola._id%>/projeto" method="POST">
             <div id="content-publish-school">
                 <h1>Cadastre seu projeto</h1>
-                <label for="titulo">Título do projeto:
-                    <input type="text" name="titulo" id="titulo" placeholder="Insira aqui o título do projeto">
-                </label>
-                <label for="descricao">Descrição:
-                    <textarea name="descricao" id="descricao" placeholder="Faça uma breve descrição" cols="30" rows="10"></textarea>
-                </label>
-                <label for="coordenador">Coordenador:
-                    <input type="text" name="coordenador" id="coordenador" placeholder="Insira o nome do coordenador">
-                </label>
-                <label for="contato">Contato:
-                    <input type="text" name="contato" id="contato">
-                </label>
-                <label for="data_inicio">Data de início do projeto:
-                    <input type="date" name="data_inicio" id="data_inicio">
-                </label>
+                <div id="publish-project">
+                    <label id="for="titulo">Título do projeto:
+                        <input type="text" name="titulo" id="titulo" placeholder="Insira aqui o título do projeto">
+                    </label>
+                    <label for="descricao">Descrição:
+                        <textarea name="descricao" id="descricao" placeholder="Faça uma breve descrição" cols="30" rows="10"></textarea>
+                    </label>
+                    <label for="coordenador">Coordenador:
+                        <input type="text" name="coordenador" id="coordenador" placeholder="Insira o nome do coordenador">
+                    </label>
+                    <label for="contato">Contato:
+                        <input type="text" name="contato" id="contato">
+                    </label>
+                    <label for="data_inicio">Data de início do projeto:
+                        <input type="date" name="data_inicio" id="data_inicio">
+                    </label>
+                    
+                </div>
+                <button>Publicar projeto</button>
            </div>
-            <button class="btn-submit-new">Publicar projeto</button>
+           
         </form>
     </div>
 </div>
