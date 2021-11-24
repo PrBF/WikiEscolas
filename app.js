@@ -219,11 +219,11 @@ app.delete('/escola/:id/evento/:id_evento', isLoggedIn, async(req, res) => {
     const {id} = req.params;
     const {id_evento} = req.params;
     try{
-       await Escola.findByIdAndRemove(id, {eventos: {_id: id_evento}})
+       await Escola.findByIdAndUpdate(id, {eventos: {_id: id_evento}})
     } catch(e){
         console.log(e)
     }
-    res.redirect('/escola/'+id+'/index');
+    res.redirect('/escola')
 })
 
 app.get('/escola/:id/projeto/new', isLoggedIn, async(req, res) => {
