@@ -801,3 +801,6 @@ input[type='radio']:checked:after {
     color: var(--cor_auxiliar);
 }
 
+#fields-projects{
+    display: inline;
+}

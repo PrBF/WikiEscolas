@@ -52,6 +52,7 @@
             </div>
            <div class="item-publish">
                 <div id="eventos">
+                    
                     <div class="event">
                         <% if (escola.eventos) {%>
                             <% for (evento of escola.eventos) {%>
@@ -68,14 +69,17 @@
                     <% if (escola.projetos) {%>
                         <% for (projeto of escola.projetos) {%>  
                             <div id="content-project">
-                                <h2><%=projeto.titulo%></h2>
-                                <div class="icons">
-                                    <form action="/escola/<%=escola._id%>/projeto/<%=projeto._id%>?_method=DELETE" method="post">
-                                        <button><i class="icon-notice-settings"data-feather="trash-2"></i></button>
-                                    </form>
-                                    <a href=""><i class="icon-notice-settings"data-feather="edit-2"></i></a>
+                            <div id="header-notice-profile">
+                                <div id="fields-project">
+                                    <h2><%=projeto.titulo%></h2>
+                                    <div class="icons">
+                                        <form action="/escola/<%=escola._id%>/projeto/<%=projeto._id%>?_method=DELETE" method="post">
+                                            <button><i class="icon-notice-settings"data-feather="trash-2"></i></button>
+                                        </form>
+                                        <a href=""><i class="icon-notice-settings"data-feather="edit-2"></i></a>
+                                    </div>
+                                    <p><%=projeto.descricao%></p>
                                 </div>
-                                <p><%=projeto.descricao%></p>
                             </div>
                         <%}%>
                         
@@ -83,6 +87,7 @@
                     <a href="/escola/<%=escola._id%>/projeto/new"><button id="btn-add-school-data">Cadastrar um novo  projeto</button></a>
                 </div>                        
             </div>  
+        </div>
         </div>       
 </div>
 
