@@ -157,7 +157,7 @@ app.get('/escola/:id/noticia/:id_noticia/edit', isLoggedIn, async(req,res) => {
     const {id_noticia} = req.params;
     
     const escola = await Escola.findById(id, {noticias: {_id: id_noticia}})
-    res.render('/escolas/noticias/edit', {escola})
+    res.render('escolas/noticias/edit', {escola})
 })
 
 app.put('/escola/:id/noticia/:id_noticia', isLoggedIn, async(req, res) => {
