@@ -22,7 +22,16 @@
                         <% for (noticia of escola.noticias) {%>  
                             <div class="content-noticias">
                                 <div class="noticia">
-                                    <h2> <%=noticia.titulo%></h2>
+                                    <div id="header-notice-profile">
+                                        <h2> <%=noticia.titulo%></h2>
+                                        <div class="icons">
+                                            <form action="/escola/<%=escola._id%>/noticia/<%=escola.noticias._id%>?_method=DELETE" method="post">
+                                                <button><i class="icon-notice-settings"data-feather="trash-2"></i></button>
+                                            </form>
+                                            <a href=""><i class="icon-notice-settings"data-feather="edit-2"></i></a>
+                                        </div>
+                                        
+                                    </div>
                                     <h5><%= `${noticia.data_post.getDay()}/${noticia.data_post.getMonth()}/${ noticia.data_post.getFullYear ()}`%></h5>
                                     <p><%=noticia.descricao.substring(0, 10)%></p>
                                     <button id="btnModal" onclick="openModal()">Veja mais</button>
@@ -61,7 +70,6 @@
                             <div id="content-project">
                                 <p><%=projeto.titulo%></p> 
                             </div>
-                           
                         <%}%>
                         
                     <%}%>

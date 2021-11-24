@@ -734,7 +734,8 @@ input[type='radio']:checked:after {
 
 #noticias {
     display: none;
-
+    font-size: 0.8rem;
+    margin-top: 5%;
 }
 
 
@@ -777,4 +778,15 @@ input[type='radio']:checked:after {
     color: white;
     border: none;
     background-color: var(--cor_auxiliar);
+}
+
+#header-notice-profile {
+    display: flex;
+}
+
+
+.icon-notice-settings{
+    color: var(--cor_auxiliar);
+   
+   
 }
