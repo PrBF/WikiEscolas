@@ -68,7 +68,14 @@
                     <% if (escola.projetos) {%>
                         <% for (projeto of escola.projetos) {%>  
                             <div id="content-project">
-                                <p><%=projeto.titulo%></p> 
+                                <h2><%=projeto.titulo%></h2>
+                                <div class="icons">
+                                    <form action="/escola/<%=escola._id%>/noticia/<%=escola.noticias._id%>?_method=DELETE" method="post">
+                                        <button><i class="icon-notice-settings"data-feather="trash-2"></i></button>
+                                    </form>
+                                    <a href=""><i class="icon-notice-settings"data-feather="edit-2"></i></a>
+                                </div>
+                                <p><%=projeto.descricao%></p>
                             </div>
                         <%}%>
                         
