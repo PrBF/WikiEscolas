@@ -7,10 +7,16 @@ function verifyOption(){
     var option = select.options[select.selectedIndex].value;
     if (option == "noticias"){
         noticias.style.display="block"
+        eventos.style.display="none"
+        projetos.style.display="none"
     } else if (option == "eventos"){
         eventos.style.display="block"
+        noticias.style.display="none"
+        projetos.style.display="none"
     } else if (option == "projetos"){
         projetos.style.display="block"
+        noticias.style.display="none"
+        eventos.style.display="none"
     } else{
         noticias.style.display="none"
         eventos.style.display="none"
