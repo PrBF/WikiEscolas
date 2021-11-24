@@ -152,6 +152,14 @@ app.post('/escola/:id/noticia', isLoggedIn, async(req, res) => {
     res.redirect('/escola'); //depois redirecionar para a listagem de noticias da escola
 })
 
+app.get('/escola/:id/noticia/:id_noticia/edit', isLoggedIn, async(req,res) => {
+    const {id} = req.params;
+    const {id_noticia} = req.params;
+    
+    const escola = await Escola.findById(id, {noticias: {_id: id_noticia}})
+    res.render('/escolas/noticias/edit', {escola})
+})
+
 app.put('/escola/:id/noticia/:id_noticia', isLoggedIn, async(req, res) => {
     const {id} = req.params;
     const {id_noticia} = req.params;

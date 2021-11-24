@@ -25,10 +25,10 @@
                                     <div id="header-notice-profile">
                                         <h2> <%=noticia.titulo%></h2>
                                         <div class="icons">
-                                            <form action="/escola/<%=escola._id%>/noticia/<%=escola.noticias._id%>?_method=DELETE" method="post">
+                                            <form action="/escola/<%=escola._id%>/noticia/<%=noticia._id%>?_method=DELETE" method="post">
                                                 <button><i class="icon-notice-settings"data-feather="trash-2"></i></button>
                                             </form>
-                                            <a href=""><i class="icon-notice-settings"data-feather="edit-2"></i></a>
+                                            <a href="/escola/<%=escola._id%>/noticia/<%=noticia._id%>/edit"><i class="icon-notice-settings"data-feather="edit-2"></i></a>
                                         </div>
                                         
                                     </div>
