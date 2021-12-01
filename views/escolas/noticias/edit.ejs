@@ -14,8 +14,10 @@
                     </label>
                     <label>Data de publicação:
                         <% 
+                           //console.log("data original: " + noticia.data_post);
                            const data = new Date(noticia.data_post);
-                           const dataConvertida = data.getUTCFullYear() + "-" + (data.getUTCMonth()+1) + "-" + data.getUTCDate();
+                           const dataConvertida = data.getUTCFullYear() + "-" + ("0" + (data.getUTCMonth()+1)).slice(-2) + "-" + ("0" + data.getUTCDate()).slice(-2);
+                           //console.log("data convertida: " + dataConvertida);
                         %>
                         <input type="date" name="data_post" id="data_post" value="<%=dataConvertida%>">
                     </label>
