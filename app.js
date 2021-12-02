@@ -203,6 +203,13 @@ app.post('/escola/:id/evento', isLoggedIn, async(req, res) => {
     res.redirect('/escola');
 })
 
+app.get('/escola/:id/evento/:id_evento', isLoggedIn, async (req, res) => {
+    const {id, id_evento } = req.params;
+    const escola = await Escola.findById(id);
+    const evento = escola.eventos.find(not => not._id == id_evento);
+    res.render('escolas/eventos/edit', {escola, evento})
+})
+
 app.put('/escola/:id/evento/:id_evento', isLoggedIn, async(req, res) => {
     const {id, id_evento} = req.params;
     const evento = req.body;
