@@ -204,17 +204,22 @@ app.post('/escola/:id/evento', isLoggedIn, async(req, res) => {
 })
 
 app.put('/escola/:id/evento/:id_evento', isLoggedIn, async(req, res) => {
-    const {id} = req.params;
-    const {id_evento} = req.params;
+    const {id, id_evento} = req.params;
+    const evento = req.body;
     try{
-        const escola = await Escola.findByIdAndUpdate(id, 
-            {$pull: {eventos: {_id: id_evento}}},
-            {runValidators: true, safe: true, new: true, upsert: true},
+        await Escola.updateOne(
+            {
+                _id: id, 
+                "eventos._id": id_evento
+            },
+            { $set: { "eventos.$" : evento}},
+            {runValidators: true}
         )
-        res.redirect('/escola/index', {escola})
-    } catch(e){
-        console.log(e)
-    }   
+    }catch (err){
+        console.log(err);
+    }
+
+    res.redirect('/escola/' + id)
 })
 
 app.delete('/escola/:id/evento/:id_evento', isLoggedIn, async(req, res) => {
