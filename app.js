@@ -254,6 +254,13 @@ app.post ('/escola/:id/projeto', isLoggedIn, async(req, res) => {
     res.redirect('/escola')
 })
 
+app.get('/escola/:id/projeto/:id_projeto', isLoggedIn, async(req, res) => {
+    const {id, id_projeto} = req.params;
+    const escola = await Escola.findById(id);
+    const projeto = escola.projetos.find(not => not._id == id_projeto);
+    res.render('/escolas/projetos/edit', {escola, projeto})
+})
+
 app.put('/escola/:id/projeto/:id_projeto', isLoggedIn, async(req, res) => {
     const {id, id_projeto} = req.params;
     const {projeto} = req.body;
