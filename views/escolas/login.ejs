@@ -11,6 +11,10 @@
                     <input type="password" name="password" id="password" required size="25">
                     <label>Senha</label>
                 </div>
+
+                <% for (let i = 0; i < errors.length; i++){ %>
+                    <h5><%=errors[i] %></h5>
+                <%}%>
                 <div class="forgot-password">
                     <p>Esqueceu sua senha?</p>
                 </div>

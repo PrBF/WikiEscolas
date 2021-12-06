@@ -71,7 +71,8 @@ app.get('/show', (req, res) =>{
 })
 
 app.get('/login', (req, res) =>{
-    res.render('escolas/login');
+    const errors = req.flash().error || []
+    res.render('escolas/login', {errors});
 })
 
 app.get('/logout', (req, res) => {
@@ -80,8 +81,12 @@ app.get('/logout', (req, res) => {
 })
 
 app.post('/login',
-  passport.authenticate('local', { successRedirect: '/escola',
-                                   failureRedirect: '/login', })
+  passport.authenticate('local', { 
+      failureFlash: true,
+      failureRedirect: '/login', 
+
+      successRedirect: '/escola',
+    })
 );
 
 app.get('/escola', isLoggedIn, async(req, res) => {
