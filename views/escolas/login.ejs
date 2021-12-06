@@ -1,7 +1,4 @@
 <%- include ('../partials/head')%>
-
-
-
     <div id="login">
         <div id="container-login">
             <h1>Login</h1>
@@ -16,7 +13,7 @@
                 </div>
 
                 <% for (let i = 0; i < errors.length; i++){ %>
-                    <h5><%= errors[i] %></h5>
+                    <h5><%=errors[i] %></h5>
                 <%}%>
                 <div class="forgot-password">
                     <p>Esqueceu sua senha?</p>
