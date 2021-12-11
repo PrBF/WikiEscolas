@@ -159,7 +159,13 @@ const escolaSchema = new mongoose.Schema({
                 required: true
             }
         }
-    ]
+    ],
+    calendario: {
+        type: String
+    },
+    proj_pol_pedag: {
+        type: String
+    }
 })
 
 escolaSchema.plugin(passportLocalMongoose);
