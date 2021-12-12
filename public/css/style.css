@@ -272,7 +272,7 @@ h3 {
 }
 
 .info-geral {
-  width: 100%;
+  width: 55%;
 }
 
 .info-geral li {
@@ -299,7 +299,7 @@ h3 {
 }
 
 .info-evento .data-projetos .descricao {
-  width: 35rem;
+  width: 15rem;
   margin-right: 1rem;
 }
 
@@ -309,15 +309,19 @@ h3 {
 }
 
 .info-evento .data-evento {
-  display: flex;
+  width: 45rem;
+  height: 18rem;
   padding-top: 2%;
   padding-bottom: 2%;
   font-size: 0.85rem;
 }
 
-.info-evento .data-evento .descricao {
-  width: 35rem;
-  margin-right: 1rem;
+.info-evento .data-projetos {
+  width: 45rem;
+  height: 18rem;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-size: 0.85rem;
 }
 
 .data-evento h3 {
@@ -798,4 +802,12 @@ textarea:focus {
 
 #fields-projects {
   display: inline;
+}
+
+.data-evento {
+  overflow-y: scroll;
+}
+
+.data-projetos {
+  overflow-y: scroll;
 }

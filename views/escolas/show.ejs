@@ -1,87 +1,102 @@
 <%- include ('../partials/head')%>
 
-    <div class="container-escola">
-        <% if (escola) {%>
-            <div class="content-escola">
-                <div class="info-escola">
-                    <div id="head-escola">
-                        <h1><%= escola.nome %></h1>
-                        <p><%= escola.modalidade %> | Esfera <%=escola.tipo_inst%></p>
-                    </div>
-                    <div class="container-info">
-                        <div class="info-geral">
-                            <h2>Informações gerais</h2>
-                            <ul>
-                                <li><i class="icon-info" data-feather="home"></i><%=escola.endereco%></li>
-                                <li><i class="icon-info"data-feather="phone"></i><%=escola.tel1%></li>
-                                <li><i class="icon-info" data-feather="at-sign"></i><%=escola.email%></li>
-                                <li><i class="icon-info"data-feather="clock"></i><%=escola.horario_funcMin%> até <%=escola.horario_funcMax%></li>
-                            </ul>
-                        </div>
-                        <div class="info-evento">
-                            <h2>Eventos e projetos</h2>
-                            <div class="data-evento">
-                                <% if (escola.eventos) {%>
-                                    <% for (evento of escola.eventos) {%>
-                                        <ul>
-                                            <h3><%=`${evento.data_inicio.getDay()}/${evento.data_inicio.getMonth()}`%></h3>
-                                            <h3><%= evento.nome_evento%></h3>
-                                            <p class="descricao"><%= evento.descricao %></p>
-                                            <h4>Endereço:</h4>
-                                            <p><%= evento.endereco %></p>
-                                            <h4>Data de Encerramento:</h4>
-                                            <p><%= evento.data_fim%></p>
-                                            <h4>Horário:</h4>
-                                            <p><%= evento.hora_inicio%> - <%= evento.hora_fim%></p>
-                                        </ul>
-                                    <%}%>        
-                                <% } %>
-                            </div>
-                            <div class="data-projetos">
-                                <% if (escola.projetos) { %>
-                                    <% for (projeto of escola.projetos) {%>
-                                        <ul>
-                                            <h3><%=`${projeto.data_inicio.getDay()}/${projeto.data_inicio.getMonth()}`%></h3>
-                                            <h3><%=projeto.titulo %></h3>
-                                            <p class="descricao"><%= projeto.descricao %></p>
-                                            <h4>Coordenador:</h4>
-                                            <p><%= projeto.coordenador%></p>
-                                            <h4>Contato: </h4>
-                                            <p><%= projeto.contato%></p>
-                                        </ul>
-                                    <%}%>
-                                <%}%>
-                            </div>
-                        </div>
-                    </div>
+<div class="container-escola">
+  <% if (escola) {%>
+  <div class="content-escola">
+    <div class="info-escola">
+      <div id="head-escola">
+        <h1><%= escola.nome %></h1>
+        <p><%= escola.modalidade %> | Esfera <%=escola.tipo_inst%></p>
+      </div>
+      <div class="container-info">
+        <div class="info-geral">
+          <h2>Informações gerais</h2>
+          <ul>
+            <li>
+              <i class="icon-info" data-feather="home"></i><%=escola.endereco%>
+            </li>
+            <li>
+              <i class="icon-info" data-feather="phone"></i><%=escola.tel1%>
+            </li>
+            <li>
+              <i class="icon-info" data-feather="at-sign"></i><%=escola.email%>
+            </li>
+            <li>
+              <i class="icon-info" data-feather="clock"></i
+              ><%=escola.horario_funcMin%> até <%=escola.horario_funcMax%>
+            </li>
+          </ul>
+        </div>
+        <div class="info-evento">
+          <h2>Eventos</h2>
 
-                    <div class="noticias">
-                        <% if (escola.noticias) %>
-                            <h2>Noticias</h2>
-                            <% for (noticia of escola.noticias) {%>  
-                                <% if (noticia) {%>
-                                    <div class="content-noticias">
-                                        <div class="noticia">
-                                            <h2> <%=noticia.titulo%></h2>
-                                            <h5><%= `${noticia.data_post.getDay()}/${noticia.data_post.getMonth()}/${ noticia.data_post.getFullYear()}`%></h5>
-                                            <p><%=noticia.descricao.substring(0, 10)%></p>
-                                            <button id="btnModal" onclick="openModal()">Veja mais</button>
-                                            <div id="modal">
-                                                <div class="modal-content">
-                                                    <span class="close" onclick="closeModal()">X</span>
-                                                    <h1><%=noticia.titulo%></h1>
-                                                    <h2>><%=`${noticia.data_post.getDay()}/${noticia.data_post.getMonth()}/${ noticia.data_post.getFullYear()}`%></h2>
-                                                    <p><%=noticia.descricao%></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <% } %>
-                            <% } %>
-                        <% } %>
-                    </div>
-                </div>
+          <div class="data-evento">
+            <% if (escola.eventos) {%> <% for (evento of escola.eventos) {%>
+            <ul>
+              <h3>
+                <%=`${evento.data_inicio.getDay()}/${evento.data_inicio.getMonth()}`%>
+              </h3>
+              <h3><%= evento.nome_evento%></h3>
+              <p class="descricao"><%= evento.descricao %></p>
+              <h4>Endereço:</h4>
+              <p><%= evento.endereco %></p>
+              <h4>Data de Encerramento:</h4>
+              <p><%= evento.data_fim%></p>
+              <h4>Horário:</h4>
+              <p><%= evento.hora_inicio%> - <%= evento.hora_fim%></p>
+            </ul>
+            <%}%> <% } %>
+          </div>
+          <h2>Projetos</h2>
+          <div class="data-projetos">
+            <% if (escola.projetos) { %> <% for (projeto of escola.projetos) {%>
+            <ul>
+              <h3>
+                <%=`${projeto.data_inicio.getDay()}/${projeto.data_inicio.getMonth()}`%>
+              </h3>
+              <h3><%=projeto.titulo %></h3>
+              <p class="descricao"><%= projeto.descricao %></p>
+              <h4>Coordenador:</h4>
+              <p><%= projeto.coordenador%></p>
+              <h4>Contato:</h4>
+              <p><%= projeto.contato%></p>
+            </ul>
+            <%}%> <%}%>
+          </div>
+        </div>
+      </div>
+
+      <div class="noticias">
+        <% if (escola.noticias) %>
+        <h2>Noticias</h2>
+        <% for (noticia of escola.noticias) {%> <% if (noticia) {%>
+        <div class="content-noticias">
+          <div class="noticia">
+            <h2><%=noticia.titulo%></h2>
+            <h5>
+              <%=
+              `${noticia.data_post.getDay()}/${noticia.data_post.getMonth()}/${
+              noticia.data_post.getFullYear()}`%>
+            </h5>
+            <p><%=noticia.descricao.substring(0, 10)%></p>
+            <button id="btnModal" onclick="openModal()">Veja mais</button>
+            <div id="modal">
+              <div class="modal-content">
+                <span class="close" onclick="closeModal()">X</span>
+                <h1><%=noticia.titulo%></h1>
+                <h2>
+                  ><%=`${noticia.data_post.getDay()}/${noticia.data_post.getMonth()}/${
+                  noticia.data_post.getFullYear()}`%>
+                </h2>
+                <p><%=noticia.descricao%></p>
+              </div>
             </div>
+          </div>
+        </div>
+        <% } %> <% } %> <% } %>
+      </div>
     </div>
+  </div>
+</div>
 
-    <%- include ('../partials/footer')%>
+<%- include ('../partials/footer')%>
