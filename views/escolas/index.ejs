@@ -6,12 +6,16 @@
             <li><span><%=escola.nome%></span</li>
             <li><span><%=escola.tel1%></span></li>
             <li><span><%=escola.email%></span></li>
-            <% if (escola.calendario) { %>
-                <li><span><%=escola.calendario%></span></li>
-            <%}%>
-            <% if (escola.proj_pol_pedag) {%>
-                <li><span><%=escola.proj_pol_pedag%></span></li>
-            <%}%>
+            <% if (escola.calendario) {%>
+                <li>
+                    <a href="http://<%=escola.calendario%>" target="_blank">Calendário escolar</a>
+                </li>
+              <%}%>
+              <% if (escola.proj_pol_pedag) {%>
+                <li>
+                    <a href="http://<%=escola.proj_pol_pedag%>" target="_blank">Projeto Político Pedagógico</a>
+                </li>
+              <%}%>
         </ul>
     </div>
         <div id="menu-dash-content-event">
@@ -62,18 +66,20 @@
                 </div>
             </div>
            <div class="item-publish">
+            <% if (escola.eventos) {%>
+
                 <div id="eventos">
-                    
                     <div class="event">
-                        <% if (escola.eventos) {%>
+                        
                             <% for (evento of escola.eventos) {%>
                                 <h2><%=`${evento.data_inicio.getDay()}/${evento.data_inicio.getMonth()}`%></h2>
                                 <h4><%=evento.nome_evento%></h4>
                             <%}%>
-                        <%}%>
+                       
                     </div>   
                <a href="/escola/<%=escola._id%>/evento/new"><button id="btn-add-school-data">Cadastrar novo evento</button></a>     
                </div> 
+               <%}%>
             </div>                   
             <div class="item-publish">
                 <div id="projetos">
