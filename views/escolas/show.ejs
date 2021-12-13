@@ -25,6 +25,18 @@
               <i class="icon-info" data-feather="clock"></i
               ><%=escola.horario_funcMin%> até <%=escola.horario_funcMax%>
             </li>
+            <% if (escola.calendario) {%>
+              <li>
+                <i class = "icon-info" data-feather="calendar"></i>
+                  <a href="http://<%=escola.calendario%>" target="_blank">Calendário escolar</a>
+              </li>
+            <%}%>
+            <% if (escola.proj_pol_pedag) {%>
+              <li>
+                <i class = "icon-info" data-feather="file-text"></i>
+                  <a href="http://<%=escola.proj_pol_pedag%>" target="_blank">Projeto Político Pedagógico</a>
+              </li>
+            <%}%>
           </ul>
         </div>
         <div class="info-evento">
