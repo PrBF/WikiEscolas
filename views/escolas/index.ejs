@@ -6,6 +6,12 @@
             <li><span><%=escola.nome%></span</li>
             <li><span><%=escola.tel1%></span></li>
             <li><span><%=escola.email%></span></li>
+            <% if (escola.calendario) { %>
+                <li><span><%=escola.calendario%></span></li>
+            <%}%>
+            <% if (escola.proj_pol_pedag) {%>
+                <li><span><%=escola.proj_pol_pedag%></span></li>
+            <%}%>
         </ul>
     </div>
         <div id="menu-dash-content-event">
