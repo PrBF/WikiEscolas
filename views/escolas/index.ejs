@@ -47,7 +47,7 @@
                                             const dataConvertida = ("0" + data.getUTCDate()).slice(-2) + "/" + ("0" + (data.getUTCMonth()+1)).slice(-2) + "/" + data.getUTCFullYear();
                                         %>
                                         <h5><%= dataConvertida %></h5>
-                                        <p><%=noticia.descricao.substring(0, 10)%></p>
+                                        <p><%=noticia.descricao.substring(0, 100)%></p>
                                         <button id="btnModal<%=noticia._id%>" onclick="document.getElementById('modal<%=noticia._id%>').style.display='block'">Veja mais</button>
                                         <div id="modal<%=noticia._id%>" class="modal">
                                             <div class="modal-content">
