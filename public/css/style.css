@@ -531,6 +531,27 @@ input[type="radio"]:checked:after {
   margin-bottom: 5px;
 }
 
+.escola-details .senha .details {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.escola-details .senha {
+  padding-right: 40.25rem;
+}
+
+.escola-details .senha input {
+  height: 30px;
+  width: 20.75rem;
+  outline: none;
+  border-radius: 5px;
+  border: 1.5px solid #ccc;
+  padding-left: 10px;
+  font-size: 13px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
 .input-form input {
   height: 30px;
   width: 70%;
@@ -541,6 +562,10 @@ input[type="radio"]:checked:after {
   font-size: 13px;
   border-bottom-width: 2px;
   transition: all 0.3s ease;
+}
+
+.escola-details .senha input:focus {
+  border-color: #0aa6ad;
 }
 
 .escola-details .input-form input:focus {
