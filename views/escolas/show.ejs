@@ -46,7 +46,7 @@
             <% if (escola.eventos) {%> <% for (evento of escola.eventos) {%>
             <ul>
               <%
-                const data = new Date(eventos.data_inicio);
+                const data = new Date(evento.data_inicio);
                 const dataConvertida = ("0" + data.getUTCDate()).slice(-2) + "/" + ("0" + (data.getUTCMonth()+1)).slice(-2) + "/" + data.getUTCFullYear();
                %>
               <h3><%= dataConvertida %></h3>
@@ -56,7 +56,7 @@
               <p><%= evento.endereco %></p>
               <h4>Data de Encerramento:</h4>
               <%
-              const dataFim = new Date(eventos.data_fim);
+              const dataFim = new Date(evento.data_fim);
               const dataFimConvertida = ("0" + data.getUTCDate()).slice(-2) + "/" + ("0" + (data.getUTCMonth()+1)).slice(-2) + "/" + data.getUTCFullYear();
              %>
               <p><%= dataFimConvertida %></p>
