@@ -22,12 +22,12 @@
                         </label>
                     </div>
                     <div class="input-form">
-                        <label for="latitude"><span class="details">Latitude:</span>
+                        <label for="latitude"><span class="details">Latitude: <span class="btn-help" onClick="openModal()">?</span></span>
                             <input type="text" name="latitude" id="latitude" value="<%=escola.latitude%>">
                         </label>
                     </div>
                     <div class="input-form">
-                        <label for="longitude"><span class="details">Longitude:</span>
+                        <label for="longitude"><span class="details">Longitude: <span class="btn-help" onClick="openModal()">?</span></span>
                             <input type="text" name="longitude" id="longitude" value="<%=escola.longitude%>">
                         </label>
                     </div>
@@ -112,5 +112,28 @@
                 <button class="btn-submit-new" type="submit" id="btn-submit-edit">Salvar alterações</button>
             </div>
         </form>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">X</span>
+                <h1>Como encontrar as coordenadas de sua escola</h1>
+                <p>A maneira mais simples para encontrar as coordenadas de sua escola é por meio do Google Maps. Porém, você pode fazer isso pelo computador ou pelo celular. </p> 
+                <br>
+                <h3>Método pelo computador:</h3>
+                <p>Abra o Google Maps em seu navegador e procure o endereço de seu interesse, após, clique com o botão direito do mouse em cima do local desejado.</p>
+                <p>Você deve estar na seguinte página:</p>
+                <img src="/images/coordenada.png" />
+                <p>Você perceberá que a primeira opção, assim que clicar com o botão direito do mouse no local desejado, são um par de números, separados por vírgula,
+                onde, respectivamente, temos latitude e longitude.</p>
+                <br>
+                <h3>Método pelo celular:</h3>
+                <p>Abra o aplicativo do Google Maps, procure o endereço de sua escola, após, clique no mapa em cima do local desejado 
+                e você perceberá que o aplicativo criará um marcador vermelho no local. </p>
+                <p>Você deverá ver a seguinte interface:</p>
+                <img src="/images/marcador.jpeg" width="270" height="450" />
+                <p>Agora basta puxar a aba que contém as informações do endereço selecionado para cima, e você terá as coordenadas, respectivamente, latitude e longitude.</p>
+                <p>Como exibido na imagem abaixo:</p>
+                <img src="/images/coordenada_2.png" width="270" height="450" />
+            </div>
+    </div>
 </div>
     <%- include ('../partials/footer')%>
