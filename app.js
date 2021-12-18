@@ -66,6 +66,15 @@ app.get('/', (req, res) =>{
     res.render('index')
 })
 
+
+app.get('/lgpd', (req, res) => {
+    res.render('lgpd')
+})
+
+app.get('/termos-e-condicoes', (req, res) => {
+    res.render('termos')
+})
+
 app.get('/show', (req, res) =>{
     res.render('show')
 })
@@ -180,7 +189,7 @@ app.put('/escola/:id/noticia/:id_noticia', isLoggedIn, async(req, res) => {
     } catch(err){
         console.log(err);
     }
-    res.redirect('/escola/'+id)
+    res.redirect('/escola')
 })
 
 app.delete('/escola/:id/noticia/:id_noticia', isLoggedIn, async(req, res) => {
@@ -259,16 +268,16 @@ app.post ('/escola/:id/projeto', isLoggedIn, async(req, res) => {
     res.redirect('/escola')
 })
 
-app.get('/escola/:id/projeto/:id_projeto', isLoggedIn, async(req, res) => {
+app.get('/escola/:id/projeto/:id_projeto/edit', isLoggedIn, async(req, res) => {
     const {id, id_projeto} = req.params;
     const escola = await Escola.findById(id);
     const projeto = escola.projetos.find(not => not._id == id_projeto);
-    res.render('/escolas/projetos/edit', {escola, projeto})
+    res.render('escolas/projetos/edit', {escola, projeto})
 })
 
 app.put('/escola/:id/projeto/:id_projeto', isLoggedIn, async(req, res) => {
     const {id, id_projeto} = req.params;
-    const {projeto} = req.body;
+    const projeto = req.body;
     try{
         await Escola.updateOne(
             {
@@ -281,7 +290,7 @@ app.put('/escola/:id/projeto/:id_projeto', isLoggedIn, async(req, res) => {
     } catch(err){
         console.log(err);
     }
-    res.redirect('/escola/' + id);
+    res.redirect('/escola');
 })
 
 app.delete('/escola/:id/projeto/:id_projeto', isLoggedIn, async (req, res) => {
