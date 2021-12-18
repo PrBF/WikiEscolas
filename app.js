@@ -66,6 +66,15 @@ app.get('/', (req, res) =>{
     res.render('index')
 })
 
+
+app.get('/lgpd', (req, res) => {
+    res.render('lgpd')
+})
+
+app.get('/termos-e-condicoes', (req, res) => {
+    res.render('termos')
+})
+
 app.get('/show', (req, res) =>{
     res.render('show')
 })
