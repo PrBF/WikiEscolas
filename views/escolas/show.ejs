@@ -101,12 +101,12 @@
             (data.getUTCMonth()+1)).slice(-2) + "/" + data.getUTCFullYear(); %>
             <h5><%= dataConvertida %></h5>
             <p><%=noticia.descricao.substring(0, 100)%></p>
-            <button id="btnModal" onclick="openModal()">Veja mais</button>
-            <div id="modal">
+            <button id="btnModal<%=noticia._id%>" onclick="document.getElementById('modal<%=noticia._id%>').style.display='block'">Veja mais</button>
+            <div id="modal<%=noticia._id%>" class="modal">
               <div class="modal-content">
-                <span class="close" onclick="closeModal()">X</span>
+                <span class="close" onclick="document.getElementById('modal<%=noticia._id%>').style.display='none'">X</span>
                 <h1><%=noticia.titulo%></h1>
-                <h2><%= dataConvertida %></h2>
+                <h2>><%= dataConvertida %></h2>
                 <p><%=noticia.descricao%></p>
               </div>
             </div>
