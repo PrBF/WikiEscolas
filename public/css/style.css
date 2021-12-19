@@ -537,12 +537,27 @@ input[type="radio"]:checked:after {
 }
 
 .escola-details .senha {
-  padding-right: 40.25rem;
+  padding-right: 33.5vw;
+}
+#edit-form-school .escola-details .senha {
+  padding-right: 37.5vw;
+}
+
+#edit-form-school .escola-details .senha input {
+  height: 30px;
+  width: 19.5vw;
+  outline: none;
+  border-radius: 5px;
+  border: 1.5px solid #ccc;
+  padding-left: 10px;
+  font-size: 13px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
 }
 
 .escola-details .senha input {
   height: 30px;
-  width: 20.75rem;
+  width: 17.25vw;
   outline: none;
   border-radius: 5px;
   border: 1.5px solid #ccc;
@@ -846,6 +861,9 @@ textarea:focus {
 
 #login #container-login h5 {
   color: red;
+  padding-left: 2.75vw;
+  margin-bottom: 1vh;
+  border: solid 1px;
 }
 
 #lgpd {

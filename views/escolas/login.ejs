@@ -19,7 +19,9 @@
       </div>
 
       <% for (let i = 0; i < errors.length; i++){ %>
-      <h5><%=errors[i] %></h5>
+      <div className="error-message">
+        <h5><%=errors[i] %></h5>
+      </div>
       <%}%>
       <div class="forgot-password">
         <p>Esqueceu sua senha?</p>
