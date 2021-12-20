@@ -4,9 +4,39 @@
   <% if (escola) {%>
   <div class="content-escola">
     <div class="info-escola">
+      <div class="social-media">
+        <% if (escola.facebook) {%>
+          <a href="http://<%=escola.facebook%>" target="_blank">
+            <i class="redes-sociais" id="" data-feather="facebook"></i>
+          </a>
+        <% } %>
+        <% if (escola.youtube) {%>
+          <a href="http://<%=escola.youtube%>" target="_blank">
+            <i class="redes-sociais" data-feather="youtube"></i>
+          </a>
+        <%}%>
+        <% if (escola.instagram) { %>
+          <a href="http://<%=escola.instagram%>" target="_blank">
+            <i class="redes-sociais" data-feather="instagram"></i>
+          </a>
+        <%}%>
+        <% if (escola.blog) { %>
+          <a href="http://<%=escola.blog%>" target="_blank">
+            <i class="redes-sociais" data-feather="bold"></i>
+          </a>
+        <%}%>
+        <% if (escola.site) { %>
+          <a href="http://<%=escola.site%>" idtarget="_blank">
+            <i class="redes-sociais" data-feather="monitor"></i>        
+          </a>
+        <%}%>
+
+
+      </div>
       <div id="head-escola">
         <h1><%= escola.nome %></h1>
         <p><%= escola.modalidade %> | Esfera <%=escola.tipo_inst%></p>
+        
       </div>
       <div class="container-info">
         <div class="info-geral">
@@ -42,6 +72,7 @@
             <%}%>
           </ul>
         </div>
+       
       </div>
       <div class="info-evento">
         <div class="data-evento">

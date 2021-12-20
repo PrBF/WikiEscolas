@@ -950,3 +950,16 @@ textarea:focus {
   margin-right: 1vw;
   margin-left: 1vw;
 }
+
+.redes-sociais{
+  color: var(--cor_auxiliar);
+  width: 40px;
+  height: 30px;
+  margin-right: 10px;
+  display: flex;
+  float: right;
+  border-radius: 3px;
+  background-color:  #add7da;
+  padding: 2px;
+}
+
