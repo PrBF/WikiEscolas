@@ -934,3 +934,19 @@ textarea:focus {
 #wiki-list {
   margin-left: 5vh;
 }
+.inicializacao #terms-buttons {
+  display: flex;
+  margin-left: 5vw;
+}
+
+.inicializacao #terms-buttons button {
+  background-color: #066165;
+  color: white;
+  width: 7vw;
+  height: 5vh;
+  border-radius: 1vw;
+  font-family: var(--fonte_titulos);
+  font-size: 0.9rem;
+  margin-right: 1vw;
+  margin-left: 1vw;
+}
