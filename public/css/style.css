@@ -904,3 +904,33 @@ textarea:focus {
 .btn-back:hover {
   background-color: #0aa6ad;
 }
+
+#termos {
+  margin-left: 4vw;
+  width: 90vw;
+  margin-top: 10vh;
+  margin-bottom: 11vh;
+}
+
+#termos h1 {
+  margin-bottom: 2vh;
+}
+
+#termos h3 {
+  margin-bottom: 1vh;
+  margin-top: 2vh;
+  font-size: 1.5rem;
+}
+
+#termos h4 {
+  color: var(--cor_auxiliar);
+  margin-top: 2.5vh;
+  margin-bottom: 1vh;
+}
+#responsabilidades-list {
+  margin-left: 5vh;
+}
+
+#wiki-list {
+  margin-left: 5vh;
+}
