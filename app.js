@@ -20,8 +20,10 @@ app.set("views", path.join(__dirname, "views"));
 
 const school = require("./routes/schoolRoutes");
 const index = require("./routes/indexRoutes");
+const profile = require("./routes/schoolProfileRoutes");
 app.use("/index", index);
 app.use("/escolas", school);
+app.use("/profile", profile);
 
 app.use(
   session({ secret: "my_secret...", resave: false, saveUninitialized: false })
