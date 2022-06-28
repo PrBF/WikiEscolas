@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
-const mongoose = require("mongoose");
+const connection = require("./db/config/connection.js");
 const Escola = require("./models/escola");
 const session = require("express-session");
 const passport = require("passport");
@@ -21,19 +21,6 @@ app.set("views", path.join(__dirname, "views"));
 const school = require("./routes/schoolRoutes");
 
 app.use("/escolas", school);
-
-mongoose
-  .connect("mongodb://localhost:27017/dbWiki", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("Conexão com o banco estabelecida");
-  })
-  .catch((err) => {
-    console.log("Erro ao conectar com o banco....");
-    console.log(err);
-  });
 
 app.use(
   session({ secret: "my_secret...", resave: false, saveUninitialized: false })
