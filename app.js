@@ -8,6 +8,8 @@ const session = require("express-session");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const flash = require("connect-flash");
+const dotenv = require("dotenv");
+dotenv.config();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
@@ -68,7 +70,6 @@ app.post(
   })
 );
 
-
-app.listen(4000, () => {
+app.listen(process.env.PORT, () => {
   console.log("Rodando");
 });
