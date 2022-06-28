@@ -29,6 +29,63 @@ class SchoolProfileController {
     await Escola.findByIdAndDelete(id);
     res.redirect("/");
   }
+
+  static async newNotice(req, res) {
+    const { id } = req.params;
+    const escola = await Escola.findById(id);
+    res.render("escolas/noticias/new", { escola });
+  }
+
+  static async saveNotice(req, res) {
+    const { id } = req.params;
+    const { titulo, descricao, data_post } = req.body;
+    const escola = await Escola.findByIdAndUpdate(
+      id,
+      { $push: { noticias: { titulo, descricao, data_post } } },
+      { runValidators: true, new: true, safe: true, upsert: true }
+    );
+    await escola.save();
+    res.redirect("/escola");
+  }
+
+  static async editNotice(req, res) {
+    const { id } = req.params;
+    const { id_noticia } = req.params;
+    const escola = await Escola.findById(id);
+    const noticia = escola.noticias.find((not) => not._id == id_noticia);
+    res.render("escolas/noticias/edit", { escola, noticia });
+  }
+
+  static async updateNotice(req, res) {
+    const { id, id_noticia } = req.params;
+    const noticia = req.body;
+    try {
+      await Escola.updateOne(
+        {
+          _id: id,
+          "noticias._id": id_noticia,
+        },
+        { $set: { "noticias.$": noticia } },
+        { runValidators: true }
+      );
+    } catch (err) {
+      console.log(err);
+    }
+    res.redirect("/escola");
+  }
+
+  static async deleteNotice(req, res) {
+    const { id } = req.params;
+    const { noticeId } = req.params;
+    try {
+      await Escola.findByIdAndUpdate(id, {
+        $pull: { noticias: { _id: noticeId } },
+      });
+    } catch (e) {
+      console.log(e);
+    }
+    res.redirect("/escola");
+  }
 }
 
 module.exports = SchoolProfileController;

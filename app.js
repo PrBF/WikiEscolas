@@ -68,67 +68,6 @@ app.post(
   })
 );
 
-app.get("/escola/:id/noticia/new", isLoggedIn, async (req, res) => {
-  const { id } = req.params;
-  const escola = await Escola.findById(id);
-  res.render("escolas/noticias/new", { escola });
-});
-
-app.post("/escola/:id/noticia", isLoggedIn, async (req, res) => {
-  const { id } = req.params;
-  const { titulo, descricao, data_post } = req.body;
-  const escola = await Escola.findByIdAndUpdate(
-    id,
-    { $push: { noticias: { titulo, descricao, data_post } } },
-    { runValidators: true, new: true, safe: true, upsert: true }
-  );
-  await escola.save();
-  res.redirect("/escola"); //depois redirecionar para a listagem de noticias da escola
-});
-
-app.get(
-  "/escola/:id/noticia/:id_noticia/edit",
-  isLoggedIn,
-  async (req, res) => {
-    const { id } = req.params;
-    const { id_noticia } = req.params;
-    const escola = await Escola.findById(id);
-    const noticia = escola.noticias.find((not) => not._id == id_noticia);
-    res.render("escolas/noticias/edit", { escola, noticia });
-  }
-);
-
-app.put("/escola/:id/noticia/:id_noticia", isLoggedIn, async (req, res) => {
-  const { id, id_noticia } = req.params;
-  const noticia = req.body;
-  try {
-    await Escola.updateOne(
-      {
-        _id: id,
-        "noticias._id": id_noticia,
-      },
-      { $set: { "noticias.$": noticia } },
-      { runValidators: true }
-    );
-  } catch (err) {
-    console.log(err);
-  }
-  res.redirect("/escola");
-});
-
-app.delete("/escola/:id/noticia/:id_noticia", isLoggedIn, async (req, res) => {
-  const { id } = req.params;
-  const { id_noticia } = req.params;
-  try {
-    await Escola.findByIdAndUpdate(id, {
-      $pull: { noticias: { _id: id_noticia } },
-    });
-  } catch (e) {
-    console.log(e);
-  }
-  res.redirect("/escola");
-});
-
 app.get("/escola/:id/evento/new", isLoggedIn, async (req, res) => {
   const { id } = req.params;
   const escola = await Escola.findById(id);
