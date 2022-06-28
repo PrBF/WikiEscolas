@@ -68,35 +68,6 @@ app.post(
   })
 );
 
-app.get("/escola", isLoggedIn, async (req, res) => {
-  const id = req.user;
-  const escola = await Escola.findById(id);
-  res.render("escolas/index", { escola });
-});
-
-app.get("/escola/:id/edit", isLoggedIn, async (req, res) => {
-  const { id } = req.params;
-  const escola = await Escola.findById(id);
-  res.render("escolas/edit", { escola });
-});
-
-app.put("/escola/:id", isLoggedIn, async (req, res) => {
-  const { id } = req.params;
-  await Escola.findByIdAndUpdate(id, req.body, {
-    runValidators: true,
-    new: true,
-    safe: true,
-    upsert: true,
-  });
-  res.redirect("/escola");
-});
-
-app.delete("/escola/:id", isLoggedIn, async (req, res) => {
-  const { id } = req.params;
-  await Escola.findByIdAndDelete(id);
-  res.redirect("/");
-});
-
 app.get("/escola/:id/noticia/new", isLoggedIn, async (req, res) => {
   const { id } = req.params;
   const escola = await Escola.findById(id);
