@@ -19,7 +19,8 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 const school = require("./routes/schoolRoutes");
-
+const index = require("./routes/indexRoutes");
+app.use("/index", index);
 app.use("/escolas", school);
 
 app.use(
@@ -44,22 +45,6 @@ const isLoggedIn = (req, res, next) => {
   req.session.returnTo = req.originalUrl;
   res.redirect("login");
 };
-
-app.get("/", (req, res) => {
-  res.render("index");
-});
-
-app.get("/lgpd", (req, res) => {
-  res.render("lgpd");
-});
-
-app.get("/termos-e-condicoes", (req, res) => {
-  res.render("termos");
-});
-
-app.get("/show", (req, res) => {
-  res.render("show");
-});
 
 app.get("/login", (req, res) => {
   const errors = req.flash().error || [];
