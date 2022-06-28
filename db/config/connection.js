@@ -1,10 +1,14 @@
 const mongoose = require("mongoose");
-
+const dotenv = require("dotenv");
+dotenv.config();
 const connection = mongoose
-  .connect("mongodb://localhost:27017/dbWiki", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    `mongodb://localhost:${process.env.DB_PORT}/${process.env.DB_NAME}`,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     console.log("Conexão com o banco estabelecida");
   })
