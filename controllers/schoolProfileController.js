@@ -1,4 +1,4 @@
-const Escola = require("./../models");
+const Escola = require("./../models/escola.js");
 
 class SchoolProfileController {
   static async showProfile(req, res) {
