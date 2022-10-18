@@ -963,3 +963,53 @@ textarea:focus {
   padding: 2px;
 }
 
+#adm{
+  background-color: #053f42;
+  height:100vh;
+}
+
+#container{
+  background-color: #d1d3d1;
+  width: 98%;
+  height: 95vh;
+  padding-top: 3vh;
+  margin-left:1%;
+  padding: 5%;
+}
+
+.content{
+  background-color: white;
+  margin-top: 3%;
+  padding: 2%;
+  border-radius: 5px;
+}
+
+.content table {
+  width: 95%;
+  text-align: center;
+}
+
+.content table td {
+  padding: 3px;
+}
+
+.content table form button{
+  color: var(--cor_auxiliar);
+  border: none;
+  background-color: white;
+}
+
+.search-field{
+  display: flex;
+}
+
+#busca button {
+  border: none;
+  background-color:#053f42;
+  margin-left: -15%;
+  margin-top: 8%;
+  color:white;
+  width: 0%;
+}
+
+
