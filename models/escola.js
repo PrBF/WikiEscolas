@@ -165,7 +165,25 @@ const escolaSchema = new mongoose.Schema({
     },
     proj_pol_pedag: {
         type: String
-    }
+    },
+    denuncias: [{
+        autor: {
+            type: String, 
+        },
+        nome_escola: {
+            type: String,
+            required: true
+        },
+        motivo: {
+            type: String,
+            required: true
+        },
+        data_denuncia: {
+            type: Date,
+            default: Date.now()
+        }
+    }]
+
 })
 
 escolaSchema.plugin(passportLocalMongoose);
