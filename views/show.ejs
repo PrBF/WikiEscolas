@@ -3,24 +3,30 @@
 <div class="container">
     <div class="container_horizontal">
         <div class="header-search">
-            <img src="images/logo.png" alt="image" srcset="">
+            <!-- <img src="images/logo.png" alt="image" srcset=""> -->
             <a href="/login"> <i data-feather="user"></i></a>
         </div>
         <div id="busca">
-            <h2>Busque por uma escola: </h2>
-            <input type="text" placeholder="Nome da escola" size="25"required autofocus>
+            <form action="/search" method="POST">
+                <h2>Busque por uma escola: </h2>
+                <div class="search-field">
+                    <input type="text" placeholder="Nome da escola" size="25"required autofocus name="nome" id="nome">
+                    <button type="submit"><i id="search-btn" data-feather="search"></i></button>
+                </div>
+            </form>
         </div>
         <div class="rodape">
             <footer>
                 <p>Deseja cadastrar sua escola?</p>
-                <a href="escola/new"><button>Clique aqui</button></a>
+                <a href="/new"><button>Clique aqui</button></a>
             </footer>
         </div>
-    </div>  
+    </div>
+   
     <div class="content"></div>
         <div id="map"></div>
     </div>
-</div>
 
+</div>
 
 <%- include ('partials/footer')%>

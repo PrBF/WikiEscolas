@@ -76,8 +76,8 @@
       </div>
       <div class="info-evento">
         <div class="data-evento">
-          <h2>Eventos</h2>
           <% if (escola.eventos) {%> <% for (evento of escola.eventos) {%>
+          <h2>Eventos</h2>  
           <ul>
             <% const data = new Date(evento.data_inicio); const dataConvertida =
             ("0" + data.getUTCDate()).slice(-2) + "/" + ("0" +
@@ -102,8 +102,9 @@
         </div>
         <%}%>
         <div class="data-projetos">
-          <h2>Projetos</h2>
           <% if (escola.projetos) { %> <% for (projeto of escola.projetos) {%>
+
+          <h2>Projetos</h2>
           <ul>
             <% const data = new Date(projeto.data_inicio); const dataConvertida
             = ("0" + data.getUTCDate()).slice(-2) + "/" + ("0" +
@@ -122,8 +123,9 @@
 
       <div class="noticias">
         <% if (escola.noticias) %>
-        <h2>Noticias</h2>
         <% for (noticia of escola.noticias) {%> <% if (noticia) {%>
+
+        <h2>Noticias</h2>
         <div class="content-noticias">
           <div class="noticia">
             <h2><%=noticia.titulo%></h2>

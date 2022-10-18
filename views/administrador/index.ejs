@@ -1,0 +1,38 @@
+<%- include ('../partials/head')%>
+<div id="adm">
+    <div id="container">
+       
+        <h1>Novas denuncias</h1>
+        <div class="content">
+            <table>
+                <tr>
+                    <th>Nome da Escola</th>
+                    <th>Data da denúncia</th>
+                    <th>Motivo</th>
+                    <th>Autor</th>
+                    <th>Analisado</th>
+                    <th>Excluir</th>
+                </tr>
+                
+                <div id="info">
+                    <tr>
+                        <td>Escolinha</td>
+                        <td>02/01/2000</td>
+                        <td>Falsidade</td>
+                        <td>Eu mesma</td>
+                        <td>
+                            <input type="checkbox" name="analisado" id="analisado">
+                        </td>
+                        <td>
+                            <form action="/">
+                                <button ><i class="icon-dash" data-feather="trash-2"></i></button>
+                            </form
+                        </td>
+                    </tr>
+                </div>
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include ('../partials/footer') %>
