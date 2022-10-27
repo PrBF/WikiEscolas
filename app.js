@@ -55,7 +55,7 @@ app.get('/login', (req, res) =>{
 
 app.get('/logout', (req, res) => {
     req.logout()
-    res.redirect('/show')
+    res.redirect('/index')
 })
 
 app.post('/login',
@@ -74,17 +74,17 @@ app.post ('/escola', async (req, res) =>{
     Escola.register(escola, req.body.password, (err) => {
       if (err){
         const errors = req.flash().err || []
-        res.render('escolas/login', {errors});
-          res.render('escolas/new')
+        res.render('escolas/new', {errors});
       } else {
           passport.authenticate("local")(req, res, () => {
               res.redirect('/escola')
           })
       }
     })
+ 
 })
 
-app.get('/:id', async (req, res) =>{
+app.get('/escola/:id', async (req, res) =>{
     const {id} = req.params;
     const escola = await Escola.findById(id);
     if (escola){
@@ -270,9 +270,27 @@ app.delete('/escola/:id/projeto/:id_projeto', isLoggedIn, async (req, res) => {
     res.redirect('/escola')
 })
 
-app.get('/administrador',  (req, res) => {
-    res.render('administrador/index')
+app.get('/administrador', async (req, res) => {
+    const data = await Escola.find({}, {denuncias: 1})
+    res.render('administrador/index', { data })
 });
+
+app.post('/escola/:id/denuncia', async (req, res) => {
+    const { id } = req.params;
+    const {denuncia} = req.body;
+    try{
+        if(denuncia == 'on'){
+            const escola = await Escola.findById(id);
+
+            await Escola.findByIdAndUpdate(id , {$push:{denuncias: {id_escola: id, nome_escola: escola.nome }}});
+            res.redirect('/index');    
+        } else  {
+            console.log('erro');
+        }
+    }catch(err){
+        console.log(err);
+    }
+})
 
 app.listen(3000, () =>{
     console.log("Rodando")
