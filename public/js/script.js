@@ -48,7 +48,7 @@ function map(){
         .then(function (data) {
             for (var i = 0; i < data.length; i++){
                 L.marker([data[i].lat_log[0], data[i].lat_log[1]]).addTo(map)
-                .bindPopup(`<a href="http://localhost:3000/${data[i].id}">${data[i].nome}</a>`)
+                .bindPopup(`<a href="http://localhost:3000/escola/${data[i].id}">${data[i].nome}</a>`)
             }
         
         })
