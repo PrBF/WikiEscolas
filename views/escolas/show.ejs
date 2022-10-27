@@ -29,14 +29,29 @@
           <a href="http://<%=escola.site%>" idtarget="_blank">
             <i class="redes-sociais" data-feather="monitor"></i>        
           </a>
-        <%}%>
-
+        <%}%>         
 
       </div>
+
       <div id="head-escola">
         <h1><%= escola.nome %></h1>
         <p><%= escola.modalidade %> | Esfera <%=escola.tipo_inst%></p>
-        
+        <button id="btnModal" class="btn-denuncia" onclick="document.getElementById('modal').style.display='block'">Essa escola não existe?</button>
+              <div id="modal" class="modal">
+                <div class="modal-content">
+                  <span class="close" onclick="document.getElementById('modal').style.display='none'">X</span>
+                  <h1>Denúncia de escola falsa</h1>
+                  <div class="content-denuncia">
+                    <form action="/escola/<%=escola._id%>/denuncia" method="POST">
+                      <input type="checkbox" name="denuncia" id="denuncia"> Declaro que essa escola não existe e seu cadastro deve ser analisado e removido.
+                      <br>
+                      <button>Enviar</button>
+                    </form>
+                    
+                  </div>
+                  
+                </div>
+              </div>
       </div>
       <div class="container-info">
         <div class="info-geral">
@@ -74,79 +89,86 @@
         </div>
        
       </div>
-      <div class="info-evento">
-        <div class="data-evento">
-          <% if (escola.eventos) {%> <% for (evento of escola.eventos) {%>
-          <h2>Eventos</h2>  
-          <ul>
-            <% const data = new Date(evento.data_inicio); const dataConvertida =
-            ("0" + data.getUTCDate()).slice(-2) + "/" + ("0" +
-            (data.getUTCMonth()+1)).slice(-2) + "/" + data.getUTCFullYear(); %>
-            <h3><%= dataConvertida %></h3>
-            <h3><%= evento.nome_evento%></h3>
-            <p class="descricao"><%= evento.descricao %></p>
-            <h4>Endereço:</h4>
-            <p><%= evento.endereco %></p>
-            <h4>Data de Encerramento:</h4>
-            <% const dataFim = new Date(evento.data_fim); const
-            dataFimConvertida = ("0" + data.getUTCDate()).slice(-2) + "/" + ("0"
-            + (data.getUTCMonth()+1)).slice(-2) + "/" + data.getUTCFullYear();
-            %>
-            <p><%= dataFimConvertida %></p>
-            <h4>Horário:</h4>
-            <p class="horario">
-              <%= evento.hora_inicio%> - <%= evento.hora_fim%>
-            </p>
-          </ul>
-          <%}%> <% } %>
-        </div>
-        <%}%>
-        <div class="data-projetos">
-          <% if (escola.projetos) { %> <% for (projeto of escola.projetos) {%>
-
-          <h2>Projetos</h2>
-          <ul>
-            <% const data = new Date(projeto.data_inicio); const dataConvertida
-            = ("0" + data.getUTCDate()).slice(-2) + "/" + ("0" +
-            (data.getUTCMonth()+1)).slice(-2) + "/" + data.getUTCFullYear(); %>
-            <h5><%= dataConvertida %></h5>
-            <h3><%=projeto.titulo %></h3>
-            <p class="descricao"><%= projeto.descricao %></p>
-            <h4>Coordenador:</h4>
-            <p><%= projeto.coordenador%></p>
-            <h4>Contato:</h4>
-            <p class="contato"><%= projeto.contato%></p>
-          </ul>
+      <div class="publish-info">
+          <% if (escola.eventos.lenght > 0) {%> 
+          <div class="data-evento">
+            <h2>Eventos</h2>  
+            <% for (evento of escola.eventos) {%>
+                <ul>
+                  <% const data = new Date(evento.data_inicio); const dataConvertida =
+                  ("0" + data.getUTCDate()).slice(-2) + "/" + ("0" +
+                  (data.getUTCMonth()+1)).slice(-2) + "/" + data.getUTCFullYear(); %>
+                  <h3><%= evento.nome_evento%></h3>
+                  <h3><%= dataConvertida %></h3>
+                  <div class="content-evento">
+                    <h4>Descrição</h4>
+                    <p class="descricao"><%= evento.descricao %></p>
+                    <h4>Endereço:</h4>
+                    <p><%= evento.endereco %></p>
+                    <h4>Data de Encerramento:</h4>
+                    <% const dataFim = new Date(evento.data_fim); const
+                    dataFimConvertida = ("0" + data.getUTCDate()).slice(-2) + "/" + ("0"
+                    + (data.getUTCMonth()+1)).slice(-2) + "/" + data.getUTCFullYear();
+                    %>
+                    <p><%= dataFimConvertida %></p>
+                    <h4>Horário:</h4>
+                    <p class="horario">
+                      <%= evento.hora_inicio%> - <%= evento.hora_fim%>
+                    </p>
+                  </div>
+                </ul>
+              
+            <%}%> 
+          </div>
           <%}%>
-        </div>
+        <%}%>
+        <% if (escola.projetos.lenght > 0) { %> 
+          <div class="data-projetos">
+            <h2>Projetos</h2>
+            <ul>
+              <% for (projeto of escola.projetos) {%>
+              <% const data = new Date(projeto.data_inicio); const dataConvertida
+              = ("0" + data.getUTCDate()).slice(-2) + "/" + ("0" +
+              (data.getUTCMonth()+1)).slice(-2) + "/" + data.getUTCFullYear(); %>
+              <h3><%=projeto.titulo %></h3>
+              <h5><%= dataConvertida %></h5>
+
+              <p class="descricao"><%= projeto.descricao %></p>
+              <h4>Coordenador:</h4>
+              <p><%= projeto.coordenador%></p>
+              <h4>Contato:</h4>
+              <p class="contato"><%= projeto.contato%></p>
+            </ul>
+          </div>
+        <%}%>
       </div>
+      
 
       <div class="noticias">
         <% if (escola.noticias) %>
-        <% for (noticia of escola.noticias) {%> <% if (noticia) {%>
-
-        <h2>Noticias</h2>
-        <div class="content-noticias">
-          <div class="noticia">
-            <h2><%=noticia.titulo%></h2>
-            <% const data = new Date(noticia.data_post); const dataConvertida =
-            ("0" + data.getUTCDate()).slice(-2) + "/" + ("0" +
-            (data.getUTCMonth()+1)).slice(-2) + "/" + data.getUTCFullYear(); %>
-            <h5><%= dataConvertida %></h5>
-            <p><%=noticia.descricao.substring(0, 100)%></p>
-            <button id="btnModal<%=noticia._id%>" onclick="document.getElementById('modal<%=noticia._id%>').style.display='block'">Veja mais</button>
-            <div id="modal<%=noticia._id%>" class="modal">
-              <div class="modal-content">
-                <span class="close" onclick="document.getElementById('modal<%=noticia._id%>').style.display='none'">X</span>
-                <h1><%=noticia.titulo%></h1>
-                <h2>><%= dataConvertida %></h2>
-                <p><%=noticia.descricao%></p>
+          <% for (noticia of escola.noticias) {%> <% if (noticia) {%>
+          <h2>Noticias</h2>
+          <div class="content-noticias">
+            <div class="noticia">
+              <h2><%=noticia.titulo%></h2>
+              <% const data = new Date(noticia.data_post); const dataConvertida =
+              ("0" + data.getUTCDate()).slice(-2) + "/" + ("0" +
+              (data.getUTCMonth()+1)).slice(-2) + "/" + data.getUTCFullYear(); %>
+              <h5><%= dataConvertida %></h5>
+              <p><%=noticia.descricao.substring(0, 100)%></p>
+              <button id="btnModal<%=noticia._id%>" onclick="document.getElementById('modal<%=noticia._id%>').style.display='block'">Veja mais</button>
+              <div id="modal<%=noticia._id%>" class="modal">
+                <div class="modal-content">
+                  <span class="close" onclick="document.getElementById('modal<%=noticia._id%>').style.display='none'">X</span>
+                  <h1><%=noticia.titulo%></h1>
+                  <h2><%= dataConvertida %></h2>
+                  <p><%=noticia.descricao%></p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <% } %> <% } %> <% } %>
       </div>
+      <% } %> <% } %> <% } %>
     </div>
   </div>
 </div>

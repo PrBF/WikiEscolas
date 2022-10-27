@@ -65,18 +65,15 @@
                     <a href="/escola/<%=escola._id%>/noticia/new"><button id="btn-add-school-data">Cadastrar nova notícia</button></a>
                 </div>
             </div>
-           <div class="item-publish">
             <% if (escola.eventos) {%>
-
+           <div class="item-publish">           
                 <div id="eventos">
+                    <% for (evento of escola.eventos) {%>
                     <div class="event">
-                        
-                            <% for (evento of escola.eventos) {%>
-                                <h2><%=`${evento.data_inicio.getDay()}/${evento.data_inicio.getMonth()}`%></h2>
-                                <h4><%=evento.nome_evento%></h4>
-                            <%}%>
-                       
+                        <h2><%=`${evento.data_inicio.getDay()}/${evento.data_inicio.getMonth()}`%></h2>
+                        <h4><%=evento.nome_evento%></h4>
                     </div>   
+                    <%}%>
                <a href="/escola/<%=escola._id%>/evento/new"><button id="btn-add-school-data">Cadastrar novo evento</button></a>     
                </div> 
                <%}%>
