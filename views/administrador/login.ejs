@@ -1,0 +1,34 @@
+<%- include ('../partials/head')%>
+<div id="login">
+  <div id="container-login">
+    <h1>Acesso Restrito</h1>
+    <form action="/login-adm" method="POST">
+      <div class="input-login">
+        <input type="text" name="username" id="username" required size="25" />
+        <label>Username</label>
+      </div>
+      <div class="input-login">
+        <input
+          type="password"
+          name="password"
+          id="password"
+          required
+          size="25"
+        />
+        <label>Senha</label>
+      </div>
+
+      <% for (let i = 0; i < errors.length; i++){ %>
+      <div class="error-message">
+        <p><%=errors[i] %></p>
+      </div>
+      <%}%>
+
+      <div class="btn-login">
+        <button type="submit">Acessar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<%- include ('../partials/footer')%>

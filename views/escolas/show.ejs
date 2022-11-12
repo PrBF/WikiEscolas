@@ -30,7 +30,6 @@
             <i class="redes-sociais" data-feather="monitor"></i>        
           </a>
         <%}%>         
-
       </div>
 
       <div id="head-escola">
@@ -47,9 +46,7 @@
                       <br>
                       <button>Enviar</button>
                     </form>
-                    
                   </div>
-                  
                 </div>
               </div>
       </div>
@@ -90,7 +87,7 @@
        
       </div>
       <div class="publish-info">
-          <% if (escola.eventos.lenght > 0) {%> 
+          <% if (escola.eventos.lenght != 0) {%> 
           <div class="data-evento">
             <h2>Eventos</h2>  
             <% for (evento of escola.eventos) {%>
@@ -117,12 +114,12 @@
                     </p>
                   </div>
                 </ul>
-              
             <%}%> 
           </div>
           <%}%>
         <%}%>
-        <% if (escola.projetos.lenght > 0) { %> 
+        <% if (escola.projetos.lenght != 0) { %>
+       
           <div class="data-projetos">
             <h2>Projetos</h2>
             <ul>
@@ -143,9 +140,8 @@
         <%}%>
       </div>
       
-
+      <% if (escola.noticias) %>
       <div class="noticias">
-        <% if (escola.noticias) %>
           <% for (noticia of escola.noticias) {%> <% if (noticia) {%>
           <h2>Noticias</h2>
           <div class="content-noticias">
