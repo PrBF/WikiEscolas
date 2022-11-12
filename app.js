@@ -295,6 +295,12 @@ app.post('/login-adm', async(req, res) => {
     }
 })
 
+app.delete('/administrador/remove/:idEscola', async(req, res) => {
+    const {idEscola} = req.params;
+    await Escola.findByIdAndDelete(idEscola);
+    res.redirect('/administrador')
+})
+
 app.post('/escola/:id/denuncia', async (req, res) => {
     const { id } = req.params;
     const {denuncia} = req.body;
