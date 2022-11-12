@@ -2,7 +2,6 @@
 <div id="adm">
     <div id="container">
         <h1>Novas denúncias</h1>
-       
         <div class="content">
             <table>
                 <tr>
@@ -24,19 +23,21 @@
                        
                         <td><input type="checkbox" name="analisado" id="analisado"></td>
                         <td>
-                            <form action="/">
+                            <form action="/administrador/remove/<%=info.id_escola%>?_method=DELETE" method="post">
                                 <button ><i class="icon-dash" data-feather="trash-2"></i></button>
                             </form>
                         </td>
                         <br> 
-                        
-                    </tr>
-                    <%}%>
+                            <%}%>
                         <%}%>
+                    </tr>
                 </div>
+                <%}%>
+
             </table>
+            
         </div>
-        <%}%>
+        
     </div>
 </div>
 
