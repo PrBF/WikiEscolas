@@ -3,11 +3,14 @@ const app = express()
 const path = require('path')
 const methodOverride = require('method-override')
 const Escola = require('./models/escola');
+const adm = require('./models/adm');
 const session = require('express-session');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const flash = require('connect-flash')
 require('./config/db/connection');
+require('dotenv').config();
+const bcrypt = require('bcryptjs');
 
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'));
@@ -274,6 +277,23 @@ app.get('/administrador', async (req, res) => {
     const data = await Escola.find({}, {denuncias: 1})
     res.render('administrador/index', { data })
 });
+
+app.get('/login-adm', async(req, res) => {
+    const errors = req.flash().error || []
+    res.render('administrador/login', {errors});
+})
+
+app.post('/login-adm', async(req, res) => {
+    const {password} = req.body;
+    const userWiki =  await adm.findOne({});
+    try{
+        const pass = await bcrypt.compare(password, userWiki.hash);
+        if(userWiki.user == process.env.WIKIUSER && pass ) res.redirect('/administrador')
+        else throw Error;
+    }catch(err){
+        res.redirect('/login-adm')
+    }
+})
 
 app.post('/escola/:id/denuncia', async (req, res) => {
     const { id } = req.params;
