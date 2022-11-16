@@ -1,4 +1,4 @@
-const Escola = require('./../models/escola')
+const Escola = require('./../models/escola');
 
 class IndexController {
     static home(req, res) {
@@ -15,13 +15,6 @@ class IndexController {
     static newSchool(req, res){
         res.render('escolas/new');
     }
-
-    static async getByName(req, res) {
-        let{ nome }  = req.body;
-        const resultados = await Escola.find({ 'nome' : { '$regex' : nome} });
-        res.render('show', {resultados})
-    }
-
-  }
+}
   
 module.exports = IndexController;
