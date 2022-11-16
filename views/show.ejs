@@ -7,13 +7,14 @@
             <a href="/login"> <i data-feather="user"></i></a>
         </div>
         <div id="busca">
-            <form action="/search" method="POST">
+            
                 <h2>Busque por uma escola: </h2>
-                <div class="search-field">
-                    <input type="text" placeholder="Nome da escola" size="25"required autofocus name="nome" id="nome">
-                    <button type="submit"><i id="search-btn" data-feather="search"></i></button>
+                
+                <div id="formsearch" >
+                    <input id="textsearch" type="text" value="" />
                 </div>
-            </form>
+                
+       
         </div>
         <div class="rodape">
             <footer>
@@ -29,6 +30,8 @@
     <%}%>
     <div class="content"></div>
         <div id="map"></div>
+        <div id="findbox"></div>
+
     </div>
 
 </div>
