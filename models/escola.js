@@ -167,21 +167,16 @@ const escolaSchema = new mongoose.Schema({
         type: String
     },
     denuncias: [{
-        autor: {
-            type: String, 
+        id_escola: {
+            type: String
         },
         nome_escola: {
-            type: String,
-            required: true
-        },
-        motivo: {
-            type: String,
-            required: true
+            type: String
         },
         data_denuncia: {
             type: Date,
             default: Date.now()
-        }
+        },
     }]
 
 })
