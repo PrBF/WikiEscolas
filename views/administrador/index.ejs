@@ -23,7 +23,7 @@
                        
                         <td><input type="checkbox" name="analisado" id="analisado"></td>
                         <td>
-                            <form action="/administrador/remove/<%=info.id_escola%>?_method=DELETE" method="post">
+                            <form action="/administrador/remove/<%=info.id_escola%>?_method=DELETE" method="post" onClick="return confirm('Você tem certeza que deseja excluir essa escola?')">
                                 <button ><i class="icon-dash" data-feather="trash-2"></i></button>
                             </form>
                         </td>
