@@ -52,7 +52,8 @@ app.get('/index', (req, res) => {
 });
 
 app.get('/login', (req, res) =>{
-    const errors = req.flash().error || []
+    let errors = req.flash().error || []
+    if (errors.length > 0) errors = "Usuário ou senha incorretos"
     res.render('escolas/login', {errors});
 })
 
