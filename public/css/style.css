@@ -469,11 +469,12 @@ li span {
 }
 
 #container-form {
-  height: 100vh;
+  height: 80vh;
   background-color: var(--cor_auxiliar);
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 #edit-form-school {
@@ -492,6 +493,7 @@ li span {
   width: 80%;
   padding: 30px;
   border-radius: 5px;
+  overflow: scroll;
 }
 
 .title-form {
@@ -1036,3 +1038,22 @@ textarea:focus {
   border: none;
 }
 
+@media (max-width: 450px) {
+  #container-login {
+    width: 70%;
+    height: 70%;
+    font-size: 1.2rem;
+  }
+
+  .btn-login button{
+    font-size: 1.2rem;
+    padding: 3%;
+    margin-top: 15%;
+  }
+
+  .signup{
+    margin-top: 30%;
+    font-size: 1rem;
+  }
+
+}
