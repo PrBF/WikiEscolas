@@ -308,8 +308,7 @@ app.post('/escola/:id/denuncia', async (req, res) => {
     try{
         if(denuncia == 'on'){
             const escola = await Escola.findById(id);
-
-            await Escola.findByIdAndUpdate(id , {$push:{denuncias: {id_escola: id, nome_escola: escola.nome }}});
+            await Escola.findByIdAndUpdate(id , {$push:{denuncias: {id_escola: escola._id, nome_escola: escola.nome }}});
             res.redirect('/index');    
         } else  {
             console.log('erro');
