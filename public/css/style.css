@@ -986,13 +986,6 @@ textarea:focus {
   background-color: var(--background_padrao);
   padding: 3%;
 }
-#adm .content table {
-  width: 98.8%;
-  text-align: center;
-  background-color: white;
-  height:50vh;
-  margin-top: 2%;
-}
 
 .content table td {
   padding: 3px;
@@ -1024,3 +1017,22 @@ textarea:focus {
   margin-left: 45%;
   margin-bottom: 20%;
 }
+
+#adm-table{
+  padding: 3%;
+  background-color: white;
+  width: 98.8%;
+  text-align: center;
+  height:50%;
+  margin-top: 2%;
+}
+
+#adm-table tr {
+  margin-top: 2%;
+}
+
+#adm-table td form button{
+  cursor: pointer;
+  border: none;
+}
+

@@ -4,43 +4,38 @@
         <h1>Novas denúncias</h1>
         <div class="content">
             <% if (data.length == 0) {%>
-                <h4 id="denuncia-message"">Nada para ver por aqui :)</h4>
-            <%} else {%>
-            <table>
-                <tr>
-                    <th>ID da Escola</th>
-                    <th>Nome da Escola</th>
-                    <th>Data da denúncia</th>
-                    <th>Analisado</th>
-                    <th>Excluir</th>
-                </tr>
-                
-                <div id="info">
+                <h4 id="denuncia-message">Nada para ver por aqui :)</h4>
+            <%} else  {%>
+                <table id="adm-table">
                     <tr>
-                        <% for(denuncia of data) {%>
-                            <% for (info of denuncia.denuncias) {%>
-                                <td><%=info.id_escola%></td>
-                                
-                                <td><%=info.nome_escola%></td>
-                                <td><%=info.data_denuncia%></td>
-                       
-                        <td><input type="checkbox" name="analisado" id="analisado"></td>
-                        <td>
-                            <form action="/administrador/remove/<%=info.id_escola%>?_method=DELETE" method="post" onClick="return confirm('Você tem certeza que deseja excluir essa escola?')">
-                                <button ><i class="icon-dash" data-feather="trash-2"></i></button>
-                            </form>
-                        </td>
-                        <br> 
+                        <th>ID da Escola</th>
+                        <th>Nome da Escola</th>
+                        <th>Data da denúncia</th>
+                        <th>Analisado</th>
+                        <th>Excluir</th>
+                    </tr>
+                
+                    <div id="info">
+                        <% for (denuncia of data){%>
+                            <% for (field of denuncia.denuncias) {%>
+                            <tr> 
+                                <td><%=field.id_escola%></td>
+                                <td><%=field.nome_escola%></td>
+                                <td><%=field.data_denuncia%></td>
+                                <td><input type="checkbox" name="analisado" id="analisado"></td>  
+                                <td>
+                                    <form action="/administrador/remove/<%=field.id_escola%>?_method=DELETE" method="post" onClick="return confirm('Você tem certeza que deseja excluir essa escola?')">
+                                        <button ><i  data-feather="trash-2"></i></button>
+                                    </form>
+                                </td> 
+                            </tr>
                             <%}%>
                         <%}%>
-                    </tr>
-                </div>
-                <%}%>
-
-            </table>
-            
+                        
+                    </div>
+                </table>
+            <%}%>
         </div>
-        
     </div>
 </div>
 
