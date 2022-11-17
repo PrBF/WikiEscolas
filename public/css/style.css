@@ -308,6 +308,17 @@ h3 {
   width: 55%;
 }
 
+.info-geral a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+.info-geral a:hover {
+  text-decoration: underline;
+  color: #053f42;
+}
+
 .info-geral li {
   list-style: none;
   line-height: 40px;
@@ -1128,6 +1139,10 @@ textarea:focus {
     box-shadow: none;
     text-decoration: underline;
     align-items: center;
+  }
+
+  .social-media svg{
+    margin-bottom: 3%;
   }
 
 }
