@@ -1056,4 +1056,22 @@ textarea:focus {
     font-size: 1rem;
   }
 
+  .container-info{
+    width: 100vw;
+  }
+  .btn-denuncia{
+    float: none;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    background: var(--background_padrao);
+    border: none;
+    box-shadow: none;
+    color: var(--cor_auxiliar);
+  }
+
+  .modal-content{
+    width: 70%;
+    height: 60%;
+    margin-left: 18%;
+  }
 }
