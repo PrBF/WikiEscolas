@@ -1037,7 +1037,7 @@ textarea:focus {
   border: none;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   #container-login {
     width: 70%;
     height: 70%;
@@ -1096,12 +1096,13 @@ textarea:focus {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    width: 100%;
   }
   
   #map{
     width: 100%;
     margin-left: 0%;
-    margin-top: 32%;
+    margin-top: 20%;
     position: fixed;
     top: 0;
     bottom: 0;
