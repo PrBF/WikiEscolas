@@ -3,6 +3,9 @@
     <div id="container">
         <h1>Novas denúncias</h1>
         <div class="content">
+            <% if (data.length == 0) {%>
+                <h4 id="denuncia-message"">Nada para ver por aqui :)</h4>
+            <%} else {%>
             <table>
                 <tr>
                     <th>ID da Escola</th>
@@ -11,7 +14,7 @@
                     <th>Analisado</th>
                     <th>Excluir</th>
                 </tr>
-                <% if (data) {%>
+                
                 <div id="info">
                     <tr>
                         <% for(denuncia of data) {%>
