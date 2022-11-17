@@ -1018,3 +1018,9 @@ textarea:focus {
 }
 
 
+#denuncia-message{
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 20%;
+  margin-left: 45%;
+  margin-bottom: 20%;
+}
