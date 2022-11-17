@@ -70,11 +70,7 @@ const escolaSchema = new mongoose.Schema({
     tipo_inst: {
         type: String, 
         required: true
-    },
-    foto: {
-        type: String,
-    }, 
-   
+    },   
     horario_funcMin: {
         type: String, 
     
