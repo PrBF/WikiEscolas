@@ -47,8 +47,7 @@ const isLoggedIn = (req, res, next) =>{
 }
 
 app.get('/index', (req, res) => {
-    const resultados = undefined;
-    res.render('show', {resultados})
+    res.render('show')
 });
 
 app.get('/login', (req, res) =>{
