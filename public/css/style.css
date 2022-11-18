@@ -1157,4 +1157,12 @@ textarea:focus {
     margin-bottom: 3%;
   }
 
+  .publish-info {
+    flex-direction: column;
+    height: 50vh;
+  }
+
+  .data-projetos {
+    margin-top: 10%;
+  }
 }
