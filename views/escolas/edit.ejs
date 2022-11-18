@@ -55,7 +55,7 @@
                     <div class="input-form">
                         <label for="modalidade"><span class="details">Modalidade:</span>
                             <select name="modalidade" class="modalidade">
-                                <option disabled selected></option>
+                                <option><%=escola.modalidade%></option>
                                 <option>Regular</option>
                                 <option>EJA</option>
                                 <option>PROEJA</option>
@@ -69,13 +69,8 @@
               
                     <div class="input-form">
                         <label for="horario_func"><span class="details ">Horário de funcionamento:</span>
-                            <input type="time" name="horario_funcMin" id="horario_funcMin"> até <input type="time"
-                                name="horario_funcMax" id="horario_funcMax">
-                        </label>
-                    </div>
-                    <div class="input-form">
-                        <label for="foto"><span class="details">Foto:</span>
-                            <input type="file" name="foto" id="foto">
+                            <input type="time" name="horario_funcMin" id="horario_funcMin" required> até <input type="time"
+                                name="horario_funcMax" id="horario_funcMax" required>
                         </label>
                     </div>
                     <div class="input-form">
@@ -126,14 +121,14 @@
                     </div>
                     <div class="input-form">
                         <label for="password"><span class="details">Senha:</span>
-                            <input type="password" name="password" id="password" placeholder="Informe sua senha">
+                            <input type="password" name="password" id="password" placeholder="Informe sua senha" required>
                         </label>
                     </div>
                 </div>
                 <div class="input-type">
-                    <input type="radio" class="tipo_inst-radio"name="tipo_inst" value="Federal"><label for="federal">Federal</label></input>
-                    <input type="radio" class="tipo_inst-radio" name="tipo_inst" value="Estadual"><label for="estadual"> Estadual</label></input>
-                    <input type="radio" class="tipo_inst-radio" name="tipo_inst" value="Municipal"><label for="municipal"> Municipal</label></input>
+                    <input type="radio" required class="tipo_inst-radio"name="tipo_inst" value="Federal"><label for="federal">Federal</label></input>
+                    <input type="radio" required class="tipo_inst-radio" name="tipo_inst" value="Estadual"><label for="estadual"> Estadual</label></input>
+                    <input type="radio" required class="tipo_inst-radio" name="tipo_inst" value="Municipal"><label for="municipal"> Municipal</label></input>
                 </div>
                 <button class="btn-submit-new" type="submit" id="btn-submit-edit">Salvar alterações</button>
             </div>
