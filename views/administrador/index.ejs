@@ -39,6 +39,29 @@
                 </table>
             <%}%>
         </div>
+        <% if (denuncias_antigas){%>
+            <table id="adm-table">
+                <tr>
+                    <th>Nome da Escola</th>
+                    <th>Data da denúncia</th>
+                    <th>Ação</th>
+                </tr>
+                <div id="info">
+                    <% for (denuncia of denuncias_antigas){%>
+                        <% for (field of denuncia.denuncias) {%>
+                        <tr> 
+                            <td><%=field.nome_escola%></td>
+                            <td><%=field.data_denuncia%></td>
+                            <td><%=field.acao%></td>
+                            </td> 
+                        </tr>
+                        <%}%>
+                    <%}%>
+                    
+                </div>
+            </table>
+        <%}%>
+        
     </div>
 </div>
 
