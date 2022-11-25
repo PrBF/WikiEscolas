@@ -297,10 +297,23 @@ app.post('/login-adm', async(req, res) => {
 
 app.delete('/administrador/remove/:idEscola', async(req, res) => {
     const {idEscola} = req.params;
-    await Escola.findByIdAndDelete(idEscola);
+    const escola = await Escola.findByIdAndDelete(idEscola);
+    await adm.findByIdAndUpdate("636ee22559b17018758b49db", {$push: {denuncias: {nome_escola: escola.nome, acao: "Deferida"}}})
     res.redirect('/administrador')
 })
 
+app.delete('/administrador/analisa/:id_escola/:idDenuncia', async(req, res) => {
+   const {analisado} = req.body;
+    if(analisado === "on"){
+        const {id_escola, idDenuncia} = req.params;
+        const escola = await Escola.findById(id_escola)
+        await adm.findByIdAndUpdate("636ee22559b17018758b49db", {$push: {denuncias: {nome_escola: escola.nome, acao: "Indeferida"}}})
+
+        await Escola.findByIdAndUpdate(id_escola, {$pull: {denuncias: {_id: idDenuncia}}})
+    }
+    
+    res.redirect('/administrador');
+})
 app.post('/escola/:id/denuncia', async (req, res) => {
     const { id } = req.params;
     const {denuncia} = req.body;

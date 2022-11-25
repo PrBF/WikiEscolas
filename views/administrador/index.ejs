@@ -22,7 +22,10 @@
                                 <td><%=field.id_escola%></td>
                                 <td><%=field.nome_escola%></td>
                                 <td><%=field.data_denuncia%></td>
-                                <td><input type="checkbox" name="analisado" id="analisado"></td>  
+                                <form action="/administrador/analisa/<%=field.id_escola%>/<%=field._id%>?_method=DELETE" method="POST">
+
+                                    <td><input type="checkbox" name="analisado" id="analisado" onclick="submit()"></td>  
+                                </form>
                                 <td>
                                     <form action="/administrador/remove/<%=field.id_escola%>?_method=DELETE" method="post" onClick="return confirm('Você tem certeza que deseja excluir essa escola?')">
                                         <button ><i  data-feather="trash-2"></i></button>

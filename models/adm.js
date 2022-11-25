@@ -10,7 +10,22 @@ var adm = mongoose.model("adm", new Schema({
     hash: {
         type: String, 
         required: true
-    }
+    },
+    denuncias: [{
+        id_escola: {
+            type: String
+        },
+        nome_escola: {
+            type: String
+        },
+        data_denuncia: {
+            type: Date,
+            default: Date.now()
+        },
+        acao: {
+            type: String
+        }
+    }]
 }), "adm"); 
 
 module.exports = adm

@@ -18,9 +18,9 @@
         <label>Senha</label>
       </div>
 
-      <% for (let i = 0; i < errors.length; i++){ %>
+      <% if(errors.length != 0){ %>
       <div class="error-message">
-        <p><%=errors[i] %></p>
+        <p><%=errors%></p>
       </div>
       <%}%>
 
