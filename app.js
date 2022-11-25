@@ -3,6 +3,7 @@ const app = express()
 const path = require('path')
 const methodOverride = require('method-override')
 const Escola = require('./models/escola');
+const Administrador = require('./models/adm');
 const adm = require('./models/adm');
 const session = require('express-session');
 const passport = require('passport');
@@ -275,7 +276,8 @@ app.delete('/escola/:id/projeto/:id_projeto', isLoggedIn, async (req, res) => {
 
 app.get('/administrador', async (req, res) => {
     const data = await Escola.find({}, {denuncias: 1})
-    res.render('administrador/index', { data })
+    const denuncias_antigas = await Administrador.find({});
+    res.render('administrador/index', { data,denuncias_antigas})
 });
 
 app.get('/login-adm', async(req, res) => {
@@ -298,7 +300,7 @@ app.post('/login-adm', async(req, res) => {
 app.delete('/administrador/remove/:idEscola', async(req, res) => {
     const {idEscola} = req.params;
     const escola = await Escola.findByIdAndDelete(idEscola);
-    await adm.findByIdAndUpdate("636ee22559b17018758b49db", {$push: {denuncias: {nome_escola: escola.nome, acao: "Deferida"}}})
+    await adm.findByIdAndUpdate("636ee22559b17018758b49db", {$push: {denuncias: {nome_escola: escola.nome, acao: "Escola Excluída"}}})
     res.redirect('/administrador')
 })
 
@@ -307,7 +309,7 @@ app.delete('/administrador/analisa/:id_escola/:idDenuncia', async(req, res) => {
     if(analisado === "on"){
         const {id_escola, idDenuncia} = req.params;
         const escola = await Escola.findById(id_escola)
-        await adm.findByIdAndUpdate("636ee22559b17018758b49db", {$push: {denuncias: {nome_escola: escola.nome, acao: "Indeferida"}}})
+        await adm.findByIdAndUpdate("636ee22559b17018758b49db", {$push: {denuncias: {nome_escola: escola.nome, acao: "Denúncia não atendida"}}})
 
         await Escola.findByIdAndUpdate(id_escola, {$pull: {denuncias: {_id: idDenuncia}}})
     }
