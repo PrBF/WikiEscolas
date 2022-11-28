@@ -34,14 +34,14 @@ function closeModal(){
 
 async function map(){
 
-    fetch('http://dev.osorio.ifrs.edu.br:3000/api')
+    fetch('http://127.0.0.1:3000/api')
     .then(function(response) {
         return response.json();
     })
     .then(function (data) {
         for (var i = 0; i < data.length; i++){
             L.marker([data[i].lat_log[0], data[i].lat_log[1]]).addTo(map)
-            .bindPopup(`<a href="http://dev.osorio.ifrs.edu.br:3000/escola/${data[i].id}">${data[i].nome}</a>`)
+            .bindPopup(`<a href="http://127.0.0.1:3000/escola/${data[i].id}">${data[i].nome}</a>`)
         }
         var markersLayer = new L.LayerGroup();	
 	
