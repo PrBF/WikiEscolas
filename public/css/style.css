@@ -502,6 +502,7 @@ li span {
 #edit-form-school {
   width: 100%;
   background: white;
+  margin-top: 0;
 }
 
 #btn-submit-edit {
@@ -1222,7 +1223,7 @@ textarea:focus {
     margin-top: 5%;
     flex-direction: row;
   }
-  
+
   .inicializacao #terms-buttons button {
    
     background-color: var(--background_padrao);    
