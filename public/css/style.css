@@ -505,6 +505,14 @@ li span {
   margin-top: 0;
 }
 
+.content-form #edit-form-school {
+  background-color: var(--background_padrao);
+  width: 80%;
+  padding: 30px;
+  border-radius: 5px;
+  margin-bottom: 15.5vh;
+}
+
 #btn-submit-edit {
   margin-top: 4%;
   width: 20%;
