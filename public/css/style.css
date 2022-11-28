@@ -1170,7 +1170,7 @@ textarea:focus {
   .incializacao {
     align-items: center;
     float: right;
-    margin-top: 30vh;
+    margin-top: 22vh;
     margin-right: 40px;
     font-family: var(--fonte_titulos);
     width: 480px;
@@ -1193,7 +1193,7 @@ textarea:focus {
     -moz-box-shadow: 10px 11px 13px -8px rgba(77,76,77,1);
     box-shadow: 10px 11px 13px -8px rgb(77 76 77);
    }
-   
+
   .inicializacao h1 {
     color: var(--cor_auxiliar);
     font-size: 60px;
@@ -1209,5 +1209,24 @@ textarea:focus {
     margin-bottom: 20px;
     margin-left: 35%;
     font-weight: lighter;
+  }
+
+  .inicializacao #terms-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background_padrao);
+    list-style: none;
+    width: 60%;
+    margin-left: 38%;
+    margin-top: 5%;
+    flex-direction: row;
+  }
+  
+  .inicializacao #terms-buttons button {
+   
+    background-color: var(--background_padrao);    
+    box-shadow: none;
+    color: var(--cor_auxiliar);
   }
 }
