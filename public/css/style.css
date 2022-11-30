@@ -1072,7 +1072,7 @@ textarea:focus {
 
 @media (max-width: 600px) {
   #container-login {
-    width: 55%;
+    width: 60%;
     height: 55%;
     font-size: 1rem;
   }
