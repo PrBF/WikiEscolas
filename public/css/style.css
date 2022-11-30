@@ -1071,6 +1071,10 @@ textarea:focus {
 }
 
 @media (max-width: 600px) {
+
+  .publish-info {
+    width: 100%;
+  }
   #container-login {
     width: 60%;
     height: 55%;
