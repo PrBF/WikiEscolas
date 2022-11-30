@@ -1077,8 +1077,9 @@ textarea:focus {
   }
   
   .data-projeto {
-    height: 50%;
+    height: 40vh;
   }
+  
   #container-login {
     width: 60%;
     height: 55%;
