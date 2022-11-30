@@ -34,14 +34,14 @@ function closeModal(){
 
 async function map(){
 
-    fetch('http://wikiescolas.osorio.ifrs.edu.br:3000/api')
+    fetch('https://wikiescolas.osorio.ifrs.edu.br/api')
     .then(function(response) {
         return response.json();
     })
     .then(function (data) {
         for (var i = 0; i < data.length; i++){
             L.marker([data[i].lat_log[0], data[i].lat_log[1]]).addTo(map)
-            .bindPopup(`<a href="http://wikiescolas.osorio.ifrs.edu.br:3000/escola/${data[i].id}">${data[i].nome}</a>`)
+            .bindPopup(`<a href="https://wikiescolas.osorio.ifrs.edu.br/escola/${data[i].id}">${data[i].nome}</a>`)
         }
         var markersLayer = new L.LayerGroup();	
 	
@@ -60,7 +60,7 @@ async function map(){
 	    	var nome = data[i].nome,	
 	    		lat_log = data[i].lat_log,		
 	    		marker = new L.Marker(new L.latLng(lat_log), {title: nome} );
-	    	marker.bindPopup(`<a href="http://dev.osorio.ifrs.edu.br:3000/escola/${data[i].id}">${data[i].nome}</a>`)
+	    	marker.bindPopup(`<a href="https://wikiescolas.osorio.ifrs.edu.br/escola/${data[i].id}">${data[i].nome}</a>`)
 	    	markersLayer.addLayer(marker);
 	    }
 
