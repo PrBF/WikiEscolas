@@ -1072,8 +1072,12 @@ textarea:focus {
 
 @media (max-width: 600px) {
 
-  .publish-info {
+  .data-evento {
     width: 100%;
+  }
+  
+  .data-projeto {
+    height: 50%;
   }
   #container-login {
     width: 60%;
