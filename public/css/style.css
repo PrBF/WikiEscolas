@@ -1073,19 +1073,19 @@ textarea:focus {
 @media (max-width: 600px) {
   #container-login {
     width: 50%;
-    height: 50%;
+    height: 55%;
     font-size: 1rem;
   }
 
   .btn-login button{
-    font-size: 1.0rem;
+    font-size: 0,7rem;
     padding: 3%;
     margin-top: 15%;
   }
 
   .signup{
     margin-top: 30%;
-    font-size: 1rem;
+    font-size: 0.6rem;
   }
 
   .container-info{
