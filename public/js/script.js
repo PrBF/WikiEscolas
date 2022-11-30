@@ -1,5 +1,3 @@
-feather.replace();
-
 var modalContent = document.getElementById('modal')
 var select = document.getElementById('data_select')
 
