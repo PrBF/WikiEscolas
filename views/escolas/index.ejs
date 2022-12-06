@@ -70,13 +70,24 @@
                 <div id="eventos">
                     <% for (evento of escola.eventos) {%>
                     <div class="event">
-                        <h2><%=`${evento.data_inicio.getDay()}/${evento.data_inicio.getMonth()}`%></h2>
-                        <h4><%=evento.nome_evento%></h4>
+                        <div id="info-event">
+                            <h4><%=evento.nome_evento%></h4>
+                            <h5><%=`${evento.data_inicio.getDay()}/${evento.data_inicio.getMonth()}`%></h5>
+                            <p><%=evento.descricao.substring(0, 100)%></p>
+                            <button id="btnModal<%=evento._id%>" onclick="document.getElementById('modal<%=evento._id%>').style.display='block'">Veja mais</button>
+                            <div id="modal<%=evento._id%>" class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('modal<%=evento._id%>').style.display='none'">X</span>
+                                    <h1><%=evento.nome_evento%></h1>
+                                    <p><%=evento.descricao%></p>
+                                </div>
+                            </div>
+                        </div>
                         <div class="icons">
-                            <form action="/escola/<%=escola._id%>/noticia/<%=noticia._id%>?_method=DELETE" method="post">
-                                <button id="button-border"><i class="icon-notice-settings"data-feather="trash-2"></i></button>
+                            <form action="/escola/<%=escola._id%>/evento/<%=evento._id%>?_method=DELETE" method="post">
+                                <button><i class="icon-notice-settings"data-feather="trash-2"></i></button>
                             </form>
-                            <a href="/escola/<%=escola._id%>/noticia/<%=noticia._id%>/edit"><i class="icon-notice-settings"data-feather="edit-2"></i></a>
+                            <a href="/escola/<%=escola._id%>/evento/<%=evento._id%>/edit"><i class="icon-notice-settings"data-feather="edit-2"></i></a>
                         </div>
                     </div>   
                     <%}%>
@@ -94,7 +105,7 @@
                                     <h2><%=projeto.titulo%></h2>
                                     <div class="icons">
                                         <form action="/escola/<%=escola._id%>/projeto/<%=projeto._id%>?_method=DELETE" method="post">
-                                            <button id="button-border"><i class="icon-notice-settings"data-feather="trash-2"></i></button>
+                                            <button><i class="icon-notice-settings"data-feather="trash-2"></i></button>
                                         </form>
                                         <a href="/escola/<%=escola._id%>/projeto/<%=projeto._id%>/edit"><i class="icon-notice-settings"data-feather="edit-2"></i></a>
                                     </div>
