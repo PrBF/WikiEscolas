@@ -72,6 +72,12 @@
                     <div class="event">
                         <h2><%=`${evento.data_inicio.getDay()}/${evento.data_inicio.getMonth()}`%></h2>
                         <h4><%=evento.nome_evento%></h4>
+                        <div class="icons">
+                            <form action="/escola/<%=escola._id%>/noticia/<%=noticia._id%>?_method=DELETE" method="post">
+                                <button id="button-border"><i class="icon-notice-settings"data-feather="trash-2"></i></button>
+                            </form>
+                            <a href="/escola/<%=escola._id%>/noticia/<%=noticia._id%>/edit"><i class="icon-notice-settings"data-feather="edit-2"></i></a>
+                        </div>
                     </div>   
                     <%}%>
                <a href="/escola/<%=escola._id%>/evento/new"><button id="btn-add-school-data">Cadastrar novo evento</button></a>     
@@ -88,7 +94,7 @@
                                     <h2><%=projeto.titulo%></h2>
                                     <div class="icons">
                                         <form action="/escola/<%=escola._id%>/projeto/<%=projeto._id%>?_method=DELETE" method="post">
-                                            <button><i class="icon-notice-settings"data-feather="trash-2"></i></button>
+                                            <button id="button-border"><i class="icon-notice-settings"data-feather="trash-2"></i></button>
                                         </form>
                                         <a href="/escola/<%=escola._id%>/projeto/<%=projeto._id%>/edit"><i class="icon-notice-settings"data-feather="edit-2"></i></a>
                                     </div>

@@ -885,8 +885,13 @@ textarea:focus {
   right: 80px;
 }
 
+#button-border {
+  border: none;
+}
+
 .icon-notice-settings {
   color: var(--cor_auxiliar);
+  border: none;
 }
 
 #fields-projects {
