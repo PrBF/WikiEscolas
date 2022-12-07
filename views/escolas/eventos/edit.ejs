@@ -1,21 +1,23 @@
 <%- include ('../../partials/head')%>
 <%- include ('../../partials/menu')%>
-
+<div id="container-publish-school">
     <form action="/escola/<%=escola._id%>/evento/<%=escola.eventos._id%>?_method=PUT" method="POST">
-        <<div id="new-event-form">
+    <div id="content-publish-school">
+      <h1>Edite seu evento!</h1>
+        <div id="new-event-form">
             <div class="field-event-form">
                 <label for="nome_evento">Nome do evento
-                    <input type="text" name="nome_evento" id="nome_evento" placeholder="Nome do seu evento" value=<%=escola.eventos.nome_evento%>>
+                    <input type="text" name="nome_evento" id="nome_evento" placeholder="Nome do seu evento" value="<%=evento.nome_evento%>">
                 </label>
             </div>
             <div class="field-event-form">
                 <label for="descricao">Descrição:
-                    <input type="text" name="descricao" id="descricao" placeholder="Descrição do seu evento" value=<%=escola.eventos.descricao%>>
+                    <input type="text" name="descricao" id="descricao" placeholder="Descrição do seu evento" value="<%=evento.descricao%>">
                 </label>
             </div>
             <div class="field-event-form">
                 <label for="endereco">Endereço:
-                  <input type="text" name="endereco" id="endereco" placeholder="Seu endereço" value=<%=escola.eventos.endereco%>>
+                  <input type="text" name="endereco" id="endereco" placeholder="Seu endereço" value="<%=evento.endereco%>">
                 </label>
             </div>
             <div class="field-event-form">
@@ -40,8 +42,9 @@
             </div>
         
         </div>
-        <button>Editar evento</button>
-    </form>
+        <button>Publicar evento</button> 
+  </form>
 
 </div>
+
 <%- include ('../../partials/footer')%>
