@@ -23,8 +23,8 @@
             <div class="field-event-form">
                 <label for="data_inicio">Data de início do evento:
                     <% 
-                       const data = new Date(evento.data_inicio);
-                       const dataConvertida = data.getUTCFullYear() + "-" + ("0" + (data.getUTCMonth()+1)).slice(-2) + "-" + ("0" + data.getUTCDate()).slice(-2);
+                       const dataInicio = new Date(evento.data_inicio);
+                       const dataConvertida = dataInicio.getUTCFullYear() + "-" + ("0" + (dataInicio.getUTCMonth()+1)).slice(-2) + "-" + ("0" + dataInicio.getUTCDate()).slice(-2);
                     %>
                     <input type="date" name="data_inicio" id="data_inicio" value=<%=dataConvertida%>>
                 </label>
@@ -32,8 +32,8 @@
             <div class="field-event-form">
                 <label for="data_fim">Data do fim do evento:
                     <% 
-                       const data = new Date(evento.data_inicio);
-                       const dataConvertida = data.getUTCFullYear() + "-" + ("0" + (data.getUTCMonth()+1)).slice(-2) + "-" + ("0" + data.getUTCDate()).slice(-2);
+                       const dataFim = new Date(evento.data_inicio);
+                       const dataConvertida = dataFim.getUTCFullYear() + "-" + ("0" + (dataFim.getUTCMonth()+1)).slice(-2) + "-" + ("0" + dataFim.getUTCDate()).slice(-2);
                     %>
                     <input type="date" name="data_fim" id="data_fim" value=<%=dataConvertida%>>
                 </label>
