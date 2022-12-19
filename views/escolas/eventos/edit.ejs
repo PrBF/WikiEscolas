@@ -33,9 +33,9 @@
                 <label for="data_fim">Data do fim do evento:
                     <% 
                        const dataFim = new Date(evento.data_inicio);
-                       const dataConvertida = dataFim.getUTCFullYear() + "-" + ("0" + (dataFim.getUTCMonth()+1)).slice(-2) + "-" + ("0" + dataFim.getUTCDate()).slice(-2);
+                       const dataConvertidaFim = dataFim.getUTCFullYear() + "-" + ("0" + (dataFim.getUTCMonth()+1)).slice(-2) + "-" + ("0" + dataFim.getUTCDate()).slice(-2);
                     %>
-                    <input type="date" name="data_fim" id="data_fim" value=<%=dataConvertida%>>
+                    <input type="date" name="data_fim" id="data_fim" value=<%=dataConvertidaFim%>>
                 </label>
             </div>
             <div class="field-event-form">
