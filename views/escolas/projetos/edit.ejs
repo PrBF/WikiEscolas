@@ -19,7 +19,7 @@
                     </label>
                     <label for="data_inicio">Data de início do projeto:
                         <% 
-                           const data = new Date(projeto.data_post);
+                           const data = new Date(projeto.data_inicio);
                            const dataConvertida = data.getUTCFullYear() + "-" + ("0" + (data.getUTCMonth()+1)).slice(-2) + "-" + ("0" + data.getUTCDate()).slice(-2);
                         %>
                         <input type="date" name="data_inicio" id="data_inicio" value="<%=dataConvertida%>">
