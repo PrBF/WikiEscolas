@@ -26,7 +26,7 @@
                        const data = new Date(evento.data_inicio);
                        const dataConvertida = data.getUTCFullYear() + "-" + ("0" + (data.getUTCMonth()+1)).slice(-2) + "-" + ("0" + data.getUTCDate()).slice(-2);
                     %>
-                    <input type="date" name="data_inicio" id="data_inicio" value=<%=evento.data%>>
+                    <input type="date" name="data_inicio" id="data_inicio" value=<%=dataConvertida%>>
                 </label>
             </div>
             <div class="field-event-form">
@@ -35,7 +35,7 @@
                        const data = new Date(evento.data_inicio);
                        const dataConvertida = data.getUTCFullYear() + "-" + ("0" + (data.getUTCMonth()+1)).slice(-2) + "-" + ("0" + data.getUTCDate()).slice(-2);
                     %>
-                    <input type="date" name="data_fim" id="data_fim" value=<%=evento.data%>>
+                    <input type="date" name="data_fim" id="data_fim" value=<%=dataConvertida%>>
                 </label>
             </div>
             <div class="field-event-form">
