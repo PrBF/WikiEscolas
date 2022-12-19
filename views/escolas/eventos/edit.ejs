@@ -32,7 +32,7 @@
             <div class="field-event-form">
                 <label for="data_fim">Data do fim do evento:
                     <% 
-                       const dataFim = new Date(evento.data_inicio);
+                       const dataFim = new Date(evento.data_fim);
                        const dataConvertidaFim = dataFim.getUTCFullYear() + "-" + ("0" + (dataFim.getUTCMonth()+1)).slice(-2) + "-" + ("0" + dataFim.getUTCDate()).slice(-2);
                     %>
                     <input type="date" name="data_fim" id="data_fim" value=<%=dataConvertidaFim%>>
@@ -50,7 +50,7 @@
             </div>
         
         </div>
-        <button>Publicar evento</button> 
+        <button>Editar evento</button> 
   </form>
 
 </div>
