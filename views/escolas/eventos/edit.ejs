@@ -7,17 +7,17 @@
         <div id="new-event-form">
             <div class="field-event-form">
                 <label for="nome_evento">Nome do evento
-                    <input type="text" name="nome_evento" id="nome_evento" placeholder="Nome do seu evento" value="<%=evento.nome_evento%>">
+                    <input type="text" name="nome_evento" id="nome_evento" placeholder="Nome do seu evento" value="<%=evento.nome_evento%>" required>
                 </label>
             </div>
             <div class="field-event-form">
                 <label for="descricao">Descrição:
-                    <input type="text" name="descricao" id="descricao" placeholder="Descrição do seu evento" value="<%=evento.descricao%>">
+                    <input type="text" name="descricao" id="descricao" placeholder="Descrição do seu evento" value="<%=evento.descricao%>" required>
                 </label>
             </div>
             <div class="field-event-form">
                 <label for="endereco">Endereço:
-                  <input type="text" name="endereco" id="endereco" placeholder="Seu endereço" value="<%=evento.endereco%>">
+                  <input type="text" name="endereco" id="endereco" placeholder="Seu endereço" value="<%=evento.endereco%>" required>
                 </label>
             </div>
             <div class="field-event-form">
@@ -26,7 +26,7 @@
                        const dataInicio = new Date(evento.data_inicio);
                        const dataConvertida = dataInicio.getUTCFullYear() + "-" + ("0" + (dataInicio.getUTCMonth()+1)).slice(-2) + "-" + ("0" + dataInicio.getUTCDate()).slice(-2);
                     %>
-                    <input type="date" name="data_inicio" id="data_inicio" value=<%=dataConvertida%>>
+                    <input type="date" name="data_inicio" id="data_inicio" value=<%=dataConvertida%> required>
                 </label>
             </div>
             <div class="field-event-form">
@@ -35,17 +35,17 @@
                        const dataFim = new Date(evento.data_fim);
                        const dataConvertidaFim = dataFim.getUTCFullYear() + "-" + ("0" + (dataFim.getUTCMonth()+1)).slice(-2) + "-" + ("0" + dataFim.getUTCDate()).slice(-2);
                     %>
-                    <input type="date" name="data_fim" id="data_fim" value=<%=dataConvertidaFim%>>
+                    <input type="date" name="data_fim" id="data_fim" value=<%=dataConvertidaFim%> required>
                 </label>
             </div>
             <div class="field-event-form">
                 <label for="hora_inicio">Horário inicial:
-                    <input type="time" name="hora_inicio" id="hora_inicio" value=<%=evento.hora_inicio%>>
+                    <input type="time" name="hora_inicio" id="hora_inicio" value=<%=evento.hora_inicio%> required>
                 </label>
             </div>
             <div class="field-event-form">
                 <label for="hora_fim">Horário final:
-                    <input type="time" name="hora_fim" id="hora_fim" value=<%=evento.hora_fim%>>
+                    <input type="time" name="hora_fim" id="hora_fim" value=<%=evento.hora_fim%> required>
                 </label>
             </div>
         

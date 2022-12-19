@@ -7,10 +7,10 @@
                 <h1>Edite sua noticia!</h1>
                 <div class="item-notice-form">
                     <label>Título
-                        <input type="text" name="titulo" id="titulo" value="<%=noticia.titulo%>">
+                        <input type="text" name="titulo" id="titulo" value="<%=noticia.titulo%>" required>
                     </label>
                     <label>Descrição:
-                        <textarea name="descricao"><%=noticia.descricao%></textarea>
+                        <textarea name="descricao" required><%=noticia.descricao%></textarea>
                     </label>
                     <label>Data de publicação:
                         <% 
@@ -19,7 +19,7 @@
                            const dataConvertida = data.getUTCFullYear() + "-" + ("0" + (data.getUTCMonth()+1)).slice(-2) + "-" + ("0" + data.getUTCDate()).slice(-2);
                            //console.log("data convertida: " + dataConvertida);
                         %>
-                        <input type="date" name="data_post" id="data_post" value="<%=dataConvertida%>">
+                        <input type="date" name="data_post" id="data_post" value="<%=dataConvertida%>" required>
                     </label>
                 </div>
                 <button>Editar notícia</button>

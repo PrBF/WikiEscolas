@@ -6,23 +6,23 @@
                 <h1>Edite seu projeto</h1>
                 <div id="publish-project">
                     <label id="for="titulo">Título do projeto:
-                        <input type="text" name="titulo" id="titulo" value="<%=projeto.titulo%>">
+                        <input type="text" name="titulo" id="titulo" value="<%=projeto.titulo%>" required>
                     </label>
                     <label for="descricao">Descrição:
-                        <textarea name="descricao" id="descricao" value="<%=projeto.descricao%>"  cols="30" rows="10"><%=projeto.descricao%></textarea>
+                        <textarea name="descricao" id="descricao" value="<%=projeto.descricao%>"   required cols="30" rows="10"><%=projeto.descricao%></textarea>
                     </label>
                     <label for="coordenador">Coordenador:
-                        <input type="text" name="coordenador" id="coordenador" placeholder="Insira o nome do coordenador" value="<%=projeto.coordenador%>">
+                        <input type="text" name="coordenador" id="coordenador" placeholder="Insira o nome do coordenador" value="<%=projeto.coordenador%>" required>
                     </label>
                     <label for="contato">Contato:
-                        <input type="text" name="contato" id="contato" value="<%=projeto.contato%>">
+                        <input type="text" name="contato" id="contato" value="<%=projeto.contato%>" required>
                     </label>
                     <label for="data_inicio">Data de início do projeto:
                         <% 
                            const data = new Date(projeto.data_inicio);
                            const dataConvertida = data.getUTCFullYear() + "-" + ("0" + (data.getUTCMonth()+1)).slice(-2) + "-" + ("0" + data.getUTCDate()).slice(-2);
                         %>
-                        <input type="date" name="data_inicio" id="data_inicio" value=<%=dataConvertida%>>
+                        <input type="date" name="data_inicio" id="data_inicio" value=<%=dataConvertida%> required>
                     </label>
                     
                 </div>
